@@ -1,0 +1,109 @@
+/* Inner Block Sizes */
+.container {
+    max-width: 1800px;
+    margin: 0 auto;
+    padding: 0 40px;
+    overflow: auto;
+}
+
+.container-min {
+    max-width: 1300px;
+    margin: 0 auto;
+}
+
+/* Display Sections */
+.flex {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.grid {
+    display: grid;
+    gap: 20px;
+    margin: 0 auto;
+}
+
+.grid-1 { grid-template-columns: repeat(1, 1fr); }
+
+.grid-2 { grid-template-columns: repeat(2, 1fr); }
+
+.grid-3 { grid-template-columns: repeat(3, 1fr); }
+
+.grid-4 { grid-template-columns: repeat(4, 1fr); }
+
+/* Underline (Cool Ones)*/
+.display-table {
+    border-bottom: 1px solid #533834;
+    display: table;
+    margin-bottom: 10px;
+    padding-bottom: 8px;
+}
+
+/* Aligning Content */
+.align-item-center { align-items: center; }
+
+.jc-ai-center {
+    justify-content: center;
+    align-content: center;
+}
+
+/* Buttons */
+.btn {
+    border-radius: 20px;
+    border: 1px solid #333;
+    padding: 5px 20px;
+    margin: 5px 15px;
+}
+
+/* Cards */
+.card {
+    background-color: #FAF9F6;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    transition: transform ease-in 0.2s;
+}
+
+/* Text Colours */
+.clr-red { color: rgb(255, 0, 0); }
+.clr-green { color: rgb(0, 128, 0); }
+.clr-black { color: #333;}
+
+/* Text Center */
+.text-center { 
+    text-align: center;
+    margin: 0 auto;
+}
+
+/* Text Sizes */
+.sm { font-size: 1.5rem;}
+.md { font-size: 2rem;}
+.lg { font-size: 3rem;}
+.xl { font-size: 4rem;}
+.xxl { font-size: 5rem;}
+
+/* Margin Y Axis */
+.my-1 { margin: 1rem 0;}
+.my-2 { margin: 2rem 0;}
+.my-3 { margin: 3rem 0;}
+.my-4 { margin: 4rem 0;}
+.my-5 { margin: 5rem 0;}
+
+/* Margin XY Axis */
+.m-1 { margin: 1rem;}
+.m-2 { margin: 2rem;}
+.m-3 { margin: 3rem;}
+.m-4 { margin: 4rem;}
+.m-5 { margin: 5rem;}
+
+/* Padding Y Axis */
+.py-1 { margin: 1rem 0;}
+.py-2 { margin: 2rem 0;}
+.py-3 { margin: 3rem 0;}
+.py-4 { margin: 4rem 0;}
+.py-5 { margin: 5rem 0;}
+
+/* Padding XY Axis */
+.p-1 { margin: 1rem;}
+.p-2 { margin: 2rem;}
+.p-3 { margin: 3rem;}
+.p-4 { margin: 4rem;}
+.p-5 { margin: 5rem;}

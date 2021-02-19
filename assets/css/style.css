@@ -1,0 +1,260 @@
+/* Regular Utilities */
+*, ::after, ::before {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+    background-color: #faf9f6;
+    font-family: Verdana, sans-serif;
+    line-height: 1.6;
+    font-size: 1rem;
+    color: #333;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    line-height: 1.6;
+    font-weight: 400;
+    padding: 5px 0;
+}
+
+ul { list-style-type: none; }
+
+a { 
+    text-decoration: none; 
+    color: #333;
+}
+
+p { 
+    line-height: 1.3;
+    padding: 5px 0;
+}
+
+img { width: 100%; }
+
+/* ------------- Home Page CSS -------------- */
+/* Navbar */
+.navbar h1 { font-size: 25px; }
+
+.navbar .container { justify-content: space-between; }
+
+.btn { transition: 0.3s; }
+
+.navbar .btn:hover {
+    background: #000;
+    color: #fff;
+}
+
+.navbar ul, .navbar li { 
+    font-size: 18px;
+    margin-top: 3px;
+    padding: 10px 20px; 
+}
+
+.navbar .left-nav a:hover { color: rgb(214, 52, 52); }
+
+/* Right Nav Cart */
+.right-nav img {
+    width: 40px;
+    height: 40px;
+}
+
+/* Number of items in Cart */
+.right-nav p {
+    padding: 3px 7px;
+    margin: -5px 0;
+    border-radius: 80px;
+    height: 25px;
+    width: 25px;
+    background: #000;
+    color: #fff;
+}
+
+/* Hero Section */
+.hero { height: 500px; }
+
+.hero img {
+    width: 550px;
+    height: 550px;
+    margin-top: -70px;
+}
+
+.hero h3 { font-size: 30px; }
+
+.hero li {
+    margin-top: 10px;
+    padding-right: 20px;
+}
+
+.hero p { 
+    max-width: 400px; 
+    font-size: 16px;
+}
+
+/* Come & Dine Section */
+.showcase h6 {
+    color: #aea512;
+    text-transform: uppercase;
+}
+
+.showcase h1, .showcase h4 , .showcase .sm{
+    color: #533834;
+}
+
+.showcase img {
+    width: 100px;
+    height: 100px;
+    margin: 5px 0;
+}
+
+.showcase p { font-size: 17px;}
+
+/* Todays Special */
+.special {
+    background-image: url(../images/99.jpg);
+    height: 35em;
+}
+
+.special .container-min {
+    justify-content: space-around;
+}
+
+.special .card { width: 350px; }
+
+.special .card:hover {
+    transform: translateY(-10px) ;
+}
+
+.card img { height: 350px; }
+
+/* Most Loved Dishes */
+.dishes .container-min { 
+    max-width: 1600px;
+    margin-bottom: 60px;
+    margin: 0 auto;
+}
+
+.dishes .grid {
+    justify-content: center;
+}
+
+.dishes .card {
+    display: block;
+    width: 320px;
+    height: 480px;
+    padding: 35px;
+    transition: transform 0.3s ease-in;
+}
+
+.dishes h2{
+    font-size: 29px;
+    color: #aea512;
+}
+
+.dishes img {
+    border-radius: 50%;
+    width: 200px;
+    height: 200px;
+    padding: 10px;
+}
+
+.dishes .card:hover { transform: translateY(-10px);}
+
+
+/* ------------------ Menu Page CSS ----------------- */
+.menu ul {
+    background-color: pink;
+}
+
+.menu li {
+    padding: 10px 15px;
+    margin: 10px 15px;
+}
+
+
+/* ----------------- Our Vision CSS ------------------ */
+/* Banner Image */
+.main-img img { height: 50em; }
+
+
+/* Our History Section */
+.our-history p { 
+    width: 28em;
+    font-size: 22px;
+}
+
+.our-history img { box-shadow: 0 0 0 4px #ffffff, 0 0 0 5px rgb(210 200 42 / 50%); }
+
+/* History & Philosphy */
+.our-history h1, .our-philosphy h1 { color: #533834;}
+
+.our-history h3, .our-philosphy h3 { color: #aea512;}
+
+/* Our Philoshpy */
+.our-philosphy img { 
+    width: 100px;
+    height: 100px;
+    margin-right: 20px;
+}
+
+.our-philosphy figure { width: 500px; }
+
+.our-philosphy p { width: 350px;
+font-size: 18px;}
+
+/* ------------------ Footer ---------------*/
+footer {
+    background-color: #171819;
+    color: #fff;
+    padding: 80px 50px;
+}
+
+footer li, footer p, footer i, footer a {
+    font-weight: 400;
+    color: #666262;
+}
+
+footer article {
+    max-width: 35em;
+    padding: 0 50px;
+}
+
+footer h1 { text-transform: uppercase; }
+
+footer li { padding: 10px 0; }
+
+.quick-links li { border-bottom: 1px solid #666262; }
+
+footer .contact li { 
+    display: flex;
+    align-items: center;
+}
+
+footer .about i, footer .contact i {
+    padding-right: 10px;
+    color: rgb(211, 48, 48);
+}
+
+footer a:hover, .contact p:hover {
+    color: #fff;
+    cursor: pointer;
+}
+
+/* Deep Devs Information */
+footer .deep-devs { 
+    border-top: 1px solid #666262;
+    color: #666262;
+    justify-content: space-between;
+    margin: 40px 40px 0 40px;
+    padding: 40px 5px 0 5px;
+    font-size: 14px;
+}
+
+footer .deep-devs a { 
+    color: #fff;
+    font-weight: 700;
+    font-size: 16px;
+}
