@@ -43,7 +43,7 @@ img { width: 100%; }
 
 .navbar .container { justify-content: space-between; }
 
-.btn { transition: 0.3s; }
+.btn { transition: 0.35s; }
 
 .navbar .btn:hover {
     background: #000;
@@ -62,6 +62,7 @@ img { width: 100%; }
 .right-nav img {
     width: 40px;
     height: 40px;
+    margin-left: 8px;
 }
 
 /* Number of items in Cart */
@@ -188,7 +189,11 @@ img { width: 100%; }
     font-size: 22px;
 }
 
-.our-history img { box-shadow: 0 0 0 4px #ffffff, 0 0 0 5px rgb(210 200 42 / 50%); }
+.our-history img { 
+    box-shadow: 0 0 0 4px #ffffff, 0 0 0 5px rgb(210 200 42 / 80%); 
+    width: 420px;
+    height: 250px;
+}
 
 /* History & Philosphy */
 .our-history h1, .our-philosphy h1 { color: #533834;}
@@ -216,7 +221,7 @@ font-size: 18px;}
     color: #fff;
 }
 
-.testimonial-footer { margin-top: 14.8em; }
+.testimonial-footer { margin-top: 16em; }
 
 /* Backgraound Video */
 .testimonial-video video {
@@ -230,9 +235,16 @@ font-size: 18px;}
 }
 
 /* Testimonial Articles */
+.testimonial-page .btn { border-color: #fff; }
+
+.testimonial-page .btn:hover { 
+    background-color: rgba(255, 255, 255, 0.932);
+    color: #333; 
+}
+
 .testimonial-video .dishes {
     position: relative;
-    margin-top: 6em;
+    margin-top: 5em;
 }
 
 .testimonial-video .dishes h1 { 
@@ -250,14 +262,14 @@ font-size: 18px;}
     opacity: 0.9;
 }
 
+.testimonial-video .dishes .card:hover { transform: translateY(-10px); }
+
 .testimonial-video i {
     color: #fff;
     margin: 0 13px;
 }
 
 .testimonial-video i:hover { color: rgb(129, 129, 129)}
-
-.testimonial-video .dishes .card:hover { transform: translateY(-10px); }
 
 /* ------------------ Footer ---------------*/
 footer {
