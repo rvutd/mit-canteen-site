@@ -1,4 +1,15 @@
+/* Dancing Script */
+/* font-family: 'Dancing Script', cursive; */
 @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap');
+
+/* Parisienne */
+/* font-family: 'Parisienne', cursive; */
+@import url('https://fonts.googleapis.com/css2?family=Parisienne&display=swap');
+
+/* Tangerine */
+/* font-family: 'Tangerine', cursive; */
+@import url('https://fonts.googleapis.com/css2?family=Tangerine:wght@700&display=swap');
+
 
 /* Regular Utilities */
 *, ::after, ::before {
@@ -41,7 +52,7 @@ img { width: 100%; }
 /* Navbar */
 .navbar h1 { font-size: 25px; }
 
-.navbar .container { justify-content: space-between; }
+.navbar .container { justify-content: space-around; }
 
 .btn { transition: 0.35s; }
 
@@ -121,15 +132,11 @@ img { width: 100%; }
     height: 35em;
 }
 
-.special .container-min {
-    justify-content: space-around;
-}
+.special .container-min { justify-content: space-around; }
 
 .special .card { width: 350px; }
 
-.special .card:hover {
-    transform: translateY(-10px) ;
-}
+.special .card:hover { transform: translateY(-10px); }
 
 .card img { height: 350px; }
 
@@ -140,9 +147,7 @@ img { width: 100%; }
     margin: 0 auto;
 }
 
-.dishes .grid {
-    justify-content: center;
-}
+.dishes .grid { justify-content: center; }
 
 .dishes .card {
     display: block;
@@ -168,14 +173,7 @@ img { width: 100%; }
 
 
 /* ------------------ Menu Page CSS ----------------- */
-.menu ul {
-    background-color: pink;
-}
 
-.menu li {
-    padding: 10px 15px;
-    margin: 10px 15px;
-}
 
 
 /* ----------------- Our Vision CSS ------------------ */
@@ -197,7 +195,6 @@ img { width: 100%; }
 
 /* History & Philosphy */
 .our-history h1, .our-philosphy h1 { color: #533834;}
-
 .our-history h3, .our-philosphy h3 { color: #aea512;}
 
 /* Our Philoshpy */
@@ -209,8 +206,10 @@ img { width: 100%; }
 
 .our-philosphy figure { width: 500px; }
 
-.our-philosphy p { width: 350px;
-font-size: 18px;}
+.our-philosphy p { 
+    width: 350px;
+    font-size: 18px;
+}
 
 
 /* ------------------- Testomonial CSS ------------------ */
@@ -271,7 +270,7 @@ font-size: 18px;}
 
 .testimonial-video i:hover { color: rgb(129, 129, 129)}
 
-/* ------------------ Footer ---------------*/
+/* ------------------------------- Footer --------------------------------*/
 footer {
     background-color: #171819;
     color: #fff;
