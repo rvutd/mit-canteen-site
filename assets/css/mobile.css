@@ -7,7 +7,8 @@
     }
 
     /* Home Page -> Shocase */
-    .showcase p { 
+    .showcase p
+    { 
         max-width: 350px;
         text-align: center;
         margin: 0 auto;
@@ -40,5 +41,55 @@
     /* Our Vision -> Main image */
     .main-img img { height: 600px;}
 }
+
  /* Mobile Devices */
+@media (max-width: 450px) {
+
+    .navbar {
+        justify-content: center;
+        align-items: center;
+        align-content: center;
+        justify-items: center;
+        justify-self: center;
+        text-align: center;
+        margin: 0 auto;
+    }
+
+    /* .Font Sizes of Headings */
+    .hero .container-min .clr-green,
+    .showcase h1,
+    .special h1,
+    .dishes h1,
+    .our-history h1,
+    .our-philosphy h1
+    { font-size: 30px; }
+
+    /* Home Page */
+    .hero { height: 700px;}
+    .hero img { 
+        object-fit: fill; 
+        height : 440px;
+    }
+
+    /* Our Vision Page - Grids */
+    .our-history .grid .m-3{
+        margin: 0;
+        text-align: center;
+    }
+
+    /* Setting of image - History Image */
+    .our-history .grid .p-3 { margin: 10px 0; }
+    .our-history .grid img { height: 200px;}
+
+    .our-philosphy img {
+        height: 70px;
+        width: 70px;
+    }
+
+    
+
+    footer .grid { margin-left: -40px; }
+}
+
+
 

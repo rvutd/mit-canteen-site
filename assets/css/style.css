@@ -12,10 +12,18 @@
 
 
 /* Regular Utilities */
-*, ::after, ::before {
+*, * ::after, * ::before {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+}
+
+/* White Space Problem Solved */
+html,body
+{
+    margin: 0px;
+    padding: 0px;
+    overflow-x: hidden; 
 }
 
 html { scroll-behavior: smooth; }
@@ -46,7 +54,10 @@ p {
     padding: 5px 0;
 }
 
-img { width: 100%; }
+img { 
+    width: 100%; 
+    object-fit: cover;
+}
 
 /* ------------- Home Page CSS -------------- */
 /* Navbar */
@@ -91,8 +102,7 @@ img { width: 100%; }
 .hero { height: 500px; }
 
 .hero img {
-    width: 550px;
-    height: 550px;
+    max-width: 550px;
     margin-top: -70px;
 }
 
@@ -152,7 +162,6 @@ img { width: 100%; }
 .dishes .card {
     display: block;
     width: 320px;
-    height: 480px;
     padding: 35px;
     transition: transform 0.3s ease-in;
 }
@@ -183,13 +192,13 @@ img { width: 100%; }
 
 /* Our History Section */
 .our-history p { 
-    width: 28em;
+    max-width: 28em;
     font-size: 22px;
 }
 
 .our-history img { 
     box-shadow: 0 0 0 4px #ffffff, 0 0 0 5px rgb(210 200 42 / 80%); 
-    width: 420px;
+    max-width: 420px;
     height: 250px;
 }
 
@@ -198,16 +207,23 @@ img { width: 100%; }
 .our-history h3, .our-philosphy h3 { color: #aea512;}
 
 /* Our Philoshpy */
+.our-philosphy figure { 
+    padding: 0 20px;
+    margin: 5px 10px;
+}
+
+.our-philosphy figcaption { display: flex;}
+
 .our-philosphy img { 
-    width: 100px;
-    height: 100px;
+    width: 70px;
+    height: 70px;
     margin-right: 20px;
 }
 
-.our-philosphy figure { width: 500px; }
+.our-philosphy figure { max-width: 500px; }
 
 .our-philosphy p { 
-    width: 350px;
+    max-width: 350px;
     font-size: 18px;
 }
 
