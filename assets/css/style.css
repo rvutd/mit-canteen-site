@@ -226,65 +226,6 @@ img {
     font-size: 18px;
 }
 
-
-/* ------------------- Testomonial CSS ------------------ */
-
-/* Customizing All stuff acc. to page */
-.testimonial-page nav, .testimonial-page li, .testimonial-page a { 
-    z-index: 10;
-    color: #fff;
-}
-
-.testimonial-footer { margin-top: 16em; }
-
-/* Backgraound Video */
-.testimonial-video video {
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 70em;
-    object-fit: cover;
-    opacity: 0.95;
-}
-
-/* Testimonial Articles */
-.testimonial-page .btn { border-color: #fff; }
-
-.testimonial-page .btn:hover { 
-    background-color: rgba(255, 255, 255, 0.932);
-    color: #333; 
-}
-
-.testimonial-video .dishes {
-    position: relative;
-    margin-top: 5em;
-}
-
-.testimonial-video .dishes h1 { 
-    color: #fff; 
-    font-family: 'Dancing Script', cursive;
-}
-
-.testimonial-video .dishes .card { 
-    z-index: 10;
-    width: 340px;
-    height: 520px;
-    transition: transform 0.8s ease-in;
-    background-color: rgba(51, 51, 51, 0.644);
-    color: #fff;
-    opacity: 0.9;
-}
-
-.testimonial-video .dishes .card:hover { transform: translateY(-10px); }
-
-.testimonial-video i {
-    color: #fff;
-    margin: 0 13px;
-}
-
-.testimonial-video i:hover { color: rgb(129, 129, 129)}
-
 /* ------------------------------- Footer --------------------------------*/
 footer {
     background-color: #171819;

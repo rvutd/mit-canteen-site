@@ -20,31 +20,23 @@
     .our-history .grid { justify-items: center; }
     /* Our Vision -> Main image */
     .main-img img { margin-top: 15px;}
-
-    /* Testimonial Page */
-    .testimonial-video video { height:97em;}
-    .testimonial-footer { margin-top: 6em; }
 }
 /* Split screen */
 @media ( max-width: 950px) {
     .hero { height: 800px;}
     .hero-article .my-2 { margin-top: -8em;}
-
-    
 }
 
 /* iPads and Other Devices */
 @media (max-width: 768px) {
     /* Todays Special Section */
     .special { height: 95em;}
-
     /* Our Vision -> Main image */
     .main-img img { height: 600px;}
 }
 
  /* Mobile Devices */
 @media (max-width: 450px) {
-
     .navbar {
         justify-content: center;
         align-items: center;
@@ -85,9 +77,6 @@
         height: 70px;
         width: 70px;
     }
-
-    
-
     footer .grid { margin-left: -40px; }
 }
 
