@@ -48,6 +48,8 @@
 }
 
 /* Buttons */
+button {cursor: pointer;}
+
 .btn {
     border-radius: 20px;
     border: 1px solid #333;

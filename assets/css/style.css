@@ -10,6 +10,8 @@
 /* font-family: 'Tangerine', cursive; */
 @import url('https://fonts.googleapis.com/css2?family=Tangerine:wght@700&display=swap');
 
+/* Roboto */
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap');
 
 /* Regular Utilities */
 *, * ::after, * ::before {
@@ -179,9 +181,77 @@ img {
 
 .dishes .card:hover { transform: translateY(-10px);}
 
-
 /* ------------------ Menu Page CSS ----------------- */
+.menu .container {
+    padding: 0 ;
+}
 
+.menu-item {
+    display: flex;
+    max-width: 500px;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    border-radius: 6px;
+    background-color: #ffffff;
+}
+
+
+.menu-item .flex { align-items: center; }
+
+.menu-item .item-info { padding: 15px;}
+
+.menu-item figure i {margin-right: 5px;}
+
+.menu-item .item-category { color: #5B6EFD;}
+
+.menu-cart-functionality {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 15px;
+}
+
+ .cart-btn-container {
+     display: flex;
+    padding: 5px;
+    background-color: #F5F5F5;
+}
+
+
+.menu-item .price {
+    color: #F57C00;
+    font-size: 25px;
+    font-weight: 700;
+    font-family: 'roboto', sans-serif;
+}
+
+.cart-btn-container i {
+    padding: 5px;
+}
+
+.cart-btn-container button {
+    background: #ffffff;
+    border: none;
+    color: #666262;
+    font-size: 18px;
+    margin: 0 10px;
+    transition: all ease-in 0.2s;
+}
+
+.cart-btn-container button:focus  {
+    outline: none;
+}
+
+.cart-btn-container button:hover {
+    background-color: #6c757d;
+    color: #ffffff;
+} 
+
+.menu-item img {
+    max-width: 220px;
+    height: 240px;
+    border-top-left-radius: 6px;
+    border-bottom-left-radius: 6px;
+}
 
 
 /* ----------------- Our Vision CSS ------------------ */
@@ -230,7 +300,7 @@ img {
 footer {
     background-color: #171819;
     color: #fff;
-    padding: 80px 50px;
+    padding: 80px 0;
 }
 
 footer li, footer p, footer i, footer a {
