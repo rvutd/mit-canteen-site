@@ -182,9 +182,7 @@ img {
 .dishes .card:hover { transform: translateY(-10px);}
 
 /* ------------------ Menu Page CSS ----------------- */
-.menu .container {
-    padding: 0 ;
-}
+.menu .container { padding: 0; }
 
 .menu-item {
     display: flex;
