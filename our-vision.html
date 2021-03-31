@@ -16,26 +16,34 @@
 <body>
 
     <!-- NavBar -->
-    <section class="navbar">
-        <div class="container flex align-item-center">
+    <header class="navbar">
+        <div class="container flex text-center jc-ai-center">
             <!-- Left Navigation -->
-            <nav class="left-nav flex align-item-center">
-                <a href="index.html"><h1><span class="clr-red">Mit</span> <span class="clr-green">Canteen</span></h1></a>
+            <div class="site-title flex align-item-center">
+                <div>
+                    <a href="index.html"><h1><span class="clr-red">Mit</span> <span class="clr-green">Canteen</span></h1></a>
+                </div>
+                <!-- Toggle Bars -->
+                <div class="toggle-bars mybar">
+                    <div class="bars bar-1"></div>
+                    <div class="bars bar-2"></div>
+                    <div class="bars bar-3"></div>
+                </div>
+            </div>
+            <!-- Right Navigation -->
+            <nav class="site-nav flex left-nav align-item-center">                
                 <ul class="flex">
                     <li><a href="index.html">Home</a></li>
                     <li><a href="menu.html">Menu</a></li>
                     <li><a href="our-vision.html">Our Vision</a></li>
+                    <button href="#" class="btn">Log In</button>
+                    <button href="#" class="btn">Sign Up</button>
+                    <!-- Cart Icon -->
+                    <a href="#" class="flex"><img src="assets/images/cart.svg" alt="cart icon"><p>6</p></a>
                 </ul>
             </nav>
-            <!-- Right Navigation -->
-            <nav class="right-nav flex align-item-center">
-                <a href="#" class="btn">Log In</a>
-                <a href="#" class="btn">Sign Up</a>
-                <!-- Cart Icon -->
-                <a href="#" class="flex"><img src="assets/images/cart.svg" alt="cart icon"><p>6</p></a>
-            </nav>
         </div>
-    </section>
+    </header>
 
     <!-- Main Image -->
     <section class="main-img">

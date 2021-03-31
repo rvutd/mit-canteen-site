@@ -8,8 +8,10 @@ document.addEventListener('scroll', () => {
     }
 })
 
-var toggleBars = document.querySelector('.toggle-bars');
 
+// Toggle Bars Switch
+var toggleBars = document.querySelector('.toggle-bars');
+// Toggle Close/Open Function
 toggleBars.addEventListener('click', () => {
     toggleBars.classList.toggle('change')
 })
