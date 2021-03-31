@@ -1,6 +1,7 @@
 .prakat-ho-animation { animation: prakatHo 2s ease-in; }
 
-.fromLeftToRight-animation { animation: fromLeftToRight 2s ease-in-out; }
+
+.fromLeftToRight-animation { animation: fromLeftToRight 2s ease-in-out;  }
 
 .fromRightToLeft-animation { animation: fromRightToLeft 2s ease-in-out; }
 
@@ -18,9 +19,11 @@
 @keyframes fromLeftToRight {
     0% {
         transform: translateX(-100%);
+        opacity: 0;
     }
     100% {
-        transform: translateX(0);
+        transform: translateX(0%);
+        opacity: 1;
     }
 }
 

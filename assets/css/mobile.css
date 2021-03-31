@@ -29,15 +29,38 @@
 
 /* iPads and Other Devices */
 @media (max-width: 768px) {
+
+    .navbar .site-nav { 
+        display: none;
+    }
+
+    .site-title {
+        justify-content: space-between;
+        width: 100%;
+    }
+    
+    .mob-container {
+        max-width: 40vw;
+        background-color: blue;
+    }
+
     /* Todays Special Section */
     .special { height: 95em;}
+
     /* Our Vision -> Main image */
     .main-img img { height: 600px;}
+
+    /* NavBar */
+    /* .navbar .container, .navbar nav {
+        text-align: center;
+        justify-content: center;
+        align-items: center;
+    } */
 }
 
  /* Mobile Devices */
 @media (max-width: 450px) {
-  
+
     /* .Font Sizes of Headings */
     .hero .container-min .clr-green,
     .showcase h1,
@@ -57,7 +80,6 @@
     /* Our Vision Page - Grids */
     .our-history .grid .m-3{
         margin: 0;
-        text-align: center;
     }
 
     /* Setting of image - History Image */
@@ -80,7 +102,6 @@
         border-bottom-left-radius: 0;
 
     }
-
 }
 
 
