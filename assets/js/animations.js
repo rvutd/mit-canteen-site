@@ -10,8 +10,13 @@ document.addEventListener('scroll', () => {
 
 
 // Toggle Bars Switch
-var toggleBars = document.querySelector('.toggle-bars');
+const toggleBars = document.querySelector('.toggle-bars');
+const mobUl = document.querySelector('.mob-ul');
+
 // Toggle Close/Open Function
 toggleBars.addEventListener('click', () => {
-    toggleBars.classList.toggle('change')
-})
+    toggleBars.classList.toggle('change');
+    mobUl.classList.toggle('mob-nav-active');
+});
+
+
