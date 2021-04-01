@@ -5,7 +5,7 @@
             "fields": {
                 "title": "Double Cheese Potato Burger",
                 "category": "Burger",
-                "price": "15",
+                "price": "45",
                 "caleories": "220 - 280 Kcal",
                 "image": { "fields": {"file": { "url": "assets/images/sandwich1.jpg" } } }
             }
@@ -13,9 +13,9 @@
         {
             "sys": { "id": "2" },
             "fields": {
-                "title": "Double Cheese Potato Burger",
-                "category": "Burger",
-                "price": "15",
+                "title": "Cheese Sandwitch",
+                "category": "Sandwitch",
+                "price": "45",
                 "caleories": "220 - 280 Kcal",
                 "image": { "fields": {"file": { "url": "assets/images/sandwich1.jpg" } } }
             }
@@ -23,9 +23,9 @@
         {
             "sys": { "id": "3" },
             "fields": {
-                "title": "Double Cheese Potato Burger",
-                "category": "Burger",
-                "price": "15",
+                "title": "Veg Club Sandwitch",
+                "category": "Sandwitch",
+                "price": "60",
                 "caleories": "220 - 280 Kcal",
                 "image": { "fields": {"file": { "url": "assets/images/sandwich1.jpg" } } }
             }
@@ -33,9 +33,9 @@
         {
             "sys": { "id": "4" },
             "fields": {
-                "title": "Double Cheese Potato Burger",
-                "category": "Burger",
-                "price": "15",
+                "title": "Cheese Masala Sandwitch",
+                "category": "Sandwitch",
+                "price": "45",
                 "caleories": "220 - 280 Kcal",
                 "image": { "fields": {"file": { "url": "assets/images/sandwich1.jpg" } } }
             }
@@ -43,9 +43,9 @@
         {
             "sys": { "id": "5" },
             "fields": {
-                "title": "Double Cheese Potato Burger",
-                "category": "Burger",
-                "price": "15",
+                "title": "Veg Schezuan Sandwitch",
+                "category": "Sandwitch",
+                "price": "45",
                 "caleories": "220 - 280 Kcal",
                 "image": { "fields": {"file": { "url": "assets/images/sandwich1.jpg" } } }
             }
@@ -53,9 +53,9 @@
         {
             "sys": { "id": "6" },
             "fields": {
-                "title": "Double Cheese Potato Burger",
-                "category": "Burger",
-                "price": "15",
+                "title": "Masala Maggie",
+                "category": "Maggie",
+                "price": "25",
                 "caleories": "220 - 280 Kcal",
                 "image": { "fields": {"file": { "url": "assets/images/sandwich1.jpg" } } }
             }
@@ -63,9 +63,9 @@
         {
             "sys": { "id": "7" },
             "fields": {
-                "title": "Double Cheese Potato Burger",
-                "category": "Burger",
-                "price": "15",
+                "title": "Schezuan Maggie",
+                "category": "Maggie",
+                "price": "30",
                 "caleories": "220 - 280 Kcal",
                 "image": { "fields": {"file": { "url": "assets/images/sandwich1.jpg" } } }
             }
@@ -73,9 +73,9 @@
         {
             "sys": { "id": "8" },
             "fields": {
-                "title": "Double Cheese Potato Burger",
-                "category": "Burger",
-                "price": "15",
+                "title": "Veg Maggie",
+                "category": "Maggie",
+                "price": "30",
                 "caleories": "220 - 280 Kcal",
                 "image": { "fields": {"file": { "url": "assets/images/sandwich1.jpg" } } }
             }
@@ -83,9 +83,9 @@
         {
             "sys": { "id": "9" },
             "fields": {
-                "title": "Double Cheese Potato Burger",
-                "category": "Burger",
-                "price": "15",
+                "title": "Cheese Garlic Maggie",
+                "category": "Maggie",
+                "price": "40",
                 "caleories": "220 - 280 Kcal",
                 "image": { "fields": {"file": { "url": "assets/images/sandwich1.jpg" } } }
             }
@@ -93,9 +93,9 @@
         {
             "sys": { "id": "10" },
             "fields": {
-                "title": "Double Cheese Potato Burger",
-                "category": "Burger",
-                "price": "15",
+                "title": "Cheese Veg Maggie",
+                "category": "Maggie",
+                "price": "45",
                 "caleories": "220 - 280 Kcal",
                 "image": { "fields": {"file": { "url": "assets/images/sandwich1.jpg" } } }
             }
@@ -103,9 +103,9 @@
         {
             "sys": { "id": "11" },
             "fields": {
-                "title": "Double Cheese Potato Burger",
-                "category": "Burger",
-                "price": "15",
+                "title": "Masala Fries",
+                "category": "Fries",
+                "price": "35",
                 "caleories": "220 - 280 Kcal",
                 "image": { "fields": {"file": { "url": "assets/images/sandwich1.jpg" } } }
             }
@@ -113,9 +113,9 @@
         {
             "sys": { "id": "12" },
             "fields": {
-                "title": "Double Cheese Potato Burger",
-                "category": "Burger",
-                "price": "15",
+                "title": "Schezuan Fries",
+                "category": "Fries",
+                "price": "45",
                 "caleories": "220 - 280 Kcal",
                 "image": { "fields": {"file": { "url": "assets/images/sandwich1.jpg" } } }
             }
@@ -123,9 +123,9 @@
         {
             "sys": { "id": "13" },
             "fields": {
-                "title": "Double Cheese Potato Burger",
-                "category": "Burger",
-                "price": "15",
+                "title": "Cheese Fries",
+                "category": "Fries",
+                "price": "40",
                 "caleories": "220 - 280 Kcal",
                 "image": { "fields": {"file": { "url": "assets/images/sandwich1.jpg" } } }
             }
@@ -133,9 +133,9 @@
         {
             "sys": { "id": "14" },
             "fields": {
-                "title": "Double Cheese Potato Burger",
-                "category": "Burger",
-                "price": "15",
+                "title": "Red Sause Pasta",
+                "category": "Pasta",
+                "price": "80",
                 "caleories": "220 - 280 Kcal",
                 "image": { "fields": {"file": { "url": "assets/images/sandwich1.jpg" } } }
             }
@@ -143,8 +143,118 @@
         {
             "sys": { "id": "15" },
             "fields": {
-                "title": "Double Cheese Potato Burger",
-                "category": "Burger",
+                "title": "White Sause Pasta",
+                "category": "Pasta",
+                "price": "80",
+                "caleories": "220 - 280 Kcal",
+                "image": { "fields": {"file": { "url": "assets/images/sandwich1.jpg" } } }
+            }
+        },
+        {
+            "sys": { "id": "16" },
+            "fields": {
+                "title": "Milk Shakes",
+                "category": "Beverages",
+                "price": "35",
+                "caleories": "220 - 280 Kcal",
+                "image": { "fields": {"file": { "url": "assets/images/sandwich1.jpg" } } }
+            }
+        },
+        {
+            "sys": { "id": "17" },
+            "fields": {
+                "title": "Hot Chocolate",
+                "category": "Beverages",
+                "price": "35",
+                "caleories": "220 - 280 Kcal",
+                "image": { "fields": {"file": { "url": "assets/images/sandwich1.jpg" } } }
+            }
+        },
+        {
+            "sys": { "id": "18" },
+            "fields": {
+                "title": "Aerated Drinks",
+                "category": "Beverages",
+                "price": "10",
+                "caleories": "220 - 280 Kcal",
+                "image": { "fields": {"file": { "url": "assets/images/sandwich1.jpg" } } }
+            }
+        },
+        {
+            "sys": { "id": "19" },
+            "fields": {
+                "title": "Cold Coffee",
+                "category": "Beverages",
+                "price": "35",
+                "caleories": "220 - 280 Kcal",
+                "image": { "fields": {"file": { "url": "assets/images/sandwich1.jpg" } } }
+            }
+        },
+        {
+            "sys": { "id": "20" },
+            "fields": {
+                "title": "Coffee",
+                "category": "Beverages",
+                "price": "15",
+                "caleories": "220 - 280 Kcal",
+                "image": { "fields": {"file": { "url": "assets/images/sandwich1.jpg" } } }
+            }
+        },
+        {
+            "sys": { "id": "21" },
+            "fields": {
+                "title": "Tea",
+                "category": "Beverages",
+                "price": "10",
+                "caleories": "220 - 280 Kcal",
+                "image": { "fields": {"file": { "url": "assets/images/sandwich1.jpg" } } }
+            }
+        },
+        {
+            "sys": { "id": "22" },
+            "fields": {
+                "title": "Chocate Frappe",
+                "category": "Beverages",
+                "price": "35",
+                "caleories": "220 - 280 Kcal",
+                "image": { "fields": {"file": { "url": "assets/images/sandwich1.jpg" } } }
+            }
+        },
+        {
+            "sys": { "id": "23" },
+            "fields": {
+                "title": "Veg Puff",
+                "category": "Bakery",
+                "price": "35",
+                "caleories": "220 - 280 Kcal",
+                "image": { "fields": {"file": { "url": "assets/images/sandwich1.jpg" } } }
+            }
+        },
+        {
+            "sys": { "id": "24" },
+            "fields": {
+                "title": "Panner Puff",
+                "category": "Bakery",
+                "price": "15",
+                "caleories": "220 - 280 Kcal",
+                "image": { "fields": {"file": { "url": "assets/images/sandwich1.jpg" } } }
+            }
+        },
+        {
+            "sys": { "id": "25" },
+            "fields": {
+                "title": "Khari",
+                "category": "Bakery",
+                "price": "20",
+                "caleories": "220 - 280 Kcal",
+                "image": { "fields": {"file": { "url": "assets/images/sandwich1.jpg" } } }
+            }
+        },
+        {
+            "sys": { "id": "26" },
+            "fields": {
+                "title": "Noodle Puff",
+                "category": "Bakery",
                 "price": "15",
                 "caleories": "220 - 280 Kcal",
                 "image": { "fields": {"file": { "url": "assets/images/sandwich1.jpg" } } }
