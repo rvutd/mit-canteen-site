@@ -286,7 +286,10 @@ img {
 
 .menu-item .flex { align-items: center; }
 
-.menu-item .item-info { padding: 15px;}
+.menu-item .item-info { 
+    padding: 15px;
+    width: 100%;
+}
 
 .menu-item figure i {margin-right: 5px;}
 
