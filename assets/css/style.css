@@ -63,6 +63,7 @@ img {
 
 /* ---------------- Registration System ----------------- */
 .signup-modal {
+    padding: 100px 0;
     visibility: hidden;
     position: fixed; 
     left: 0;
@@ -75,6 +76,7 @@ img {
 
 /* ------------------- SignIn modal ---------*/
 .sign-modal {
+    padding-top: 100px;
     visibility: hidden;
     position: fixed; 
     left: 0;
