@@ -20,6 +20,7 @@ signUpModalbtn.forEach(element => {
 window.onclick = function(event) {
     if (event.target == signModal) {
         signModal.classList.remove('show');
+        signUpModal.classList.remove('show');
     }
 }
 // ------------------ Sign In Modal ---------------------------
