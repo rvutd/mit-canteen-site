@@ -106,8 +106,7 @@ img {
     top: 45%;
     overflow: visible;
     transform: translate(-50%, -50%);
-    display: grid;
-    justify-content: center;
+    
     max-width: 45vh;
     padding: 20px 40px;
     font-family: Helvetica, sans-serif;
@@ -144,7 +143,7 @@ img {
 .form-label { font-size: 20px; }
 .sign-modal .modal-icons,.signup-modal .modal-icons {
     font-size: 30px;
-    margin: 0 auto;
+    justify-content: center;
 }
 
 .sign-modal li, .signup-modal li{
