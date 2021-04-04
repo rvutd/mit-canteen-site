@@ -31,7 +31,7 @@ html,body
 html { scroll-behavior: smooth; }
 
 body {
-    background-color: #faf9f6;
+    background-color: #fff;
     font-family: Verdana, sans-serif;
     line-height: 1.6;
     font-size: 1rem;
@@ -60,6 +60,62 @@ img {
     width: 100%; 
     object-fit: cover;
 }
+
+/* ---------------- Registration System ----------------- */
+.sign-modal {
+    visibility: hidden;
+    position: fixed; 
+    z-index: 1; 
+    left: 0;
+    top: 0;
+    width: 100%; 
+    height: 100%; 
+    overflow: auto;
+    background-color: rgba(0,0,0,0.8); 
+}
+
+.modal-container  {
+    position: absolute;
+    left: 50%;
+    top: 45%;
+    transform: translate(-50%, -50%);
+    display: grid;
+    justify-content: center;
+    max-width: 45vh;
+    padding: 10px 40px;
+    font-family: Helvetica, sans-serif;
+    background-color: #ffffff;
+    box-shadow: rgb(0, 0, 0) 0px 20px 30px -10px;
+}
+
+.show { visibility: visible; }
+
+.modal-content {
+    max-width: 240px;
+    text-align: center;
+}
+
+.sign-modal input {
+    outline: none;
+    border: 1px solid #222;
+    border-radius: 20px;
+    padding: 10px;
+    font-size: 15px;
+    text-align: center;
+}
+
+.m-content-2 { font-size: 12px; }
+
+.sign-modal .btn {
+    margin: 0 auto;
+    width: 150px;
+    padding: 10px 20px;
+    color: #fff;
+    background-color: #222;
+}
+
+.form-label { font-size: 20px; }
+
 /* ------------- Home Page CSS -------------- */
 /* Navbar */
 .navbar h1 { font-size: 25px; }
@@ -85,7 +141,7 @@ img {
 
 .navbar button {
     outline: none;
-    background-color: #FAF9F6;
+    background-color: #fff;
     padding: 0px 25px;
 }
 

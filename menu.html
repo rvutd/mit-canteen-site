@@ -35,10 +35,10 @@
                     <li><a href="index.html">Home</a></li>
                     <li><a href="menu.html">Menu</a></li>
                     <li><a href="our-vision.html">Our Vision</a></li>
-                    <button href="#" class="btn">Log In</button>
-                    <button href="#" class="btn">Sign Up</button>
+                    <button  class="btn" id="sign-modal">Log In</button>
+                    <button  class="btn" id="sign-modal">Sign Up</button>
                     <!-- Cart Icon -->
-                    <a href="#" class="flex"><img src="assets/images/cart.svg" alt="cart icon"><p>6</p></a>
+                    <a href="cart.html" class="flex"><img src="assets/images/cart.svg" alt="cart icon"><p>6</p></a>
                 </ul>
             </nav>
         </div>
@@ -51,13 +51,44 @@
                 <li><a href="index.html">Home</a></li>
                 <li><a href="menu.html">Menu</a></li>
                 <li><a href="our-vision.html">Our Vision</a></li>
-                <button href="#" class="btn">Log In</button>
-                <button href="#" class="btn">Sign Up</button>
+                <button class="btn" id="sign-modal">Log In</button>
+                <button class="btn" id="sign-modal">Sign Up</button>
                 <!-- Cart Icon -->
-                <a href="#" class="flex"><img src="assets/images/cart.svg" alt="cart icon"><p>6</p></a>
+                <a href="cart.html" class="flex"><img src="assets/images/cart.svg" alt="cart icon"><p>6</p></a>
             </ul>
         </nav>
     </header>
+
+    <!-- Modal LogIn -->
+    <!-- Background -->
+    <section class="sign-modal">
+        <!-- Main Card -->
+        <div class="modal-container">
+            <!-- Written Stuff -->
+            <div class="modal-content md py-1">
+                Welcome back.
+            </div>
+
+            <!-- Sign In Input's -->
+            <form action="submit" class="modal-form grid py-1 text-center" method="POST">
+                <input type="text" placeholder="Enter Username" name="uname" required>
+                <input type="password" placeholder="Enter Password" name="psw" required>
+                <button type="submit" class="btn">Login</button>
+            </form>
+
+            <!-- Remember Me CheckBox -->
+            <label class="py-1">
+                <input type="checkbox" checked="checked" name="remember"> Remember me
+            </label>
+           
+            <!-- Written Stuff -->
+            <div class="modal-content m-content-2 py-1">
+                Click “Sign In” to agree to Terms of Service and acknowledge 
+                that Privacy Policy applies to you. No account? 
+                <a href="sign.html"><span class="clr-green">Create one</span></a>
+            </div>
+        </div>
+    </section>
 
     <!-- Menu -->
     <section class="menu m-3">
@@ -145,6 +176,7 @@
 
     <script src="assets/js/animations.js"></script>
     <script src="assets/js/main.js"></script>
+    <script src="assets/js/features.js"></script>
 
 </body>
 </html>
