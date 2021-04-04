@@ -1,11 +1,18 @@
 // ------------------ Sign In Modal ---------------------------
-const signModalbtn = document.querySelectorAll('#sign-modal');
+const signInModalbtn = document.querySelectorAll('#sign-modal');
+const signUpModalbtn = document.querySelectorAll('#signup-modal');
 const signModal = document.querySelector('.sign-modal');
+const signUpModal = document.querySelector('.signup-modal');
 
-signModalbtn.forEach(element => {
+signInModalbtn.forEach(element => {
     element.addEventListener('click', () => {
-        console.log('toglle');
         signModal.classList.toggle('show'); 
+    })
+});
+
+signUpModalbtn.forEach(element => {
+    element.addEventListener('click', () => {
+        signUpModal.classList.toggle('show'); 
     })
 });
 
