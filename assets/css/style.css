@@ -73,21 +73,6 @@ img {
     background-color: rgba(0,0,0,0.8); 
 }
 
-.signup-modal .modal-container  {
-    position: absolute;
-    left: 50%;
-    top: 45%;
-    transform: translate(-50%, -50%);
-    display: grid;
-    justify-content: center;
-    max-width: 45vh;
-    padding: 20px 40px;
-    font-family: Helvetica, sans-serif;
-    background-color: #ffffff;
-    overflow: visible;
-    box-shadow: rgba(15, 167, 238, 0.76) 0px 22px 70px 4px;
-}
-
 /* ------------------- SignIn modal ---------*/
 .sign-modal {
     visibility: hidden;
