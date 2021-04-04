@@ -101,13 +101,14 @@ img {
 }
 
 .modal-container  {
-    position: fixed;
+    position: absolute;
     left: 50%;
     top: 45%;
     overflow: visible;
     transform: translate(-50%, -50%);
-    
-    max-width: 45vh;
+    display: grid;
+    justify-content: center;
+    width: 300px;
     padding: 20px 40px;
     font-family: Helvetica, sans-serif;
     background-color: #ffffff;
@@ -143,7 +144,7 @@ img {
 .form-label { font-size: 20px; }
 .sign-modal .modal-icons,.signup-modal .modal-icons {
     font-size: 30px;
-    justify-content: center;
+    margin: 0 auto;
 }
 
 .sign-modal li, .signup-modal li{
