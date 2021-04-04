@@ -81,7 +81,7 @@ img {
     transform: translate(-50%, -50%);
     display: grid;
     justify-content: center;
-    width: 45vh;
+    max-width: 45vh;
     padding: 20px 40px;
     font-family: Helvetica, sans-serif;
     background-color: #ffffff;
@@ -115,6 +115,22 @@ img {
 }
 
 .form-label { font-size: 20px; }
+.sign-modal .modal-icons {
+    font-size: 30px;
+    margin: 0 auto;
+}
+
+.sign-modal li {
+    margin: 0 10px;
+}
+
+.sign-modal .modal-content i {
+    position: absolute;
+    font-size: 25px;
+    right: 10px;
+    top: 10px;
+    cursor: pointer;
+}
 
 /* ------------- Home Page CSS -------------- */
 /* Navbar */
@@ -193,7 +209,7 @@ img {
     color: #fff;
 }
 
-/* mobile navbar */
+/* ---------- mobile navbar ------------ */
 .mob-ul {
     display: none;
     text-align: center;
@@ -237,7 +253,7 @@ img {
 
 .mob-navbar button {
     outline: none;
-    background-color: #FAF9F6;
+    background-color: #ffffff;
     padding: 10px 25px;
 }
 
