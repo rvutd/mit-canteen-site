@@ -5,12 +5,22 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mit Canteen | Home Page</title>
+
+    <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" 
           integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w==" 
           crossorigin="anonymous" />
+
+    <!-- Style Sheets -->
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="assets/css/utilities.css">
     <link rel="stylesheet" href="assets/css/mobile.css">
+    <link rel="stylesheet" href="assets/css/animations.css">
+
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/8.3.2/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.3.2/firebase-auth.js"></script>
+
 </head>
 <body>
 
@@ -76,13 +86,13 @@
                 <li><a href="#"><i class="fab fa-facebook"></i></a></li>
             </ul>
             <!-- Sign In Input's -->
-            <form action="submit" class="modal-form grid py-1 text-center" method="POST">
-                <input type="text" placeholder="Enter Name" name="uname" required>
-                <input type="text" placeholder="Enter Email ID" name="emailid" required>
-                <input type="text" placeholder="Enter Mobile Number" name="mobileNumber" required>
-                <input type="password" placeholder="Enter Password" name="psw" required>
-                <input type="password" placeholder="Re-Enter Password" name="re_psw" required>
-                <button type="submit" class="btn">Register</button>
+            <form class="modal-form grid py-1 text-center" onsubmit="signUpFire()">
+                <input id="user-name" type="text" placeholder="Enter Name" name="uname" >
+                <input id="email" type="text" placeholder="Enter Email ID" name="emailid" >
+                <input id="mobile-number" type="text" placeholder="Enter Mobile Number" name="mobileNumber" >
+                <input id="password" type="password" placeholder="Enter Password" name="psw" >
+                <input id="re-password" type="password" placeholder="Re-Enter Password" name="re_psw" >
+                <button type="submit" onclick="signUpFire()" value="submit" class="btn">Register</button>
             </form>
             <!-- Remember Me CheckBox -->
             <label class="text-center">
@@ -97,7 +107,7 @@
         </div>
     </section>
 
-        <!-- Modal LogIn -->
+    <!-- Modal LogIn -->
     <!-- Background -->
     <section class="sign-modal">
         <!-- Main Card -->
@@ -115,8 +125,8 @@
             </ul>
             <!-- Sign In Input's -->
             <form action="submit" class="modal-form grid py-1 text-center" method="POST">
-                <input type="text" placeholder="Enter Username" name="uname" required>
-                <input type="password" placeholder="Enter Password" name="psw" required>
+                <input  type="text" placeholder="Enter Username" name="uname" required>
+                <input id="emailid" type="password" placeholder="Enter Password" name="psw" required>
                 <button type="submit" class="btn">Login</button>
             </form>
             <!-- Remember Me CheckBox -->

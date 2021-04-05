@@ -1,3 +1,4 @@
+// ------------------ Menu.html Menu Cards ------------------------
 menu = {
     "items": [
         {
@@ -262,14 +263,11 @@ menu = {
         }
     ]
 }
-
 const menuSection = document.querySelector('.menu-section');
-
 window.addEventListener('DOMContentLoaded', () =>{
     displayMenuItems(menu)
 })
-
-
+// Function To Create Menu Cards & Add to HTML
 function displayMenuItems(menuItems){
     let displayMenu = menuItems.items.map(function(item){
       return `
@@ -301,3 +299,41 @@ function displayMenuItems(menuItems){
     displayMenu = displayMenu.join('');
     menuSection.innerHTML = displayMenu;
   }
+// ------------------ Menu.html Menu Cards END ------------------------
+
+
+
+
+
+
+// --------------------- FireBase Setup --------------------------------
+// Dont Know What this is (figure it out later) -
+// <!-- TODO: Add SDKs for Firebase products that you want to use
+//      https://firebase.google.com/docs/web/setup#available-libraries -->
+
+
+// Your web app's Firebase configuration
+var firebaseConfig = {
+apiKey: "AIzaSyD89HBwzMRGOxHVZWO12SjF0bkUqWJqrdk",
+authDomain: "mit-canteen-1.firebaseapp.com",
+projectId: "mit-canteen-1",
+storageBucket: "mit-canteen-1.appspot.com",
+messagingSenderId: "584530952672",
+appId: "1:584530952672:web:a968e7434378735ce02b85"
+};
+// Initialize Firebase
+firebase.initializeApp(firebaseConfig);
+
+// --------------------- FireBase Setup END --------------------------------
+
+// Registration & LogIn System -
+const auth = firebase.auth();
+
+document.getElementById('signup-form').addEventListener('submit', submitForm);   
+
+function submitForm(e){
+    
+    console.log(123);
+}
+
+
