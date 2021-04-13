@@ -61,6 +61,12 @@ img {
     object-fit: cover;
 }
 
+button {
+    border: none;
+    background-color: #ffffff;
+    outline: none;
+}
+
 /* ---------------- Registration System ----------------- */
 .signup-modal {
     padding: 100px 0;
@@ -129,10 +135,8 @@ img {
 }
 
 .form-label { font-size: 20px; }
-.sign-modal .modal-icons,.signup-modal .modal-icons {
-    font-size: 30px;
-    margin: 0 auto;
-}
+.sign-modal .modal-icons ,.signup-modal .modal-icons { margin: 5px auto; }
+.sign-modal .modal-icons i,.signup-modal .modal-icons i{ font-size: 26px;}
 
 .sign-modal li, .signup-modal li{
     margin: 0 10px;

@@ -17,9 +17,10 @@
     <link rel="stylesheet" href="assets/css/mobile.css">
     <link rel="stylesheet" href="assets/css/animations.css">
 
-    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <!-- Firebase Connectivity Using CDN -->
     <script src="https://www.gstatic.com/firebasejs/8.3.2/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.3.2/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.3.2/firebase-database.js"></script>
 
 </head>
 <body>
@@ -81,18 +82,19 @@
             </div>
             <!-- Other way of LogIn's -->
             <ul class="modal-icons flex">
-                <li><a href="#"><i class="fab fa-google"></i></a></li>
-                <li><a href="#"><i class="fab fa-github"></i></a></li>
-                <li><a href="#"><i class="fab fa-facebook"></i></a></li>
+                    <li><button><i class="fab fa-google" id="google-signUpIn"></i></button></li>
+                    <li><button><i class="fab fa-github" id="github-signUpIn"></i></button></li>
+                    <li><button><i class="fab fa-facebook" id="facebook-signUpIn"></i></button></li>
             </ul>
-            <!-- Sign In Input's -->
-            <form class="modal-form grid py-1 text-center" onsubmit="signUpFire()">
-                <input id="user-name" type="text" placeholder="Enter Name" name="uname" >
-                <input id="email" type="text" placeholder="Enter Email ID" name="emailid" >
-                <input id="mobile-number" type="text" placeholder="Enter Mobile Number" name="mobileNumber" >
-                <input id="password" type="password" placeholder="Enter Password" name="psw" >
-                <input id="re-password" type="password" placeholder="Re-Enter Password" name="re_psw" >
-                <button type="submit" onclick="signUpFire()" value="submit" class="btn">Register</button>
+            <!-- Sign Up Input's -->
+            <form class="modal-form grid py-1 text-center" id="main-form">
+                <input type="text" placeholder="Full Name" id="sign-up-full-name">
+                <input type="text" placeholder="email id" id="sign-up-email">
+                <input type="text" placeholder="Password" id="sign-up-password">
+                <input type="text" placeholder="Re - Enter Password" id="sign-up-repassword">
+                <input type="text" placeholder="Mobile Number" id="sign-up-number">
+
+                <button type="submit" class="btn">Register</button>
             </form>
             <!-- Remember Me CheckBox -->
             <label class="text-center">
@@ -119,14 +121,15 @@
             </div>
             <!-- Other way of LogIn's -->
             <ul class="modal-icons flex">
-                <li><a href="#"><i class="fab fa-google"></i></a></li>
-                <li><a href="#"><i class="fab fa-github"></i></a></li>
-                <li><a href="#"><i class="fab fa-facebook"></i></a></li>
+                <li><button><i class="fab fa-google" id="google-signUpIn"></i></button></li>
+                <li><button><i class="fab fa-github" id="github-signUpIn"></i></button></li>
+                <li><button><i class="fab fa-facebook" id="facebook-signUpIn"></i></button></li>
             </ul>
             <!-- Sign In Input's -->
-            <form action="submit" class="modal-form grid py-1 text-center" method="POST">
-                <input  type="text" placeholder="Enter Username" name="uname" required>
-                <input id="emailid" type="password" placeholder="Enter Password" name="psw" required>
+            <form class="modal-form grid py-1 text-center" id="signIn-form">
+                <input type="text" placeholder="Email Id" id="sign-in-email">
+                <input type="text" placeholder="Password" id="sign-in-password">
+
                 <button type="submit" class="btn">Login</button>
             </form>
             <!-- Remember Me CheckBox -->
@@ -226,9 +229,14 @@
         </section>
     </footer>
 
+    <!-- Page Animations -->
     <script src="assets/js/animations.js"></script>
+    <!-- Menu & Admin Stuff -->
     <script src="assets/js/main.js"></script>
+    <!-- Creative Features -->
     <script src="assets/js/features.js"></script>
+    <!-- Controls User Stuff -->
+    <script src="assets/js/functioning.js"></script>
 
 </body>
 </html>
