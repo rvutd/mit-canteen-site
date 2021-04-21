@@ -48,8 +48,6 @@
                     <li><a href="our-vision.html">Our Vision</a></li>
                     <button  class="btn" id="sign-modal">Log In</button>
                     <button  class="btn" id="signup-modal">Sign Up</button>
-                    <!-- Cart Icon -->
-                    <a href="cart.html" class="flex"><img src="assets/images/cart.svg" alt="cart icon"><p>6</p></a>
                 </ul>
             </nav>
         </div>
@@ -64,8 +62,6 @@
                 <li><a href="our-vision.html">Our Vision</a></li>
                 <button class="btn" id="sign-modal">Log In</button>
                 <button class="btn" id="signup-modal">Sign Up</button>
-                <!-- Cart Icon -->
-                <a href="cart.html" class="flex"><img src="assets/images/cart.svg" alt="cart icon"><p>6</p></a>
             </ul>
         </nav>
     </header>
@@ -104,7 +100,7 @@
             <div class="modal-content m-content-2 py-1">
                 Click “Register” to agree to Terms of Service and acknowledge 
                 that Privacy Policy applies to you. Have account? 
-                <a href="sign.html"><span class="clr-green">Log In</span></a>
+                <a id="sign-modal" onclick="signUpModal.classList.remove('show');" style="cursor: pointer;"><span class="clr-green">Log In</span></a>
             </div>
         </div>
     </section>
@@ -140,7 +136,7 @@
             <div class="modal-content m-content-2 py-1">
                 Click “Sign In” to agree to Terms of Service and acknowledge 
                 that Privacy Policy applies to you. No account? 
-                <a href="sign.html"><span class="clr-green">Create one</span></a>
+                <a id="signup-modal" onclick="signModal.classList.remove('show');" style="cursor: pointer;"><span class="clr-green">Create one</span></a>
             </div>
         </div>
     </section>

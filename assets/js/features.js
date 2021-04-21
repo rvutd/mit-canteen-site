@@ -3,6 +3,7 @@ const signInModalbtn = document.querySelectorAll('#sign-modal');
 const signUpModalbtn = document.querySelectorAll('#signup-modal');
 const signModal = document.querySelector('.sign-modal');
 const signUpModal = document.querySelector('.signup-modal');
+
 // LogIn Modal
 signInModalbtn.forEach(element => {
     element.addEventListener('click', () => {

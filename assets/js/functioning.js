@@ -1,3 +1,4 @@
+  // --- Authentication Part ---
   // Your web app's Firebase configuration
   var firebaseConfig = {
     apiKey: "AIzaSyDBn5GMIvsqhTPMVAeylq-I_2R8SSJYzmI",
@@ -38,15 +39,9 @@
         alert("Phone Number is not valid");
       }
       else {
-        saveDatabase.UserfirebaseDatabase(userName, email, password, phoneNumber)
-        // Create User data in firebase -
-        // firebase.database().ref('User_Data/' + userName).set({
-        //   User_Name: userName,
-        //   Email: email,
-        //   Password: password,
-        //   Phone_Number: phoneNumber,
-        // })
-        // Sign Up Authenticate
+        // Save Data to firebase storage -
+        saveDatabase.UserfirebaseDatabase(userName, email, password, phoneNumber);
+        // Firebase Auth
         firebase
         .auth()
         .createUserWithEmailAndPassword(email, password)
@@ -85,10 +80,10 @@
         .signInWithPopup(provider)
         .then(function (result) {
           console.log(result);
-          console.log("DOne Dana Done");
+          alert("Logeed In with facebook successfully");
         })
         .catch((error) => {
-          console.log("ohhh no oh noo noo no no", error);
+          alert("ohhh no oh noo noo no no", error);
         });
     }
   
@@ -102,10 +97,10 @@
         .signInWithPopup(provider)
         .then(function (result) {
           console.log(result);
-          console.log("git done");
+          alert("Logeed In with github successfully");
         })
         .catch((error) => {
-          console.log("git not done", error);
+          alert("Log In with github failed", error);
         });
     }
   }
@@ -139,6 +134,12 @@
     });
     }
   }
+
+  // class errorHandling {
+  //   static authenticationErrors() {
+      
+  //   }
+  // }
 
   // Fuction that passes stuff -
   document.addEventListener("DOMContentLoaded", () => {
@@ -192,3 +193,8 @@
       });
     }
   });
+
+// --- Authentication Ends Here ---
+
+
+
