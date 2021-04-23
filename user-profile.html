@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mit Canteen | Sign In/Up</title>
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" 
+          integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w==" 
+          crossorigin="anonymous" />
+
+    <!-- Style Sheets -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/utilities.css">
+    <link rel="stylesheet" href="assets/css/mobile.css">
+    <link rel="stylesheet" href="assets/css/animations.css">
+
+    <!-- Firebase Connectivity Using CDN -->
+    <script src="https://www.gstatic.com/firebasejs/8.3.2/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.3.2/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.3.2/firebase-database.js"></script>
+</head>
+<body>
+    
+    <!-- NavBar -->
+    <header class="navbar">
+        <div class="container flex text-center jc-ai-center">
+            <!-- Left Navigation -->
+            <div class="site-title flex align-item-center">
+                <div>
+                    <a href="index.html"><h1><span class="clr-red">Mit</span> <span class="clr-green">Canteen</span></h1></a>
+                </div>
+                <!-- Toggle Bars -->
+                <div class="toggle-bars mybar">
+                    <div class="bars bar-1"></div>
+                    <div class="bars bar-2"></div>
+                    <div class="bars bar-3"></div>
+                </div>
+            </div>
+            <!-- Right Navigation -->
+            <nav class="site-nav flex left-nav align-item-center">                
+                <ul class="flex">
+                    <li><a href="client-side.html">Menu</a></li>
+                    <li><a href="user-profile.html">Profile</a></li>
+                    <button  class="btn" id="userlogout">Log Out</button>
+                    <!-- Cart Icon -->
+                    <a href="cart.html" class="flex">
+                        <img src="assets/images/cart.svg" alt="cart icon">
+                        <p>6</p>
+                    </a>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Mobile Navbar -->
+    <header class="mob-navbar">
+        <nav class="nav container">
+            <ul class="mob-ul">
+                <li><a href="client-side.html">Menu</a></li>
+                    <li><a href="user-profile.html">Profile</a></li>
+                    <button  class="btn" id="userlogout">Log Out</button>
+                <!-- Cart Icon -->
+                <a href="cart.html" class="flex"><img src="assets/images/cart.svg" alt="cart icon"><p>6</p></a>
+            </ul>
+        </nav>
+    </header>
+
+    <p class="lg text-center">user profile</p>
+
+    <!-- Page Animations -->
+    <script src="assets/js/animations.js"></script>
+    <!-- Menu & Admin Stuff -->
+    <script src="assets/js/main.js"></script>
+    <!-- Creative Features -->
+    <script src="assets/js/features.js"></script>
+    <!-- Controls User Stuff -->
+    <script src="assets/js/functioning.js"></script>
+
+</body>
+</html>

@@ -42,12 +42,11 @@
             <!-- Right Navigation -->
             <nav class="site-nav flex left-nav align-item-center">                
                 <ul class="flex">
-                    <li><a href="menu.html">Menu</a></li>
-                    <li><a href="index.html">My Previous Orders</a></li>
-                    <li><a href="our-vision.html">Profile</a></li>
+                    <li><a href="client-side.html">Menu</a></li>
+                    <li><a href="user-profile.html">Profile</a></li>
                     <button  class="btn" id="userlogout">Log Out</button>
                     <!-- Cart Icon -->
-                    <a href="cart.html" class="flex">
+                    <a class="flex" id="cart-btn">
                         <img src="assets/images/cart.svg" alt="cart icon">
                         <p>6</p>
                     </a>
@@ -60,15 +59,94 @@
     <header class="mob-navbar">
         <nav class="nav container">
             <ul class="mob-ul">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="menu.html">Menu</a></li>
-                <li><a href="our-vision.html">Our Vision</a></li>
-                <button  class="btn" id="logout">Log In</button>
+                <li><a href="client-side.html">Menu</a></li>
+                <li><a href="user-profile.html">Profile</a></li>
+                <button  class="btn" id="userlogout">Log Out</button>
                 <!-- Cart Icon -->
-                <a href="cart.html" class="flex"><img src="assets/images/cart.svg" alt="cart icon"><p>6</p></a>
+                <a id="cart-btn" class="flex"><img src="assets/images/cart.svg" alt="cart icon"><p>6</p></a>
             </ul>
         </nav>
     </header>
+
+    <!-- Cart -->
+    <section class="cart-overlay">
+        <div class="cart-innerlay">
+            <!-- Upper Side -->
+            <header class="cart-title text-center md">
+                <div>Your Cart</div>
+                <div>
+                    <i class="fas fa-times" 
+                       onclick="cartOverlay.classList.remove('show');
+                       cartInnerlay.classList.remove('showCart');">
+                    </i>
+                </div>
+            </header>
+            <!-- Cart Item Container -->
+            <div class="cart-items-container py-2">
+                <!-- Cart Items added to cart -->
+                <article class="cart-item">
+                    <div><img src="assets/images/sandwich2.jpg" alt="Food item image"></div>
+                    <div>
+                        <h3>Double Cheese Potato Burger</h3>
+                        <p>$45.04</p>
+                        <span class="remove-item">remove</span>
+                    </div>
+                    <div>
+                        <i class="fas fa-chevron-up"></i>
+                        <p class="item-amount">5</p>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                </article>
+            </div>
+            <hr class="py-1">
+            <!-- Footer Side  -->
+            <div class="cart-footer text-center sm">
+                <div>Your Total : $186.59</div>
+                <div>
+                    <button >Clear Cart</button>
+                    <button >Check Out</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Menu -->
+    <section class="menu m-3">
+        <main class="container grid grid-1">
+            <!-- Title -->
+           <div class="title text-center">
+               <h2>Our Menu</h2>
+               <div class="underline"></div>
+           </div>
+           <!-- Menu Items -->
+           <div class="menu-section grid grid-3">
+               <!-- Menu Item -->
+               <!-- <article class="menu-item">
+                   <img src="assets/images/sandwich1.jpg" alt="Product image">
+                   <div class="item-info">
+                       <figure>
+                           <h2>Double Cheese Potato Burger</h2>
+                           <div class="item-category">Burger</div>
+                           <div class="flex">
+                               <i class="fas fa-fire"></i>
+                               <p>220 - 280 Kcal</p>
+                           </div>
+                       </figure>
+                       <hr style="margin: 10px 0;">
+                       <div class="menu-cart-functionality">
+                           <div class="price">$15.00</div>
+                           <div class="cart-btn-container">
+                               <button><i  class="fas fa-minus"></i></button>
+                               <div>0</div>
+                               <button><i  class="fas fa-plus"></i></button>
+                           </div>
+                       </div>
+                   </div>
+               </article> -->
+           </div>
+       </main>
+   </section>
 
     <!-- Page Animations -->
     <script src="assets/js/animations.js"></script>

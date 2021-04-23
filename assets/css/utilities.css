@@ -31,6 +31,8 @@
 
 .grid-4 { grid-template-columns: repeat(4, 1fr); }
 
+.show { visibility: visible; }
+
 /* Underline (Cool Ones)*/
 .display-table {
     border-bottom: 1px solid #533834;

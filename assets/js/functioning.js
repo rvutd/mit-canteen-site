@@ -209,7 +209,7 @@
     
   });
 
-
+  // To know if user have logged in -
   firebase.auth().onAuthStateChanged(function(user) {
     if (user) {
       // User is signed in.
@@ -219,3 +219,9 @@
       console.log('none');
     }
   });
+
+  // --- Cart Functioning ---
+
+
+
+  
