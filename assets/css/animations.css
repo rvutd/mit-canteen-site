@@ -1,8 +1,5 @@
 .prakat-ho-animation { animation: prakatHo 2s ease-in; }
-
-
 .fromLeftToRight-animation { animation: fromLeftToRight 2s ease-in-out;  }
-
 .fromRightToLeft-animation { animation: fromRightToLeft 2s ease-in-out; }
 
 /* Appears From No where */

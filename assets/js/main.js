@@ -297,7 +297,7 @@ function displayMenuItems(menuItems){
     });
 
     displayMenu = displayMenu.join('');
-    menuSection.innerHTML = displayMenu;
+    if (menuSection) { menuSection.innerHTML = displayMenu; }
   }
 // ------------------ Menu.html Menu Cards END ------------------------
 

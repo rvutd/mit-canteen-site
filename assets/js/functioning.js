@@ -40,13 +40,15 @@
       }
       else {
         // Save Data to firebase storage -
-        saveDatabase.UserfirebaseDatabase(userName, email, password, phoneNumber);
+        
         // Firebase Auth
         firebase
         .auth()
         .createUserWithEmailAndPassword(email, password)
         .then((cred) => {
-          console.log(cred);
+          alert('Account Created Successfully');
+          saveDatabase.UserfirebaseDatabase(userName, email, password, phoneNumber);
+          this.authRedirecting()
         })
         .catch((error) => {
           alert("failed, error is => ", error);
@@ -64,10 +66,12 @@
           var credential = result.credential;
           console.log(result);
           console.log("Google success");
+          this.authRedirecting()
         })
         .catch((error) => {
           console.log("Google Sign Up Failed", error);
         });
+
     }
   
     // FaceBook SignUp Method -
@@ -81,6 +85,7 @@
         .then(function (result) {
           console.log(result);
           alert("Logeed In with facebook successfully");
+          this.authRedirecting()
         })
         .catch((error) => {
           alert("ohhh no oh noo noo no no", error);
@@ -98,76 +103,84 @@
         .then(function (result) {
           console.log(result);
           alert("Logeed In with github successfully");
+          this.authRedirecting()
         })
         .catch((error) => {
           alert("Log In with github failed", error);
         });
     }
+
+    static authRedirecting() {
+      window.setTimeout(() => {
+        window.location.replace('http://127.0.0.1:5501/client-side.html')
+      }, 5000)
+    }
+
   }
+
+    // Sign In Methods -
+    class signInMethods {
+      builtInSignIn(){
+      const email =  document.getElementById('sign-in-email').value;
+      const password = document.getElementById('sign-in-password').value;
+      console.log('called');
+  
+      firebase.auth().signInWithEmailAndPassword(email, password)
+      .then(userCredential => {
+          alert("Logged In");
+          signUpMethods.authRedirecting()
+      })
+      .catch(error => {
+          alert("Log In Failed: ", error);
+      });
+      }
+    }
 
   // Save Data - To Firebase
   class saveDatabase {
+    // Authentication Details -
     static UserfirebaseDatabase(userName, email, password, phoneNumber) {
       // Create User data in firebase -
+      console.log('database called');
       firebase.database().ref('User_Data/' + userName).set({
         User_Name: userName,
         Email: email,
         Password: password,
         Phone_Number: phoneNumber,
-      })
+      });
     }
+
+    // Cart Detailes
   }
-
-  // Sign In Methods -
-  class signInMethods {
-    builtInSignIn(){
-    const email =  document.getElementById('sign-in-email').value;
-    const password = document.getElementById('sign-in-password').value;
-    console.log('called');
-
-    firebase.auth().signInWithEmailAndPassword(email, password)
-    .then(userCredential => {
-        alert("Logged In");
-    })
-    .catch(error => {
-        alert("Log In Failed: ", error);
-    });
-    }
-  }
-
-  // class errorHandling {
-  //   static authenticationErrors() {
-      
-  //   }
-  // }
 
   // Fuction that passes stuff -
   document.addEventListener("DOMContentLoaded", () => {
     // Sign Up Mehtods -
     const signUp = new signUpMethods();
-    // Google Sign Up Form
-    googleSignUp.addEventListener("click", (e) => {
-      e.preventDefault();
-      signUp.googleSignUpIn();
-    });
-  
-    // GitHub Sign Up Form
-    githubSignUp.addEventListener("click", (e) => {
-      e.preventDefault();
-      signUp.githubSignUpIn();
-    });
-  
-    // Facebook Sign Up Form
-    facebookSignUp.addEventListener("click", (e) => {
-      e.preventDefault();
-      signUp.facebookSignUpIn();
-    });
 
     // Main Sign Up Form
     if (myForm) {
       myForm.addEventListener("submit", (e) => {
         e.preventDefault();
         signUp.builtInSignUp();
+      });
+
+      // Google Sign Up Form
+      googleSignUp.addEventListener("click", (e) => {
+        e.preventDefault();
+        signUp.googleSignUpIn();
+      });
+    
+      // GitHub Sign Up Form
+      githubSignUp.addEventListener("click", (e) => {
+        e.preventDefault();
+        signUp.githubSignUpIn();
+      });
+    
+      // Facebook Sign Up Form
+      facebookSignUp.addEventListener("click", (e) => {
+        e.preventDefault();
+        signUp.facebookSignUpIn();
       });
     }
 
@@ -182,19 +195,27 @@
     }
 
     // LogOut User -
-    const logout = document.getElementById('logout');
+    const logout = document.getElementById('userlogout');
     if (logout){
-      logout.addEventListener('click', function() {
+      logout.addEventListener('click', (e) => {
         e.preventDefault();
         firebase.auth().signOut().then(() => {
           console.log('You have logged out successfully');
           alert('You have logged out successfully');
+          window.location.replace("http://127.0.0.1:5501/index.html")
         });
       });
     }
+    
   });
 
-// --- Authentication Ends Here ---
 
-
-
+  firebase.auth().onAuthStateChanged(function(user) {
+    if (user) {
+      // User is signed in.
+      console.log(user.email);
+    } else {
+      // No user is signed in.
+      console.log('none');
+    }
+  });
