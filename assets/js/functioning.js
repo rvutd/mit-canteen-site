@@ -14,9 +14,9 @@
   
   // SignUp Form ID's -
   const myForm = document.getElementById("main-form");
-  const googleSignUp = document.getElementById("google-signUpIn");
-  const githubSignUp = document.getElementById("github-signUpIn");
-  const facebookSignUp = document.getElementById("facebook-signUpIn");
+  const googleSignUp = document.querySelectorAll("#google-signUpIn");
+  const githubSignUp = document.querySelectorAll("#github-signUpIn");
+  const facebookSignUp = document.querySelectorAll("#facebook-signUpIn");
   
   // SignIn Form ID's -
   const signInForm = document.getElementById('signIn-form');
@@ -166,23 +166,35 @@
         e.preventDefault();
         signUp.builtInSignUp();
       });
+    }
 
-      // Google Sign Up Form
-      googleSignUp.addEventListener("click", (e) => {
-        e.preventDefault();
-        signUp.googleSignUpIn();
+    // Google Sign Up Form
+    if (googleSignUp) {
+      googleSignUp.forEach(element => {
+        element.addEventListener("click", (e) => {
+          e.preventDefault();
+          signUp.googleSignUpIn();
+        });
       });
-    
-      // GitHub Sign Up Form
-      githubSignUp.addEventListener("click", (e) => {
+    }
+
+    // GitHub Sign Up Form
+    if (githubSignUp) {
+      githubSignUp.forEach(element => {
+        element.addEventListener("click", (e) => {
         e.preventDefault();
         signUp.githubSignUpIn();
-      });
-    
-      // Facebook Sign Up Form
-      facebookSignUp.addEventListener("click", (e) => {
-        e.preventDefault();
-        signUp.facebookSignUpIn();
+      })
+    });
+    }
+
+    // Facebook Sign Up Form
+    if (facebookSignUp) {
+      facebookSignUp.forEach(element => {
+        element.addEventListener("click", (e) => {
+          e.preventDefault();
+          signUp.facebookSignUpIn();
+        });
       });
     }
 
