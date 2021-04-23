@@ -111,9 +111,11 @@
     }
 
     static authRedirecting() {
-      window.setTimeout(() => {
-        window.location.replace('http://127.0.0.1:5501/client-side.html')
-      }, 5000)
+      // window.setTimeout(() => {
+      //   // window.location.replace('http://127.0.0.1:5501/client-side.html');
+      //   window.location.replace('https://mit-canteen.netlify.app/client-side');
+      // }, 1000)
+      window.location.replace('https://mit-canteen.netlify.app/client-side');
     }
 
   }
@@ -221,7 +223,5 @@
   });
 
   // --- Cart Functioning ---
-
-
 
   
