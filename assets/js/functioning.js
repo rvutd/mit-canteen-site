@@ -39,14 +39,13 @@
         alert("Phone Number is not valid");
       }
       else {
-        // Save Data to firebase storage -
-        
         // Firebase Auth
         firebase
         .auth()
         .createUserWithEmailAndPassword(email, password)
         .then((cred) => {
           alert('Account Created Successfully');
+          // Save Data to firebase storage -
           saveDatabase.UserfirebaseDatabase(userName, email, password, phoneNumber);
           this.authRedirecting()
         })
@@ -65,8 +64,21 @@
         .then((result) => {
           var credential = result.credential;
           console.log(result);
-          console.log("Google success");
+          alert("Signed in with Google Successfully");
           this.authRedirecting()
+
+          firebase.auth().onAuthStateChanged(function(user) {
+            if (user) {
+              // User is signed in.
+              console.log(user.email);
+              window.location.replace('https://mit-canteen.netlify.app/client-side')
+            } else {
+              // No user is signed in.
+              console.log('none');
+            }
+          });
+
+
         })
         .catch((error) => {
           console.log("Google Sign Up Failed", error);
@@ -82,7 +94,7 @@
       firebase
         .auth()
         .signInWithPopup(provider)
-        .then(function (result) {
+        .then((result) => {
           console.log(result);
           alert("Logeed In with facebook successfully");
           this.authRedirecting()
@@ -111,11 +123,10 @@
     }
 
     static authRedirecting() {
-      // window.setTimeout(() => {
-      //   // window.location.replace('http://127.0.0.1:5501/client-side.html');
-      //   window.location.replace('https://mit-canteen.netlify.app/client-side');
-      // }, 1000)
-      window.location.replace('https://mit-canteen.netlify.app/client-side');
+      window.setTimeout(() => {
+        // window.location.replace('http://127.0.0.1:5501/client-side.html');
+        window.location.replace('https://mit-canteen.netlify.app/client-side');
+      }, 1000)
     }
 
   }
@@ -216,7 +227,9 @@
         firebase.auth().signOut().then(() => {
           console.log('You have logged out successfully');
           alert('You have logged out successfully');
-          window.location.replace("http://127.0.0.1:5501/index.html")
+          // window.location.replace("http://127.0.0.1:5501/index.html")
+          window.location.replace("https://mit-canteen.netlify.app/client-side.html")
+
         });
       });
     }
