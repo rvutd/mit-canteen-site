@@ -66,19 +66,7 @@
           console.log(result);
           alert("Signed in with Google Successfully");
           // this.authRedirecting()
-
-          firebase.auth().onAuthStateChanged(function(user) {
-            if (user) {
-              // User is signed in.
-              console.log(user.email);
-              window.location.replace('https://mit-canteen.netlify.app/client-side')
-            } else {
-              // No user is signed in.
-              console.log('none');
-            }
-          });
-
-
+          this.firebaseAuthRedirect();
         })
         .catch((error) => {
           console.log("Google Sign Up Failed", error);
@@ -127,6 +115,19 @@
         // window.location.replace('http://127.0.0.1:5501/client-side.html');
         window.location.replace('https://mit-canteen.netlify.app/client-side');
       }, 1000)
+    }
+
+    firebaseAuthRedirect(){
+      firebase.auth().onAuthStateChanged(function(user) {
+        if (user) {
+          // User is signed in.
+          console.log(user.email);
+          window.location.replace('https://mit-canteen.netlify.app/client-side')
+        } else {
+          // No user is signed in.
+          console.log('none');
+        }
+      });
     }
 
   }
