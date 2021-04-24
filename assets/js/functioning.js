@@ -65,7 +65,7 @@
           var credential = result.credential;
           console.log(result);
           alert("Signed in with Google Successfully");
-          this.authRedirecting()
+          // this.authRedirecting()
 
           firebase.auth().onAuthStateChanged(function(user) {
             if (user) {
