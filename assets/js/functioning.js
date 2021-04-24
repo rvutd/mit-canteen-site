@@ -229,8 +229,7 @@
           console.log('You have logged out successfully');
           alert('You have logged out successfully');
           // window.location.replace("http://127.0.0.1:5501/index.html")
-          window.location.replace("https://mit-canteen.netlify.app/client-side.html")
-
+          window.location.replace("https://mit-canteen.netlify.app/index.html")
         });
       });
     }

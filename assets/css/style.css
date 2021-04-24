@@ -173,6 +173,7 @@ button {
     background: rgba(0, 0, 0, 0.8);
     z-index: 2;
     visibility: hidden;
+    color: #F5F5F5;
 }
 
 .cart-innerlay {
@@ -213,6 +214,25 @@ button {
     border-radius: 20px;
 }
 
+.cart-item > * h3, span, p {font-size: 15px;}
+
+.cart-items > * p, h3, p ,span{ padding: 0; }
+
+.cart-item .flex-column p {
+    margin: 0.5rem 0;
+}
+
+.cart-item {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    grid-column-gap: 1rem;
+    margin: 1.5rem 0;
+}
+
+.cart-innerlay .cart-item img {
+    width: 76px;
+    height: 76px;
+}
 
 /* ------------- Home Page CSS -------------- */
 /* Navbar */
