@@ -236,7 +236,7 @@ button {
 
 /* ------------- Home Page CSS -------------- */
 /* Navbar */
-.navbar h1 { font-size: 25px; }
+.navbar h1 span{ font-size: 25px; }
 
 .navbar .container { 
     justify-content: space-around;
