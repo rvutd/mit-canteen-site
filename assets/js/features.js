@@ -22,7 +22,6 @@ signInModalbtn.forEach(element => {
 signUpModalbtn.forEach(element => {
     element.addEventListener('click', () => {
         signUpModal.classList.toggle('show');
-        signUp_UI(); 
         return signUp_UI
     });
 });
@@ -80,14 +79,13 @@ const signUp_UI = signUpModal.innerHTML = `
             that Privacy Policy applies to you. Have account? 
             <a id="sign-modal" 
             onclick="signUpModal.classList.remove('show');
-                    signModal.classList.add('show');
-                    signIn_UI();" 
+                    signModal.classList.add('show');" 
             style="cursor: pointer;">
                 <span class="clr-green">Log In</span>
             </a>
         </div>
     </div>
-    `; 
+`;
 
 const signIn_UI = signModal.innerHTML = `
     <!-- Main Card -->
@@ -120,8 +118,7 @@ const signIn_UI = signModal.innerHTML = `
             that Privacy Policy applies to you. No account? 
             <a id="signup-modal" 
                 onclick="signModal.classList.remove('show');
-                            signUpModal.classList.add('show');
-                            signUp_UI();" 
+                         signUpModal.classList.add('show');" 
                 style="cursor: pointer;">
                 <span class="clr-green">Create one</span>
             </a>
@@ -129,11 +126,8 @@ const signIn_UI = signModal.innerHTML = `
     </div>
 `;
 
-
-const customerFooter = document.querySelector('customer-footer');
-
 function customerFooterUI() {
-    const customerFooter = document.querySelector('#customer-footer');
+    const customerFooter = document.querySelector('.customer-footer');
     customerFooter.innerHTML = `
         <section class="container-min">
         <!-- Upper Footer -->

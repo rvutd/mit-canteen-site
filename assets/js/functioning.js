@@ -167,7 +167,7 @@
     // Cart Detailes
   }
 
-  // Fuction that passes stuff -
+  // When HTML & Other code is done -
   document.addEventListener("DOMContentLoaded", () => {
     // Sign Up Mehtods -
     const signUp = new signUpMethods();
