@@ -561,7 +561,7 @@ button {
     font-size: 18px;
 }
 
-/* ------------------------------- Footer --------------------------------*/
+/* --- Customer Footer --- */
 footer {
     background-color: #171819;
     color: #fff;
@@ -613,4 +613,17 @@ footer .deep-devs a {
     color: #fff;
     font-weight: 700;
     font-size: 16px;
+}
+
+/* ------------------- Admin Panel -------------------- */
+.product-management .container-min {
+    justify-content: center;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    margin: 40px auto;
+    padding: 25px 0;
+}
+
+
+.product-management .title {
+    max-width: 100%;
 }

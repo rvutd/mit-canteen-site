@@ -30,7 +30,7 @@
             <!-- Left Navigation -->
             <div class="site-title flex align-item-center">
                 <div>
-                    <a href="index.html"><h1><span class="clr-red">Mit</span> <span class="clr-green">Canteen</span></h1></a>
+                    <a href="index.html"><h1><span class="clr-red">Mit</span> <span class="clr-green">Canteen Admin</span></h1></a>
                 </div>
                 <!-- Toggle Bars -->
                 <div class="toggle-bars mybar">
@@ -42,10 +42,9 @@
             <!-- Right Navigation -->
             <nav class="site-nav flex left-nav align-item-center">                
                 <ul class="flex">
-                    <li><a href="menu.html">Menu</a></li>
-                    <li><a href="index.html">My Previous Orders</a></li>
-                    <li><a href="our-vision.html">Our Vision</a></li>
-                    <button  class="btn" id="logout">Log Out</button>
+                    <li><a href="menu.html">Orders</a></li>
+                    <li><a href="index.html">Product Management</a></li>
+                    <button  class="btn" id="logout" style="padding: 10px 20px;">Log Out</button>
                 </ul>
             </nav>
         </div>
@@ -55,13 +54,25 @@
     <header class="mob-navbar">
         <nav class="nav container">
             <ul class="mob-ul">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="menu.html">Menu</a></li>
-                <li><a href="our-vision.html">Our Vision</a></li>
-                <button  class="btn" id="logout">Log In</button>
+                <li><a id="orders">Orders</a></li>
+                <li><a id="product-management">Product Management</a></li>
+                <button  class="btn" id="logout" style="padding: 10px 20px;">Log Out</button>
             </ul>
         </nav>
     </header>
+
+    <section class="product-management">
+        <div class="container-min grid">
+            <div class="title lg text-center">Product Management</div>
+            <hr>
+            <article class="choose-operation">
+                <button class="btn">Add a Product to Menu</button>
+                <button class="btn">Edit a Product in Menu</button>
+                <button class="btn">Remove a Product from Menu</button>
+            </article>
+        </div>
+    </section>
+
 
     <!-- Page Animations -->
     <script src="assets/js/animations.js"></script>
@@ -71,6 +82,37 @@
     <script src="assets/js/features.js"></script>
     <!-- Controls User Stuff -->
     <script src="assets/js/functioning.js"></script>
+
+
+    <!-- <form class="content text-center">
+        <div>
+            <label>Product Title</label><br>
+            <input type="text" required>
+        </div>
+        <div>
+            <label>Product Image</label><br>
+            <input type="text" required>
+        </div>
+        <div>
+            <label>Product Price</label><br>
+            <input type="text" required>
+        </div>
+        <div>
+            <label>Select Product Category</label><br>
+            <select name="Categories" id="food-category">
+                <option value="Burger">Burger</option>
+                <option value="Maggie">Maggie</option>
+                <option value="Fries">Fries</option>
+                <option value="Beverages">Beverages</option>
+                <option value="Pasta">Pasta</option>
+            </select>
+        </div>
+        <div>
+            <label>Calories</label><br>
+            <input type="text" required>
+        </div>
+        <button class="btn">Add Product</button>
+    </form> -->
 
 </body>
 </html>

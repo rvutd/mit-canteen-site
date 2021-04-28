@@ -247,6 +247,38 @@
     }
   });
 
+  function userLogInDetail() {
+    // To know if user have logged in -
+    firebase.auth().onAuthStateChanged(function(user) {
+      if (user) {
+        // User is signed in.
+        return user.email
+      } else {
+        // No user is signed in.
+        console.log('no user logged in');
+        alert('No User Logged in')
+      }
+    });
+  }
+
+
   // --- Cart Functioning ---
 
-  
+  class Products {
+    // Add Products To Admin Pannel -
+    AdminAddProduct() { /* To Admin Database */ }
+
+    // Add Products To Admin Pannel -
+    AdminRemoveProduct() { /* To Admin Database */ }
+
+    // Add Update Product To Admin Pannel -
+    AdminUpdateProduct() { /* To Admin Database */ }
+
+    // Get products and display them to customer menu panel -
+    getProducts() { }
+
+  }
+
+  class UI {
+    
+  }

@@ -301,3 +301,13 @@ function displayMenuItems(menuItems){
   }
 // ------------------ Menu.html Menu Cards END ------------------------
 
+// Cart System -
+var cart = ["food", "food1", "food2", "food3", "food4"];
+const cartContainer = document.querySelector(".cart-items-container");
+
+function addCartitem(){
+    
+}
+
+addCartitem()
+console.log(cart);

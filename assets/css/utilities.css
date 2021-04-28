@@ -61,8 +61,13 @@ button {cursor: pointer;}
 .btn {
     border-radius: 20px;
     border: 1px solid #333;
-    padding: 5px 20px;
+    padding: 8px 20px;
     margin: 5px 15px;
+}
+
+.btn:hover {
+    background-color: #000;
+    color: #fff;
 }
 
 /* Cards */
