@@ -617,13 +617,40 @@ footer .deep-devs a {
 
 /* ------------------- Admin Panel -------------------- */
 .product-management .container-min {
-    justify-content: center;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     margin: 40px auto;
-    padding: 25px 0;
+    padding: 20px;
+    max-width: 120vh;
 }
 
-
-.product-management .title {
-    max-width: 100%;
+.add-product .container-min {
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    max-width: 120vh;
+    margin: 40px auto;
+    padding: 25px;
 }
+
+.add-product input {
+    border: none;
+    outline: none;
+    padding-bottom: 5px;
+    border-bottom: 1px solid #666262;
+    font-size: 18px;
+    margin-top: 15px;
+}
+
+.add-product .item-info {padding-top: 0px;}
+
+.add-product .item-category {text-align: left;}
+
+.add-product select {
+    outline: none;
+    padding: 5px;
+    background: #6c757d;
+    color: #fff;
+}
+
+.add-product img {height: 260px;}
+
+.remove img {height: 150px;}
+
