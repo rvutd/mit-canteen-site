@@ -286,9 +286,7 @@ function displayMenuItems(menuItems){
             <div class="menu-cart-functionality">
                 <div class="price">$${item.fields.price}</div>
                 <div class="cart-btn-container">
-                    <button><i  class="fas fa-minus"></i></button>
-                    <div>0</div>
-                    <button><i  class="fas fa-plus"></i></button>
+                    <button class="bag-btn" ${item.sys.id}>Add to Cart</i></button>
                 </div>
             </div>
             </div>
@@ -298,16 +296,11 @@ function displayMenuItems(menuItems){
 
     displayMenu = displayMenu.join('');
     if (menuSection) { menuSection.innerHTML = displayMenu; }
-  }
+}
 // ------------------ Menu.html Menu Cards END ------------------------
 
-// Cart System -
-var cart = ["food", "food1", "food2", "food3", "food4"];
-const cartContainer = document.querySelector(".cart-items-container");
+document.addEventListener('DOMContentLoaded', ()=>{
+    const bagBtn = document.querySelectorAll('.bag-btn')
+    console.log(bagBtn);
+})
 
-function addCartitem(){
-    
-}
-
-addCartitem()
-console.log(cart);

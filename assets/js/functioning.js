@@ -243,7 +243,7 @@
       console.log(user.email);
     } else {
       // No user is signed in.
-      console.log('none');
+      // console.log('none');
     }
   });
 
@@ -261,9 +261,7 @@
     });
   }
 
-
-  // --- Cart Functioning ---
-
+  // --- Product functioning ---
   class Products {
     // Add Products To Admin Pannel -
     AdminAddProduct() { /* To Admin Database */ }
@@ -278,7 +276,16 @@
     getProducts() { }
 
   }
+  
+  // --- Cart Functioning ---
+  document.addEventListener('DOMContentLoaded', ()=>{
+    const buttons = document.querySelectorAll('#increaseItem').innerHTML;
+    console.log(buttons);
+  })
 
   class UI {
-    
+    // Creat Cart UI on Click
+    addItemCart(){
+
+    }
   }
