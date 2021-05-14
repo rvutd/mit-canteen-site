@@ -1,5 +1,5 @@
 // ------------------ Menu.html Menu Cards ------------------------
-menu = {
+var menu = {
     "items": [
         {
             "sys": { "id": "1" },
@@ -263,14 +263,13 @@ menu = {
         }
     ]
 }
+
 const menuSection = document.querySelector('.menu-section');
-window.addEventListener('DOMContentLoaded', () =>{
-    displayMenuItems(menu)
-})
+
 // Function To Create Menu Cards & Add to HTML
 function displayMenuItems(menuItems){
     let displayMenu = menuItems.items.map(function(item){
-      return `
+        return `
         <article class="menu-item">
             <img src="${item.fields.image.fields.file.url}" alt="Product image">
             <div class="item-info">
@@ -286,21 +285,172 @@ function displayMenuItems(menuItems){
             <div class="menu-cart-functionality">
                 <div class="price">$${item.fields.price}</div>
                 <div class="cart-btn-container">
-                    <button class="bag-btn" ${item.sys.id}>Add to Cart</i></button>
+                    <button class="bag-btn" data-id=${item.sys.id}>Add to Cart</i></button>
                 </div>
             </div>
             </div>
         </article>
-      `;
+        `;
     });
 
     displayMenu = displayMenu.join('');
-    if (menuSection) { menuSection.innerHTML = displayMenu; }
+    menuSection.innerHTML = displayMenu;
 }
+
+
+
 // ------------------ Menu.html Menu Cards END ------------------------
 
-document.addEventListener('DOMContentLoaded', ()=>{
-    const bagBtn = document.querySelectorAll('.bag-btn')
-    console.log(bagBtn);
-})
+// --- Product functioning ---
+class Products {
+// Add Products To Admin Pannel -
+AdminAddProduct() { /* To Admin Database */ }
+
+// Add Products To Admin Pannel -
+AdminRemoveProduct() { /* To Admin Database */ }
+
+// Add Update Product To Admin Pannel -
+AdminUpdateProduct() { /* To Admin Database */ }
+
+// Get products and display them to customer menu panel -
+getProducts() { }
+
+}
+  
+// --- Cart Functioning ---
+var cart = []
+const cartItemsContainer = document.querySelector('.cart-items-container');
+const cartItems = document.querySelector('.cart-items');
+const cartTotal = document.querySelector('.cart-total');
+
+// class UI {
+    // Creat Cart UI on Click
+    // addItemCart(item, menuItems){
+    //     let id = item.dataset.id;
+    //     menuItems.items.map(function(item) {
+    //         if (item.sys.id === id){
+    //             const div = document.createElement('article');
+    //             div.classList.add('cart-item')
+    //             div.innerHTML = `
+    //                 <div><img src="assets/images/sandwich2.jpg" alt="Food item image"></div>
+    //                 <div class="cart-info">
+    //                     <h3>${item.fields.title}</h3>
+    //                     <p>${item.fields.price}</p>
+    //                     <span class="remove-item">remove</span>
+    //                 </div>
+    //                 <div class="flex-column"> 
+    //                     <i class="fas fa-chevron-up"></i>
+    //                     <p class="item-amount">${item.amount}</p>
+    //                     <i class="fas fa-chevron-down"></i>
+    //                 </div>
+    //             `
+    //             cartItemsContainer.appendChild(div);
+    //             cart.push(item)
+    //             let cartItem = {cart, amount:1};
+    //         }
+    //     })
+    // }
+// }
+
+
+var newCart = []
+class UI {
+
+    addItemCartValues(item, menuItems){
+        let id = item.dataset.id;
+        menuItems.items.map(function(item) {
+            if (item.sys.id === id ){
+                let amount = 1
+                cart.push({ID: id, Amount:1})
+                Storage.saveCart(cart)
+            }
+        })
+    }
+
+    showCartItem(){
+        let items = Storage.getCart();
+        console.log(items);
+    
+        items.forEach(item=>{
+            let id = item.ID;
+
+            if (menu.items[id-1].sys.id === id && id != cart.find(i => i > 1 && i === id)){
+                console.log(id);
+                const div = document.createElement('article');
+                div.classList.add('cart-item')
+                div.innerHTML = `
+                    <div><img src="assets/images/sandwich2.jpg" alt="Food item image"></div>
+                    <div class="cart-info">
+                        <h3>${menu.items[id-1].fields.title}</h3>
+                        <p>${menu.items[id-1].fields.price}</p>
+                        <span class="remove-item">remove</span>
+                    </div>
+                    <div class="flex-column"> 
+                        <i class="fas fa-chevron-up"></i>
+                        <p class="item-amount">${item.Amount}</p>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                `
+                // cartItemsContainer.appendChild(div);
+                newCart.push(div)
+            }
+        })
+        this.showInCart()
+    }
+    
+    showInCart() {
+        // newCart.forEach(element => cartItemsContainer.appendChild(element));
+        const lastAdded = newCart[newCart.length-1]
+        cartItemsContainer.appendChild(lastAdded)
+    }
+
+    setUpApp() {
+        this.showCartItem();
+    }
+}
+
+// Local Storage
+class Storage {
+    static saveProducts(products){
+          localStorage.setItem('products', JSON.stringify(products));
+    }
+
+    static getProduct(id) {
+        // goes into Browser -> Application -> localStorage -> method(getItem(stuff here it is array)) -> 
+        let products = JSON.parse(localStorage.getItem('products')); 
+        return products.find(product => product.id === id)
+    }
+
+    static saveCart(cart){
+        localStorage.setItem('cart', JSON.stringify(cart));
+    }
+
+    static getCart(){
+        return localStorage.getItem('cart')?JSON.parse
+        (localStorage.getItem('cart')):[]
+    }
+}
+
+document.addEventListener('DOMContentLoaded', () =>{
+    const ui = new UI();
+
+    displayMenuItems(menu);
+
+    const bagBtn = document.querySelectorAll('.bag-btn');
+    // Cart Buttons -
+    bagBtn.forEach(addCartBtn => {
+        addCartBtn.addEventListener('click', ()=>{
+            ui.addItemCartValues(addCartBtn, menu);
+            ui.setUpApp()
+        });
+    });
+    
+
+    // cartBtn.forEach(element => {
+    //     element.addEventListener('click', ()=>{
+            
+    //     })
+    // })
+
+});
 

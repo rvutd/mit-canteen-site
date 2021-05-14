@@ -50,7 +50,7 @@
           this.authRedirecting()
         })
         .catch((error) => {
-          alert("failed, error is => ", error);
+          console.log("failed, error is => ", error);
         });
       }
     }
@@ -132,31 +132,34 @@
 
   }
 
-    // Sign In Methods -
-    class signInMethods {
-      builtInSignIn(){
-      const email =  document.getElementById('sign-in-email').value;
-      const password = document.getElementById('sign-in-password').value;
-      console.log('called');
-  
-      firebase.auth().signInWithEmailAndPassword(email, password)
-      .then(userCredential => {
-          alert("Logged In");
-          signUpMethods.authRedirecting()
-      })
-      .catch(error => {
-          alert("Log In Failed: ", error);
-      });
-      }
+  // Sign In Methods -
+  class signInMethods {
+    builtInSignIn(){
+    const email =  document.getElementById('sign-in-email').value;
+    const password = document.getElementById('sign-in-password').value;
+    console.log('called');
+
+    firebase.auth().signInWithEmailAndPassword(email, password)
+    .then(userCredential => {
+        alert("Logged In");
+        signUpMethods.authRedirecting()
+    })
+    .catch(error => {
+        alert("Log In Failed: ", error);
+    });
     }
+  }
 
   // Save Data - To Firebase
   class saveDatabase {
     // Authentication Details -
     static UserfirebaseDatabase(userName, email, password, phoneNumber) {
+
+      const userID = makeUserDataID(email);
+      
       // Create User data in firebase -
       console.log('database called');
-      firebase.database().ref('User_Data/' + userName).set({
+      firebase.database().ref('User_Data/' + userID).set({
         User_Name: userName,
         Email: email,
         Password: password,
@@ -236,56 +239,31 @@
     
   });
 
+
+  let userEmailID = '';
+
   // To know if user have logged in -
   firebase.auth().onAuthStateChanged(function(user) {
     if (user) {
       // User is signed in.
       console.log(user.email);
+      userEmailID = user.email;
+      makeUserDataID(userEmailID)
+      console.log(makeUserDataID(userEmailID));
     } else {
       // No user is signed in.
-      // console.log('none');
+      console.log('none');
     }
   });
 
-  function userLogInDetail() {
-    // To know if user have logged in -
-    firebase.auth().onAuthStateChanged(function(user) {
-      if (user) {
-        // User is signed in.
-        return user.email
-      } else {
-        // No user is signed in.
-        console.log('no user logged in');
-        alert('No User Logged in')
-      }
-    });
+
+function makeUserDataID(userEmailID){
+  let userDataID = '';
+  for (i=0; userEmailID.length; i++){
+    if (userEmailID[i] != '@') { userDataID = userDataID + userEmailID[i] }
+    else { break }
   }
-
-  // --- Product functioning ---
-  class Products {
-    // Add Products To Admin Pannel -
-    AdminAddProduct() { /* To Admin Database */ }
-
-    // Add Products To Admin Pannel -
-    AdminRemoveProduct() { /* To Admin Database */ }
-
-    // Add Update Product To Admin Pannel -
-    AdminUpdateProduct() { /* To Admin Database */ }
-
-    // Get products and display them to customer menu panel -
-    getProducts() { }
-
-  }
+  return userDataID
+}
   
-  // --- Cart Functioning ---
-  document.addEventListener('DOMContentLoaded', ()=>{
-    const buttons = document.querySelectorAll('#increaseItem').innerHTML;
-    console.log(buttons);
-  })
 
-  class UI {
-    // Creat Cart UI on Click
-    addItemCart(){
-
-    }
-  }

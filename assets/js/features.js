@@ -46,7 +46,10 @@ window.onclick = function(event) {
     }
 }
 
-const signUp_UI = signUpModal.innerHTML = `
+var signUp_UI, signIn_UI;
+
+if (signUpModal){
+    signUp_UI = signUpModal.innerHTML = `
     <div class="modal-container">
         <!-- Written Stuff -->
         <div class="modal-content">
@@ -86,8 +89,10 @@ const signUp_UI = signUpModal.innerHTML = `
         </div>
     </div>
 `;
+}
 
-const signIn_UI = signModal.innerHTML = `
+if (signModal) {
+    signIn_UI = signModal.innerHTML = `
     <!-- Main Card -->
     <div class="modal-container">
         <!-- Written Stuff -->
@@ -125,54 +130,58 @@ const signIn_UI = signModal.innerHTML = `
         </div>
     </div>
 `;
+}
 
+// Customer Footer
+var customerFooter = document.querySelector('.customer-footer');
 function customerFooterUI() {
-    const customerFooter = document.querySelector('.customer-footer');
-    customerFooter.innerHTML = `
-        <section class="container-min">
-        <!-- Upper Footer -->
-            <main class="grid grid-3">
-                <!-- About College -->
-                <article class="about">
-                    <h1 class="sm">about</h1>
-                    <p>Malwa Institute of Technology is governed by Indus 
-                    Global Educational & Welfare Society which was founded 
-                    in 2003 by a group of industrialists and educationalists
-                    who shared a vision of establishing centers of scientific
-                    learning around the country.</p>
-                    <ul class="py-1">
-                        <li><i class="fab fa-facebook-f"></i><a href="https://www.facebook.com/malwainstitute/" target="_blank"> Facebook</a></li>
-                        <li><i class="fab fa-instagram"></i><a href="https://www.instagram.com/malwa_institute_of_technology/" target="_blank">Instagram</a></li>
-                    </ul>
-                </article>
-                <!-- Navigation Links -->
-                <article class="quick-links">
-                    <ul>
-                        <h1 class="sm">Quick Links</h1>
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="menu.html">Order Online</a></li>
-                        <li><a href="our-vision.html">Our Vision</a></li>
-                        <li><a href="testimonials.html">About Us</a></li>
-                    </ul>
-                </article>
-                <!-- Contact Details -->
-                <article class="contact">
-                    <ul>
-                        <h1 class="sm">Contact Information</h1>
-                        <li> <i class="fas fa-phone-alt"></i> <p>+91-731-2810001-08</p></li>
-                        <li> <i class="fas fa-envelope"></i> <p>admission@mitindore.co.in</p></li>
-                        <li> <i class="fas fa-map-marker-alt"></i> <p>Indore-Dewas Bypass Road, Indore (MP)-452016</p></li>
-                        <li> <i class="fas fa-globe-asia"></i> <p>For Professional Courses, Visit: www.altius.ac.in</p></li>
-                    </ul>
-                </article>
-            </main>
-            <!-- Deep Devs Info -->
-            <main class="deep-devs flex">
-                <div>© Copyright 2020 - 2021. All Rights Reserved</div>
-                <div class="">Designed & Developed with <i class="fas fa-heart clr-red"></i> By <a href="#">Deep Devs</a></div>
-            </main>
-        </section>
-    `
+    if (customerFooter){
+        customerFooter.innerHTML = `
+            <section class="container-min">
+            <!-- Upper Footer -->
+                <main class="grid grid-3">
+                    <!-- About College -->
+                    <article class="about">
+                        <h1 class="sm">about</h1>
+                        <p>Malwa Institute of Technology is governed by Indus 
+                        Global Educational & Welfare Society which was founded 
+                        in 2003 by a group of industrialists and educationalists
+                        who shared a vision of establishing centers of scientific
+                        learning around the country.</p>
+                        <ul class="py-1">
+                            <li><i class="fab fa-facebook-f"></i><a href="https://www.facebook.com/malwainstitute/" target="_blank"> Facebook</a></li>
+                            <li><i class="fab fa-instagram"></i><a href="https://www.instagram.com/malwa_institute_of_technology/" target="_blank">Instagram</a></li>
+                        </ul>
+                    </article>
+                    <!-- Navigation Links -->
+                    <article class="quick-links">
+                        <ul>
+                            <h1 class="sm">Quick Links</h1>
+                            <li><a href="index.html">Home</a></li>
+                            <li><a href="menu.html">Order Online</a></li>
+                            <li><a href="our-vision.html">Our Vision</a></li>
+                            <li><a href="testimonials.html">About Us</a></li>
+                        </ul>
+                    </article>
+                    <!-- Contact Details -->
+                    <article class="contact">
+                        <ul>
+                            <h1 class="sm">Contact Information</h1>
+                            <li> <i class="fas fa-phone-alt"></i> <p>+91-731-2810001-08</p></li>
+                            <li> <i class="fas fa-envelope"></i> <p>admission@mitindore.co.in</p></li>
+                            <li> <i class="fas fa-map-marker-alt"></i> <p>Indore-Dewas Bypass Road, Indore (MP)-452016</p></li>
+                            <li> <i class="fas fa-globe-asia"></i> <p>For Professional Courses, Visit: www.altius.ac.in</p></li>
+                        </ul>
+                    </article>
+                </main>
+                <!-- Deep Devs Info -->
+                <main class="deep-devs flex">
+                    <div>© Copyright 2020 - 2021. All Rights Reserved</div>
+                    <div class="">Designed & Developed with <i class="fas fa-heart clr-red"></i> By <a href="#">Deep Devs</a></div>
+                </main>
+            </section>
+        `;
+    }
 }
 customerFooterUI()
 
