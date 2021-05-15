@@ -47,6 +47,21 @@
     padding-bottom: 8px;
 }
 
+.bold { font-weight: bold;}
+
+table, td, th {
+    border: 1px solid black;
+}
+
+td, th {
+    padding: 10px;
+}
+  
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
 /* Aligning Content */
 .align-item-center { align-items: center; }
 

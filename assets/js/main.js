@@ -297,8 +297,6 @@ function displayMenuItems(menuItems){
     menuSection.innerHTML = displayMenu;
 }
 
-
-
 // ------------------ Menu.html Menu Cards END ------------------------
 
 // --- Product functioning ---
@@ -322,36 +320,6 @@ var cart = []
 const cartItemsContainer = document.querySelector('.cart-items-container');
 const cartItems = document.querySelector('.cart-items');
 const cartTotal = document.querySelector('.cart-total');
-
-// class UI {
-    // Creat Cart UI on Click
-    // addItemCart(item, menuItems){
-    //     let id = item.dataset.id;
-    //     menuItems.items.map(function(item) {
-    //         if (item.sys.id === id){
-    //             const div = document.createElement('article');
-    //             div.classList.add('cart-item')
-    //             div.innerHTML = `
-    //                 <div><img src="assets/images/sandwich2.jpg" alt="Food item image"></div>
-    //                 <div class="cart-info">
-    //                     <h3>${item.fields.title}</h3>
-    //                     <p>${item.fields.price}</p>
-    //                     <span class="remove-item">remove</span>
-    //                 </div>
-    //                 <div class="flex-column"> 
-    //                     <i class="fas fa-chevron-up"></i>
-    //                     <p class="item-amount">${item.amount}</p>
-    //                     <i class="fas fa-chevron-down"></i>
-    //                 </div>
-    //             `
-    //             cartItemsContainer.appendChild(div);
-    //             cart.push(item)
-    //             let cartItem = {cart, amount:1};
-    //         }
-    //     })
-    // }
-// }
-
 
 var newCart = []
 class UI {
@@ -444,13 +412,5 @@ document.addEventListener('DOMContentLoaded', () =>{
             ui.setUpApp()
         });
     });
-    
-
-    // cartBtn.forEach(element => {
-    //     element.addEventListener('click', ()=>{
-            
-    //     })
-    // })
-
 });
 
