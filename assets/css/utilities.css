@@ -39,6 +39,8 @@
 
 .show { visibility: visible; }
 
+.hide-stuff { visibility: hidden; }
+
 /* Underline (Cool Ones)*/
 .display-table {
     border-bottom: 1px solid #533834;

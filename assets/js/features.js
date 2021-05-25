@@ -11,6 +11,23 @@ const cartOverlay = document.querySelector('.cart-overlay');
 const cartInnerlay = document.querySelector('.cart-innerlay');
 const cartBtn = document.querySelectorAll('#cart-btn');
 
+// --- Admin Product Management Btns ---
+const addProductBtn = document.querySelector('#add-product-menu')
+const removeProductBtn = document.querySelector('#remove-product-menu')
+
+// Admin Management Containers
+const addContainer = document.querySelector('.add-container')
+const removeContainer = document.querySelector('.remove-container')
+
+// Admin Side URL
+const adminSRC = 'http://127.0.0.1:5501/admin-side.html';
+
+// Sound Effect
+const soundEffect = new Audio();
+soundEffect.src = 'mixkit-interface-click-1126.wav';
+
+
+
 // LogIn Modal
 signInModalbtn.forEach(element => {
     element.addEventListener('click', () => {
@@ -33,6 +50,21 @@ cartBtn.forEach(element => {
         cartInnerlay.classList.add('showCart');
     });
 })
+
+if (adminSRC === window.location.href){
+    console.log('admin side');
+    // Admin Management Btns
+    addProductBtn.addEventListener('click', ()=>{
+        addContainer.classList.toggle('show-container');
+        removeContainer.classList.remove('show-container')
+    })
+
+    // Admin Management Btns
+    removeProductBtn.addEventListener('click', ()=>{
+        removeContainer.classList.toggle('show-container');
+        addContainer.classList.remove('show-container')
+    })
+}
 
 // When the user clicks anywhere outside of the modal, closes it
 window.onclick = function(event) {
@@ -58,9 +90,9 @@ if (signUpModal){
         </div>
         <!-- Other way of LogIn's -->
         <ul class="modal-icons flex">
-                <li><button><i class="fab fa-google" id="google-signUpIn"></i></button></li>
-                <li><button><i class="fab fa-github" id="github-signUpIn"></i></button></li>
-                <li><button><i class="fab fa-facebook" id="facebook-signUpIn"></i></button></li>
+                <li><button><i class="fab fa-google" id="google-signUpIn" onmouseover="soundEffect.play()"></i></button></li>
+                <li><button><i class="fab fa-github" id="github-signUpIn" onmouseover="soundEffect.play()"></i></button></li>
+                <li><button><i class="fab fa-facebook" id="facebook-signUpIn" onmouseover="soundEffect.play()"></i></button></li>
         </ul>
         <!-- Sign Up Input's -->
         <form class="modal-form grid py-1 text-center" id="main-form">
@@ -102,9 +134,9 @@ if (signModal) {
         </div>
         <!-- Other way of LogIn's -->
         <ul class="modal-icons flex">
-            <li><button><i class="fab fa-google" id="google-signUpIn"></i></button></li>
-            <li><button><i class="fab fa-github" id="github-signUpIn"></i></button></li>
-            <li><button><i class="fab fa-facebook" id="facebook-signUpIn"></i></button></li>
+            <li><button><i class="fab fa-google" id="google-signUpIn" onmouseover="soundEffect.play()"></i></button></li>
+            <li><button><i class="fab fa-github" id="github-signUpIn" onmouseover="soundEffect.play()"></i></button></li>
+            <li><button><i class="fab fa-facebook" id="facebook-signUpIn" onmouseover="soundEffect.play()"></i></button></li>
         </ul>
         <!-- Sign In Input's -->
         <form class="modal-form grid py-1 text-center" id="signIn-form">
@@ -133,10 +165,11 @@ if (signModal) {
 }
 
 // Customer Footer
-var customerFooter = document.querySelector('.customer-footer');
+var customerFooter = document.querySelectorAll('.customer-footer');
 function customerFooterUI() {
     if (customerFooter){
-        customerFooter.innerHTML = `
+        customerFooter.forEach(element => {
+            element.innerHTML = `
             <section class="container-min">
             <!-- Upper Footer -->
                 <main class="grid grid-3">
@@ -181,7 +214,7 @@ function customerFooterUI() {
                 </main>
             </section>
         `;
+        })
     }
 }
 customerFooterUI()
-

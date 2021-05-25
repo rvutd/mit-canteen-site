@@ -616,6 +616,11 @@ footer .deep-devs a {
 }
 
 /* ------------------- Admin Panel -------------------- */
+.add-container { display: none; }
+.remove-container { display: none; }
+
+.show-container { display: block; }
+
 .product-management .container-min {
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     margin: 40px auto;

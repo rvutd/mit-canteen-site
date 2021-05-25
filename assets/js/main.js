@@ -412,5 +412,6 @@ document.addEventListener('DOMContentLoaded', () =>{
             ui.setUpApp()
         });
     });
+    
 });
 

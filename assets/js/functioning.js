@@ -62,7 +62,6 @@
         .auth()
         .signInWithPopup(provider)
         .then((result) => {
-          var credential = result.credential;
           console.log(result);
           alert("Signed in with Google Successfully");
           // this.authRedirecting()
@@ -265,5 +264,3 @@ function makeUserDataID(userEmailID){
   }
   return userDataID
 }
-  
-
