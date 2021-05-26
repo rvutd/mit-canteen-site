@@ -46,8 +46,8 @@
         .then((cred) => {
           // Save Data to firebase storage -
           saveDatabase.UserfirebaseDatabase(userName, email, password, phoneNumber);
-          this.firebaseAuthRedirect();
           this.notifyUser();
+          this.firebaseAuthRedirect();
         })
         .catch((error) => Swal.fire("" + error));
       }
@@ -63,8 +63,8 @@
           console.log(result);
           alert("Signed in with Google Successfully");
           // this.authRedirecting()
-          this.firebaseAuthRedirect();
           this.notifyUser();
+          this.firebaseAuthRedirect();
         })
         .catch((error) => Swal.fire("" + error));
 
@@ -80,9 +80,8 @@
         .signInWithPopup(provider)
         .then((result) => {
           console.log(result);
-          alert("Logeed In with facebook successfully");
-          this.firebaseAuthRedirect()
           this.notifyUser();
+          this.firebaseAuthRedirect()
         })
         .catch((error) => Swal.fire("" + error));
     }
@@ -91,15 +90,13 @@
     githubSignUpIn(){
       var provider = new firebase.auth.GithubAuthProvider();
       provider.addScope("email, password");
-  
+
       firebase
         .auth()
         .signInWithPopup(provider)
         .then(function (result) {
-          console.log(result);
-          alert("Logeed In with github successfully");
-          this.firebaseAuthRedirect()
           this.notifyUser();
+          this.firebaseAuthRedirect()
         })
         .catch((error) => Swal.fire("" + error));
     }
@@ -114,7 +111,7 @@
     notifyUser() {
       Swal.fire({
         icon: 'success',
-        title: 'Account Created Successfully',
+        title: 'Account Created/Signed In Successfully',
       })
     }
 
@@ -225,7 +222,7 @@
         firebase.auth().signOut().then(() => {
           Swal.fire({
             icon: 'success',
-            title: 'You have logged out successfully'
+            title: 'Logged Out Successfully',
           })
           window.location.replace("https://mit-canteen.netlify.app/index.html")
         });
