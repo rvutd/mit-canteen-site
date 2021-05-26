@@ -47,11 +47,7 @@
           // Save Data to firebase storage -
           saveDatabase.UserfirebaseDatabase(userName, email, password, phoneNumber);
           this.firebaseAuthRedirect();
-          // Notify User
-          Swal.fire({
-            icon: 'success',
-            title: 'Account Created Successfully',
-          })
+          this.notifyUser();
         })
         .catch((error) => Swal.fire("" + error));
       }
@@ -68,6 +64,7 @@
           alert("Signed in with Google Successfully");
           // this.authRedirecting()
           this.firebaseAuthRedirect();
+          this.notifyUser();
         })
         .catch((error) => Swal.fire("" + error));
 
@@ -84,7 +81,8 @@
         .then((result) => {
           console.log(result);
           alert("Logeed In with facebook successfully");
-          this.authRedirecting()
+          this.firebaseAuthRedirect()
+          this.notifyUser();
         })
         .catch((error) => Swal.fire("" + error));
     }
@@ -100,7 +98,8 @@
         .then(function (result) {
           console.log(result);
           alert("Logeed In with github successfully");
-          this.authRedirecting()
+          this.firebaseAuthRedirect()
+          this.notifyUser();
         })
         .catch((error) => Swal.fire("" + error));
     }
@@ -109,6 +108,14 @@
       window.setTimeout(() => {
         window.location.replace('https://mit-canteen.netlify.app/client-side');
       }, 500)
+    }
+
+    // Notify User
+    notifyUser() {
+      Swal.fire({
+        icon: 'success',
+        title: 'Account Created Successfully',
+      })
     }
 
     firebaseAuthRedirect(){
