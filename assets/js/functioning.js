@@ -32,11 +32,11 @@
       const phoneNumber = myForm["sign-up-number"].value;
 
       // CheckStuff -
-      if (password != repassword){
-        alert("Re Entered password is not same as entered password");
+      if (password != repassword || password === ''){
+        Swal.fire('Re Entered password is not same as entered password or field empty')
       }
       else if (phoneNumber.length != 10){
-        alert("Phone Number is not valid");
+        Swal.fire('Phone Number is not valid')
       }
       else {
         // Firebase Auth
@@ -44,14 +44,16 @@
         .auth()
         .createUserWithEmailAndPassword(email, password)
         .then((cred) => {
-          alert('Account Created Successfully');
           // Save Data to firebase storage -
           saveDatabase.UserfirebaseDatabase(userName, email, password, phoneNumber);
-          this.authRedirecting()
+          this.firebaseAuthRedirect();
+          // Notify User
+          Swal.fire({
+            icon: 'success',
+            title: 'Account Created Successfully',
+          })
         })
-        .catch((error) => {
-          console.log("failed, error is => ", error);
-        });
+        .catch((error) => Swal.fire("" + error));
       }
     }
   
@@ -67,9 +69,7 @@
           // this.authRedirecting()
           this.firebaseAuthRedirect();
         })
-        .catch((error) => {
-          console.log("Google Sign Up Failed", error);
-        });
+        .catch((error) => Swal.fire("" + error));
 
     }
   
@@ -86,9 +86,7 @@
           alert("Logeed In with facebook successfully");
           this.authRedirecting()
         })
-        .catch((error) => {
-          console.log("Facebook Login Failed", error);
-        });
+        .catch((error) => Swal.fire("" + error));
     }
   
     // GitHub SignUp Method -
@@ -104,31 +102,21 @@
           alert("Logeed In with github successfully");
           this.authRedirecting()
         })
-        .catch((error) => {
-          console.log("Log In with github failed", error);
-        });
+        .catch((error) => Swal.fire("" + error));
     }
 
     static authRedirecting() {
       window.setTimeout(() => {
-        // window.location.replace('http://127.0.0.1:5501/client-side.html');
         window.location.replace('https://mit-canteen.netlify.app/client-side');
-      }, 1000)
+      }, 500)
     }
 
     firebaseAuthRedirect(){
       firebase.auth().onAuthStateChanged(function(user) {
-        if (user) {
-          // User is signed in.
-          console.log(user.email);
-          window.location.replace('https://mit-canteen.netlify.app/client-side.html')
-        } else {
-          // No user is signed in.
-          console.log('none');
-        }
+        // If user is registered -
+        user ?  window.location.replace('https://mit-canteen.netlify.app/client-side.html') : console.log('none');
       });
     }
-
   }
 
   // Sign In Methods -
@@ -228,9 +216,10 @@
       logout.addEventListener('click', (e) => {
         e.preventDefault();
         firebase.auth().signOut().then(() => {
-          console.log('You have logged out successfully');
-          alert('You have logged out successfully');
-          // window.location.replace("http://127.0.0.1:5501/index.html")
+          Swal.fire({
+            icon: 'success',
+            title: 'You have logged out successfully'
+          })
           window.location.replace("https://mit-canteen.netlify.app/index.html")
         });
       });
@@ -238,9 +227,7 @@
     
   });
 
-
   let userEmailID = '';
-
   // To know if user have logged in -
   firebase.auth().onAuthStateChanged(function(user) {
     if (user) {
@@ -254,7 +241,6 @@
       console.log('No user Logged In');
     }
   });
-
 
 function makeUserDataID(userEmailID){
   let userDataID = '';
