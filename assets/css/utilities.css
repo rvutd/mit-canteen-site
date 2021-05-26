@@ -1,31 +1,21 @@
 /* Inner Block Sizes */
 .container {
-    max-width: 1800px;
-    margin: 0 auto;
-    padding: 0 40px;
-    overflow: auto;
+    max-width: 1800px; margin: 0 auto;
+    padding: 0 40px; overflow: auto;
 }
 
-.container-min {
-    max-width: 1300px;
-    margin: 0 auto;
-}
+.container-min { max-width: 1300px; margin: 0 auto; }
 
 /* Display Sections */
-.flex {
-    display: flex;
-    flex-wrap: wrap;
-}
+.flex { display: flex; flex-wrap: wrap; }
 
 .flex-column {
-    display: flex;
-    flex-direction: column;
+    display: flex; flex-direction: column;
     align-items: center;
 }
 
 .grid {
-    display: grid;
-    gap: 20px;
+    display: grid; gap: 20px;
     margin: 0 auto;
 }
 
@@ -41,51 +31,39 @@
 
 .hide-stuff { visibility: hidden; }
 
+.current {
+    background-color: #000;
+    color: #fff;
+}
+
 /* Underline (Cool Ones)*/
 .display-table {
-    border-bottom: 1px solid #533834;
-    display: table;
-    margin-bottom: 10px;
-    padding-bottom: 8px;
+    border-bottom: 1px solid #533834; display: table;
+    margin-bottom: 10px; padding-bottom: 8px;
 }
 
 .bold { font-weight: bold;}
 
-table, td, th {
-    border: 1px solid black;
-}
+table, td, th { border: 1px solid black; }
 
-td, th {
-    padding: 10px;
-}
+td, th { padding: 10px; }
   
-table {
-    width: 100%;
-    border-collapse: collapse;
-}
+table { width: 100%; border-collapse: collapse; }
 
 /* Aligning Content */
 .align-item-center { align-items: center; }
 
-.jc-ai-center {
-    justify-content: center;
-    align-content: center;
-}
+.jc-ai-center { justify-content: center; align-content: center; }
 
 /* Buttons */
 button {cursor: pointer;}
 
 .btn {
-    border-radius: 20px;
-    border: 1px solid #333;
-    padding: 8px 20px;
-    margin: 5px 15px;
+    border-radius: 20px; border: 1px solid #333;
+    padding: 8px 20px; margin: 5px 15px;
 }
 
-.btn:hover {
-    background-color: #000;
-    color: #fff;
-}
+.btn:hover { background-color: #000; color: #fff; }
 
 /* Cards */
 .card {
@@ -100,10 +78,7 @@ button {cursor: pointer;}
 .clr-black { color: #333;}
 
 /* Text Center */
-.text-center { 
-    text-align: center;
-    margin: 0 auto;
-}
+.text-center { text-align: center; margin: 0 auto; }
 /* Text Decorations */
 .underline { border-bottom: 2px solid #000; }
 

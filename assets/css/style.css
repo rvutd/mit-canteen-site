@@ -16,25 +16,21 @@
 /* Regular Utilities */
 *, * ::after, * ::before {
     box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+    margin: 0; padding: 0;
 }
 
 /* White Space Problem Solved */
 html,body
 {
-    margin: 0;
-    padding: 0;
+    margin: 0; padding: 0;
     overflow-x: hidden; 
 }
 
 html { scroll-behavior: smooth; }
 
 body {
-    background-color: #fff;
-    font-family: Verdana, sans-serif;
-    line-height: 1.6;
-    font-size: 1rem;
+    background-color: #fff; font-family: Verdana, sans-serif;
+    line-height: 1.6; font-size: 1rem;
     color: #333;
 }
 
@@ -54,97 +50,69 @@ body {
   ::-webkit-scrollbar-thumb:hover { background: #555; }
 
 h1, h2, h3, h4, h5, h6 {
-    line-height: 1.6;
-    font-weight: 400;
+    line-height: 1.6; font-weight: 400;
     padding: 5px 0;
 }
 
 ul { list-style-type: none; }
 
 a { 
-    text-decoration: none; 
-    color: #333;
+    text-decoration: none; color: #333;
     cursor: pointer;
 }
 
-p { 
-    line-height: 1.3;
-    padding: 5px 0;
-}
+p { line-height: 1.3; padding: 5px 0; }
 
-img { 
-    width: 100%; 
-    object-fit: cover;
-}
+img { width: 100%; object-fit: cover; }
 
 button {
-    border: none;
-    background-color: #ffffff;
+    border: none; background-color: #ffffff;
     outline: none;
 }
 
 /* ---------------- Registration System Modal ----------------- */
 .signup-modal {
-    padding: 100px 0;
-    visibility: hidden;
-    position: fixed; 
-    left: 0;
-    top: 0;
-    width: 100%; 
-    height: 100%; 
-    overflow: visible;
+    padding: 100px 0; visibility: hidden;
+    position: fixed; left: 0;
+    top: 0; width: 100%; 
+    height: 100%; overflow: visible;
     background-color: rgba(0,0,0,0.8); 
 }
 
 /* ------------------- SignIn Modal ---------*/
 .sign-modal {
-    padding-top: 100px;
-    visibility: hidden;
+    padding-top: 100px; visibility: hidden;
     position: fixed; 
-    left: 0;
-    top: 0;
-    width: 100%; 
-    height: 100%; 
+    left: 0; top: 0;
+    width: 100%; height: 100%; 
     overflow: visible;
     background-color: rgba(0,0,0,0.8); 
 }
 
 .modal-container  {
     position: absolute;
-    left: 50%;
-    top: 45%;
+    left: 50%; top: 45%;
     overflow: visible;
     transform: translate(-50%, -50%);
-    display: grid;
-    justify-content: center;
-    width: 300px;
-    padding: 20px 40px;
-    font-family: Helvetica, sans-serif;
-    background-color: #ffffff;
+    display: grid; justify-content: center;
+    width: 300px; padding: 20px 40px;
+    font-family: Helvetica, sans-serif; background-color: #ffffff;
     box-shadow: rgba(15, 167, 238, 0.76) 0px 22px 70px 4px;
 }
 
-.modal-content {
-    max-width: 240px;
-    text-align: center;
-}
+.modal-content { max-width: 240px; text-align: center; }
 
 .sign-modal input, .signup-modal input {
-    outline: none;
-    border: 1px solid #222;
-    border-radius: 20px;
-    padding: 10px;
-    font-size: 15px;
-    text-align: center;
+    outline: none; border: 1px solid #222;
+    border-radius: 20px; padding: 10px;
+    font-size: 15px; text-align: center;
 }
 
 .m-content-2 { font-size: 12px; }
 
 .sign-modal .btn , .signup-modal .btn{
-    margin: 0 auto;
-    width: 150px;
-    padding: 10px 20px;
-    color: #fff;
+    margin: 0 auto; width: 150px;
+    padding: 10px 20px; color: #fff;
     background-color: #222;
 }
 
@@ -152,9 +120,7 @@ button {
 .sign-modal .modal-icons ,.signup-modal .modal-icons { margin: 5px auto; }
 .sign-modal .modal-icons i,.signup-modal .modal-icons i{ font-size: 26px;}
 
-.sign-modal li, .signup-modal li{
-    margin: 0 10px;
-}
+.sign-modal li, .signup-modal li{ margin: 0 10px; }
 
 .sign-modal .modal-content i, .signup-modal .modal-content i {
     position: absolute;
@@ -178,20 +144,15 @@ button {
 
 .cart-innerlay {
     position: fixed;
-    top: 0;
-    right: 0;
-    width: 100%;
-    height: 100%;
+    top: 0; right: 0;
+    width: 100%; height: 100%;
     background: rgb(126, 125, 125);
-    z-index: 3;
-    padding: 2rem;
+    z-index: 3; padding: 2rem;
     transition: all 0.3s linear;
     transform: translateX(100%);
 }
 
-.showCart {
-    transform: translateX(0);
-}
+.showCart { transform: translateX(0); }
 
 @media screen and (min-width: 768px) {
     .cart-innerlay {

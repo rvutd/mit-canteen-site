@@ -87,7 +87,7 @@
           this.authRedirecting()
         })
         .catch((error) => {
-          alert("ohhh no oh noo noo no no", error);
+          console.log("Facebook Login Failed", error);
         });
     }
   
@@ -105,7 +105,7 @@
           this.authRedirecting()
         })
         .catch((error) => {
-          alert("Log In with github failed", error);
+          console.log("Log In with github failed", error);
         });
     }
 
@@ -251,7 +251,7 @@
       console.log(makeUserDataID(userEmailID));
     } else {
       // No user is signed in.
-      console.log('none');
+      console.log('No user Logged In');
     }
   });
 

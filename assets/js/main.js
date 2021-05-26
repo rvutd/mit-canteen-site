@@ -1,274 +1,274 @@
-// ------------------ Menu.html Menu Cards ------------------------
-var menu = {
-    "items": [
-        {
-            "sys": { "id": "1" },
-            "fields": {
-                "title": "Double Cheese Potato Burger",
-                "category": "Burger",
-                "price": "45",
-                "caleories": "220 - 280 Kcal",
-                "image": { "fields": {"file": { "url": "assets/images/sandwich1.jpg" } } }
-            }
-        },
-        {
-            "sys": { "id": "2" },
-            "fields": {
-                "title": "Cheese Sandwitch",
-                "category": "Sandwitch",
-                "price": "45",
-                "caleories": "220 - 280 Kcal",
-                "image": { "fields": {"file": { "url": "assets/images/sandwich1.jpg" } } }
-            }
-        },
-        {
-            "sys": { "id": "3" },
-            "fields": {
-                "title": "Veg Club Sandwitch",
-                "category": "Sandwitch",
-                "price": "60",
-                "caleories": "220 - 280 Kcal",
-                "image": { "fields": {"file": { "url": "assets/images/sandwich1.jpg" } } }
-            }
-        },
-        {
-            "sys": { "id": "4" },
-            "fields": {
-                "title": "Cheese Masala Sandwitch",
-                "category": "Sandwitch",
-                "price": "45",
-                "caleories": "220 - 280 Kcal",
-                "image": { "fields": {"file": { "url": "assets/images/sandwich1.jpg" } } }
-            }
-        },
-        {
-            "sys": { "id": "5" },
-            "fields": {
-                "title": "Veg Schezuan Sandwitch",
-                "category": "Sandwitch",
-                "price": "45",
-                "caleories": "220 - 280 Kcal",
-                "image": { "fields": {"file": { "url": "assets/images/sandwich1.jpg" } } }
-            }
-        },
-        {
-            "sys": { "id": "6" },
-            "fields": {
-                "title": "Masala Maggie",
-                "category": "Maggie",
-                "price": "25",
-                "caleories": "220 - 280 Kcal",
-                "image": { "fields": {"file": { "url": "assets/images/sandwich1.jpg" } } }
-            }
-        },
-        {
-            "sys": { "id": "7" },
-            "fields": {
-                "title": "Schezuan Maggie",
-                "category": "Maggie",
-                "price": "30",
-                "caleories": "220 - 280 Kcal",
-                "image": { "fields": {"file": { "url": "assets/images/sandwich1.jpg" } } }
-            }
-        },
-        {
-            "sys": { "id": "8" },
-            "fields": {
-                "title": "Veg Maggie",
-                "category": "Maggie",
-                "price": "30",
-                "caleories": "220 - 280 Kcal",
-                "image": { "fields": {"file": { "url": "assets/images/sandwich1.jpg" } } }
-            }
-        },
-        {
-            "sys": { "id": "9" },
-            "fields": {
-                "title": "Cheese Garlic Maggie",
-                "category": "Maggie",
-                "price": "40",
-                "caleories": "220 - 280 Kcal",
-                "image": { "fields": {"file": { "url": "assets/images/sandwich1.jpg" } } }
-            }
-        },
-        {
-            "sys": { "id": "10" },
-            "fields": {
-                "title": "Cheese Veg Maggie",
-                "category": "Maggie",
-                "price": "45",
-                "caleories": "220 - 280 Kcal",
-                "image": { "fields": {"file": { "url": "assets/images/sandwich1.jpg" } } }
-            }
-        },
-        {
-            "sys": { "id": "11" },
-            "fields": {
-                "title": "Masala Fries",
-                "category": "Fries",
-                "price": "35",
-                "caleories": "220 - 280 Kcal",
-                "image": { "fields": {"file": { "url": "assets/images/sandwich1.jpg" } } }
-            }
-        },
-        {
-            "sys": { "id": "12" },
-            "fields": {
-                "title": "Schezuan Fries",
-                "category": "Fries",
-                "price": "45",
-                "caleories": "220 - 280 Kcal",
-                "image": { "fields": {"file": { "url": "assets/images/sandwich1.jpg" } } }
-            }
-        },
-        {
-            "sys": { "id": "13" },
-            "fields": {
-                "title": "Cheese Fries",
-                "category": "Fries",
-                "price": "40",
-                "caleories": "220 - 280 Kcal",
-                "image": { "fields": {"file": { "url": "assets/images/sandwich1.jpg" } } }
-            }
-        },
-        {
-            "sys": { "id": "14" },
-            "fields": {
-                "title": "Red Sause Pasta",
-                "category": "Pasta",
-                "price": "80",
-                "caleories": "220 - 280 Kcal",
-                "image": { "fields": {"file": { "url": "assets/images/sandwich1.jpg" } } }
-            }
-        },
-        {
-            "sys": { "id": "15" },
-            "fields": {
-                "title": "White Sause Pasta",
-                "category": "Pasta",
-                "price": "80",
-                "caleories": "220 - 280 Kcal",
-                "image": { "fields": {"file": { "url": "assets/images/sandwich1.jpg" } } }
-            }
-        },
-        {
-            "sys": { "id": "16" },
-            "fields": {
-                "title": "Milk Shakes",
-                "category": "Beverages",
-                "price": "35",
-                "caleories": "220 - 280 Kcal",
-                "image": { "fields": {"file": { "url": "assets/images/sandwich1.jpg" } } }
-            }
-        },
-        {
-            "sys": { "id": "17" },
-            "fields": {
-                "title": "Hot Chocolate",
-                "category": "Beverages",
-                "price": "35",
-                "caleories": "220 - 280 Kcal",
-                "image": { "fields": {"file": { "url": "assets/images/sandwich1.jpg" } } }
-            }
-        },
-        {
-            "sys": { "id": "18" },
-            "fields": {
-                "title": "Aerated Drinks",
-                "category": "Beverages",
-                "price": "10",
-                "caleories": "220 - 280 Kcal",
-                "image": { "fields": {"file": { "url": "assets/images/sandwich1.jpg" } } }
-            }
-        },
-        {
-            "sys": { "id": "19" },
-            "fields": {
-                "title": "Cold Coffee",
-                "category": "Beverages",
-                "price": "35",
-                "caleories": "220 - 280 Kcal",
-                "image": { "fields": {"file": { "url": "assets/images/sandwich1.jpg" } } }
-            }
-        },
-        {
-            "sys": { "id": "20" },
-            "fields": {
-                "title": "Coffee",
-                "category": "Beverages",
-                "price": "15",
-                "caleories": "220 - 280 Kcal",
-                "image": { "fields": {"file": { "url": "assets/images/sandwich1.jpg" } } }
-            }
-        },
-        {
-            "sys": { "id": "21" },
-            "fields": {
-                "title": "Tea",
-                "category": "Beverages",
-                "price": "10",
-                "caleories": "220 - 280 Kcal",
-                "image": { "fields": {"file": { "url": "assets/images/sandwich1.jpg" } } }
-            }
-        },
-        {
-            "sys": { "id": "22" },
-            "fields": {
-                "title": "Chocate Frappe",
-                "category": "Beverages",
-                "price": "35",
-                "caleories": "220 - 280 Kcal",
-                "image": { "fields": {"file": { "url": "assets/images/sandwich1.jpg" } } }
-            }
-        },
-        {
-            "sys": { "id": "23" },
-            "fields": {
-                "title": "Veg Puff",
-                "category": "Bakery",
-                "price": "35",
-                "caleories": "220 - 280 Kcal",
-                "image": { "fields": {"file": { "url": "assets/images/sandwich1.jpg" } } }
-            }
-        },
-        {
-            "sys": { "id": "24" },
-            "fields": {
-                "title": "Panner Puff",
-                "category": "Bakery",
-                "price": "15",
-                "caleories": "220 - 280 Kcal",
-                "image": { "fields": {"file": { "url": "assets/images/sandwich1.jpg" } } }
-            }
-        },
-        {
-            "sys": { "id": "25" },
-            "fields": {
-                "title": "Khari",
-                "category": "Bakery",
-                "price": "20",
-                "caleories": "220 - 280 Kcal",
-                "image": { "fields": {"file": { "url": "assets/images/sandwich1.jpg" } } }
-            }
-        },
-        {
-            "sys": { "id": "26" },
-            "fields": {
-                "title": "Noodle Puff",
-                "category": "Bakery",
-                "price": "15",
-                "caleories": "220 - 280 Kcal",
-                "image": { "fields": {"file": { "url": "assets/images/sandwich1.jpg" } } }
-            }
+var newMenu = [
+    {
+        "sys": { "id": "1" },
+        "fields": {
+            "title": "Double Cheese Potato Burger",
+            "category": "Burger",
+            "price": "45",
+            "caleories": "220 - 280 Kcal",
+            "image": { "fields": {"file": { "url": "assets/images/burger.jpg" } } }
         }
-    ]
-}
+    },
+    {
+        "sys": { "id": "2" },
+        "fields": {
+            "title": "Cheese Sandwitch",
+            "category": "Sandwitch",
+            "price": "45",
+            "caleories": "220 - 280 Kcal",
+            "image": { "fields": {"file": { "url": "assets/images/sandwich1.jpg" } } }
+        }
+    },
+    {
+        "sys": { "id": "3" },
+        "fields": {
+            "title": "Veg Club Sandwitch",
+            "category": "Sandwitch",
+            "price": "60",
+            "caleories": "220 - 280 Kcal",
+            "image": { "fields": {"file": { "url": "assets/images/sandwich1.jpg" } } }
+        }
+    },
+    {
+        "sys": { "id": "4" },
+        "fields": {
+            "title": "Cheese Masala Sandwitch",
+            "category": "Sandwitch",
+            "price": "45",
+            "caleories": "220 - 280 Kcal",
+            "image": { "fields": {"file": { "url": "assets/images/sandwich2.jpg" } } }
+        }
+    },
+    {
+        "sys": { "id": "5" },
+        "fields": {
+            "title": "Veg Schezuan Sandwitch",
+            "category": "Sandwitch",
+            "price": "45",
+            "caleories": "220 - 280 Kcal",
+            "image": { "fields": {"file": { "url": "assets/images/sandwich1.jpg" } } }
+        }
+    },
+    {
+        "sys": { "id": "6" },
+        "fields": {
+            "title": "Masala Maggie",
+            "category": "Maggie",
+            "price": "25",
+            "caleories": "220 - 280 Kcal",
+            "image": { "fields": {"file": { "url": "assets/images/maggie.jpg" } } }
+        }
+    },
+    {
+        "sys": { "id": "7" },
+        "fields": {
+            "title": "Schezuan Maggie",
+            "category": "Maggie",
+            "price": "30",
+            "caleories": "220 - 280 Kcal",
+            "image": { "fields": {"file": { "url": "assets/images/maggie-s.jpg" } } }
+        }
+    },
+    {
+        "sys": { "id": "8" },
+        "fields": {
+            "title": "Veg Maggie",
+            "category": "Maggie",
+            "price": "30",
+            "caleories": "220 - 280 Kcal",
+            "image": { "fields": {"file": { "url": "assets/images/veg-maggie.jpg" } } }
+        }
+    },
+    {
+        "sys": { "id": "9" },
+        "fields": {
+            "title": "Cheese Garlic Maggie",
+            "category": "Maggie",
+            "price": "40",
+            "caleories": "220 - 280 Kcal",
+            "image": { "fields": {"file": { "url": "assets/images/garlic-maggie.jpg" } } }
+        }
+    },
+    {
+        "sys": { "id": "10" },
+        "fields": {
+            "title": "Cheese Veg Maggie",
+            "category": "Maggie",
+            "price": "45",
+            "caleories": "220 - 280 Kcal",
+            "image": { "fields": {"file": { "url": "assets/images/cheese-maggie.jpg" } } }
+        }
+    },
+    {
+        "sys": { "id": "11" },
+        "fields": {
+            "title": "Masala Fries",
+            "category": "Fries",
+            "price": "35",
+            "caleories": "220 - 280 Kcal",
+            "image": { "fields": {"file": { "url": "assets/images/frenchfries.jpg" } } }
+        }
+    },
+    {
+        "sys": { "id": "12" },
+        "fields": {
+            "title": "Schezuan Fries",
+            "category": "Fries",
+            "price": "45",
+            "caleories": "220 - 280 Kcal",
+            "image": { "fields": {"file": { "url": "assets/images/shezuan.jpg" } } }
+        }
+    },
+    {
+        "sys": { "id": "13" },
+        "fields": {
+            "title": "Cheese Fries",
+            "category": "Fries",
+            "price": "40",
+            "caleories": "220 - 280 Kcal",
+            "image": { "fields": {"file": { "url": "assets/images/cheese-fries.jpg" } } }
+        }
+    },
+    {
+        "sys": { "id": "14" },
+        "fields": {
+            "title": "Red Sause Pasta",
+            "category": "Pasta",
+            "price": "80",
+            "caleories": "220 - 280 Kcal",
+            "image": { "fields": {"file": { "url": "assets/images/sandwich1.jpg" } } }
+        }
+    },
+    {
+        "sys": { "id": "15" },
+        "fields": {
+            "title": "White Sause Pasta",
+            "category": "Pasta",
+            "price": "80",
+            "caleories": "220 - 280 Kcal",
+            "image": { "fields": {"file": { "url": "assets/images/sandwich1.jpg" } } }
+        }
+    },
+    {
+        "sys": { "id": "16" },
+        "fields": {
+            "title": "Milk Shakes",
+            "category": "Beverages",
+            "price": "35",
+            "caleories": "220 - 280 Kcal",
+            "image": { "fields": {"file": { "url": "assets/images/milk-shake.jpg" } } }
+        }
+    },
+    {
+        "sys": { "id": "17" },
+        "fields": {
+            "title": "Hot Chocolate",
+            "category": "Beverages",
+            "price": "35",
+            "caleories": "220 - 280 Kcal",
+            "image": { "fields": {"file": { "url": "assets/images/hot-coffee.jpg" } } }
+        }
+    },
+    {
+        "sys": { "id": "18" },
+        "fields": {
+            "title": "Aerated Drinks",
+            "category": "Beverages",
+            "price": "10",
+            "caleories": "220 - 280 Kcal",
+            "image": { "fields": {"file": { "url": "assets/images/Aerated-Drinks.jpg" } } }
+        }
+    },
+    {
+        "sys": { "id": "19" },
+        "fields": {
+            "title": "Cold Coffee",
+            "category": "Beverages",
+            "price": "35",
+            "caleories": "220 - 280 Kcal",
+            "image": { "fields": {"file": { "url": "assets/images/cold-coffee.jpg" } } }
+        }
+    },
+    {
+        "sys": { "id": "20" },
+        "fields": {
+            "title": "Coffee",
+            "category": "Beverages",
+            "price": "15",
+            "caleories": "220 - 280 Kcal",
+            "image": { "fields": {"file": { "url": "assets/images/coffee.jpg" } } }
+        }
+    },
+    {
+        "sys": { "id": "21" },
+        "fields": {
+            "title": "Tea",
+            "category": "Beverages",
+            "price": "10",
+            "caleories": "220 - 280 Kcal",
+            "image": { "fields": {"file": { "url": "assets/images/tea.jpg" } } }
+        }
+    },
+    {
+        "sys": { "id": "22" },
+        "fields": {
+            "title": "Chocate Frappe",
+            "category": "Beverages",
+            "price": "35",
+            "caleories": "220 - 280 Kcal",
+            "image": { "fields": {"file": { "url": "assets/images/beverage.jpg" } } }
+        }
+    },
+    {
+        "sys": { "id": "23" },
+        "fields": {
+            "title": "Veg Puff",
+            "category": "Bakery",
+            "price": "35",
+            "caleories": "220 - 280 Kcal",
+            "image": { "fields": {"file": { "url": "assets/images/puff.jpg" } } }
+        }
+    },
+    {
+        "sys": { "id": "24" },
+        "fields": {
+            "title": "Panner Puff",
+            "category": "Bakery",
+            "price": "15",
+            "caleories": "220 - 280 Kcal",
+            "image": { "fields": {"file": { "url": "assets/images/sandwich1.jpg" } } }
+        }
+    },
+    {
+        "sys": { "id": "25" },
+        "fields": {
+            "title": "Khari",
+            "category": "Bakery",
+            "price": "20",
+            "caleories": "220 - 280 Kcal",
+            "image": { "fields": {"file": { "url": "assets/images/sandwich1.jpg" } } }
+        }
+    },
+    {
+        "sys": { "id": "26" },
+        "fields": {
+            "title": "Noodle Puff",
+            "category": "Bakery",
+            "price": "15",
+            "caleories": "220 - 280 Kcal",
+            "image": { "fields": {"file": { "url": "assets/images/puff.jpg" } } }
+        }
+    }
+]
 
+// Menu Section -
 const menuSection = document.querySelector('.menu-section');
+// Menu Filter Buttons -
+const menuFilterBtns = document.querySelectorAll('#menu-filter');
 
 // Function To Create Menu Cards & Add to HTML
 function displayMenuItems(menuItems){
-    let displayMenu = menuItems.items.map(function(item){
+    let displayMenu = menuItems.map(function(item){
         return `
         <article class="menu-item">
             <img src="${item.fields.image.fields.file.url}" alt="Product image">
@@ -276,7 +276,7 @@ function displayMenuItems(menuItems){
             <figure>
                 <h2>${item.fields.title}</h2>
                 <div class="item-category">${item.fields.category}</div>
-                <div class="flex">
+                <div class="flex" style="margin-top: 10px;">
                     <i class="fas fa-fire"></i>
                     <p>${item.fields.caleories}</p>
                 </div>
@@ -294,8 +294,31 @@ function displayMenuItems(menuItems){
     });
 
     displayMenu = displayMenu.join('');
-    menuSection.innerHTML = displayMenu;
+    if (menuSection) {menuSection.innerHTML = displayMenu;}
 }
+
+
+menuFilterBtns.forEach( btn => {
+    btn.addEventListener('click', (e)=>{
+        const Category = e.currentTarget.dataset.id;
+
+        // Current Btn Indication - 
+        btn.classList.add('current')
+        menuFilterBtns.forEach(i =>{
+            if(i.dataset.id != Category){i.classList.remove('current')}
+        })
+
+        // Add Menu Items by Category - 
+        const menuCategory = newMenu.filter(function(menuItem){
+            if (menuItem.fields.category === Category){
+                return menuItem
+            }
+        });
+
+        // ShortHand If/else Stuff -
+        Category === 'all' ? displayMenuItems(newMenu) : displayMenuItems(menuCategory);
+    })
+})
 
 // ------------------ Menu.html Menu Cards END ------------------------
 
@@ -402,7 +425,7 @@ class Storage {
 document.addEventListener('DOMContentLoaded', () =>{
     const ui = new UI();
 
-    displayMenuItems(menu);
+    displayMenuItems(newMenu);
 
     const bagBtn = document.querySelectorAll('.bag-btn');
     // Cart Buttons -

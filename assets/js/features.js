@@ -27,7 +27,6 @@ const soundEffect = new Audio();
 soundEffect.src = 'mixkit-interface-click-1126.wav';
 
 
-
 // LogIn Modal
 signInModalbtn.forEach(element => {
     element.addEventListener('click', () => {

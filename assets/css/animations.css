@@ -4,12 +4,8 @@
 
 /* Appears From No where */
 @keyframes prakatHo {
-    0% {
-        opacity: 0;
-    }
-    100% {
-        opacity: 1;
-    }
+    0% { opacity: 0; }
+    100% { opacity: 1; }
 }
 
 /* Comes From left to right */
@@ -26,11 +22,7 @@
 
 /* Comes From right to left */
 @keyframes fromRightToLeft {
-    0% {
-        transform: translateX(100%);
-    }
+    0% { transform: translateX(100%); }
 
-    100% {
-        transform: translateX(0);
-    }
+    100% { transform: translateX(0); }
 }
