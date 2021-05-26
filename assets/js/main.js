@@ -15,7 +15,7 @@ var newMenu = [
             "title": "Cheese Sandwitch",
             "category": "Sandwitch",
             "price": "45",
-            "caleories": "220 - 280 Kcal",
+            "caleories": "250 - 300 Kcal",
             "image": { "fields": {"file": { "url": "assets/images/sandwich1.jpg" } } }
         }
     },
@@ -25,8 +25,8 @@ var newMenu = [
             "title": "Veg Club Sandwitch",
             "category": "Sandwitch",
             "price": "60",
-            "caleories": "220 - 280 Kcal",
-            "image": { "fields": {"file": { "url": "assets/images/sandwich1.jpg" } } }
+            "caleories": "320 - 400 Kcal",
+            "image": { "fields": {"file": { "url": "assets/images/s2.jpg" } } }
         }
     },
     {
@@ -35,7 +35,7 @@ var newMenu = [
             "title": "Cheese Masala Sandwitch",
             "category": "Sandwitch",
             "price": "45",
-            "caleories": "220 - 280 Kcal",
+            "caleories": "250 - 300 Kcal",
             "image": { "fields": {"file": { "url": "assets/images/sandwich2.jpg" } } }
         }
     },
@@ -45,8 +45,8 @@ var newMenu = [
             "title": "Veg Schezuan Sandwitch",
             "category": "Sandwitch",
             "price": "45",
-            "caleories": "220 - 280 Kcal",
-            "image": { "fields": {"file": { "url": "assets/images/sandwich1.jpg" } } }
+            "caleories": "230 - 285 Kcal",
+            "image": { "fields": {"file": { "url": "assets/images/schez-sandwitch.jpg" } } }
         }
     },
     {
@@ -55,7 +55,7 @@ var newMenu = [
             "title": "Masala Maggie",
             "category": "Maggie",
             "price": "25",
-            "caleories": "220 - 280 Kcal",
+            "caleories": "150 - 280 Kcal",
             "image": { "fields": {"file": { "url": "assets/images/maggie.jpg" } } }
         }
     },
@@ -65,7 +65,7 @@ var newMenu = [
             "title": "Schezuan Maggie",
             "category": "Maggie",
             "price": "30",
-            "caleories": "220 - 280 Kcal",
+            "caleories": "165 - 225 Kcal",
             "image": { "fields": {"file": { "url": "assets/images/maggie-s.jpg" } } }
         }
     },
@@ -75,7 +75,7 @@ var newMenu = [
             "title": "Veg Maggie",
             "category": "Maggie",
             "price": "30",
-            "caleories": "220 - 280 Kcal",
+            "caleories": "170 - 220 Kcal",
             "image": { "fields": {"file": { "url": "assets/images/veg-maggie.jpg" } } }
         }
     },
@@ -85,7 +85,7 @@ var newMenu = [
             "title": "Cheese Garlic Maggie",
             "category": "Maggie",
             "price": "40",
-            "caleories": "220 - 280 Kcal",
+            "caleories": "190 - 230 Kcal",
             "image": { "fields": {"file": { "url": "assets/images/garlic-maggie.jpg" } } }
         }
     },
@@ -95,7 +95,7 @@ var newMenu = [
             "title": "Cheese Veg Maggie",
             "category": "Maggie",
             "price": "45",
-            "caleories": "220 - 280 Kcal",
+            "caleories": "175 - 235 Kcal",
             "image": { "fields": {"file": { "url": "assets/images/cheese-maggie.jpg" } } }
         }
     },
@@ -105,7 +105,7 @@ var newMenu = [
             "title": "Masala Fries",
             "category": "Fries",
             "price": "35",
-            "caleories": "220 - 280 Kcal",
+            "caleories": "120 - 185 Kcal",
             "image": { "fields": {"file": { "url": "assets/images/frenchfries.jpg" } } }
         }
     },
@@ -115,7 +115,7 @@ var newMenu = [
             "title": "Schezuan Fries",
             "category": "Fries",
             "price": "45",
-            "caleories": "220 - 280 Kcal",
+            "caleories": "135 - 210 Kcal",
             "image": { "fields": {"file": { "url": "assets/images/shezuan.jpg" } } }
         }
     },
@@ -125,7 +125,7 @@ var newMenu = [
             "title": "Cheese Fries",
             "category": "Fries",
             "price": "40",
-            "caleories": "220 - 280 Kcal",
+            "caleories": "140 - 156 Kcal",
             "image": { "fields": {"file": { "url": "assets/images/cheese-fries.jpg" } } }
         }
     },
@@ -135,8 +135,8 @@ var newMenu = [
             "title": "Red Sause Pasta",
             "category": "Pasta",
             "price": "80",
-            "caleories": "220 - 280 Kcal",
-            "image": { "fields": {"file": { "url": "assets/images/sandwich1.jpg" } } }
+            "caleories": "241 - 321 Kcal",
+            "image": { "fields": {"file": { "url": "assets/images/pasta.jpg" } } }
         }
     },
     {
@@ -145,8 +145,8 @@ var newMenu = [
             "title": "White Sause Pasta",
             "category": "Pasta",
             "price": "80",
-            "caleories": "220 - 280 Kcal",
-            "image": { "fields": {"file": { "url": "assets/images/sandwich1.jpg" } } }
+            "caleories": "265 - 321 Kcal",
+            "image": { "fields": {"file": { "url": "assets/images/white-pasta.jpg" } } }
         }
     },
     {
@@ -155,7 +155,7 @@ var newMenu = [
             "title": "Milk Shakes",
             "category": "Beverages",
             "price": "35",
-            "caleories": "220 - 280 Kcal",
+            "caleories": "155 - 210 Kcal",
             "image": { "fields": {"file": { "url": "assets/images/milk-shake.jpg" } } }
         }
     },
@@ -165,7 +165,7 @@ var newMenu = [
             "title": "Hot Chocolate",
             "category": "Beverages",
             "price": "35",
-            "caleories": "220 - 280 Kcal",
+            "caleories": "230 - 280 Kcal",
             "image": { "fields": {"file": { "url": "assets/images/hot-coffee.jpg" } } }
         }
     },
@@ -175,7 +175,7 @@ var newMenu = [
             "title": "Aerated Drinks",
             "category": "Beverages",
             "price": "10",
-            "caleories": "220 - 280 Kcal",
+            "caleories": "260 - 365 Kcal",
             "image": { "fields": {"file": { "url": "assets/images/Aerated-Drinks.jpg" } } }
         }
     },
@@ -185,7 +185,7 @@ var newMenu = [
             "title": "Cold Coffee",
             "category": "Beverages",
             "price": "35",
-            "caleories": "220 - 280 Kcal",
+            "caleories": "255 - 360 Kcal",
             "image": { "fields": {"file": { "url": "assets/images/cold-coffee.jpg" } } }
         }
     },
@@ -195,7 +195,7 @@ var newMenu = [
             "title": "Coffee",
             "category": "Beverages",
             "price": "15",
-            "caleories": "220 - 280 Kcal",
+            "caleories": "220 - 265 Kcal",
             "image": { "fields": {"file": { "url": "assets/images/coffee.jpg" } } }
         }
     },
@@ -205,7 +205,7 @@ var newMenu = [
             "title": "Tea",
             "category": "Beverages",
             "price": "10",
-            "caleories": "220 - 280 Kcal",
+            "caleories": "155 - 225 Kcal",
             "image": { "fields": {"file": { "url": "assets/images/tea.jpg" } } }
         }
     },
@@ -215,7 +215,7 @@ var newMenu = [
             "title": "Chocate Frappe",
             "category": "Beverages",
             "price": "35",
-            "caleories": "220 - 280 Kcal",
+            "caleories": "265 - 355 Kcal",
             "image": { "fields": {"file": { "url": "assets/images/beverage.jpg" } } }
         }
     },
@@ -225,7 +225,7 @@ var newMenu = [
             "title": "Veg Puff",
             "category": "Bakery",
             "price": "35",
-            "caleories": "220 - 280 Kcal",
+            "caleories": "260 - 320 Kcal",
             "image": { "fields": {"file": { "url": "assets/images/puff.jpg" } } }
         }
     },
@@ -235,7 +235,7 @@ var newMenu = [
             "title": "Panner Puff",
             "category": "Bakery",
             "price": "15",
-            "caleories": "220 - 280 Kcal",
+            "caleories": "255 - 390 Kcal",
             "image": { "fields": {"file": { "url": "assets/images/sandwich1.jpg" } } }
         }
     },
@@ -245,7 +245,7 @@ var newMenu = [
             "title": "Khari",
             "category": "Bakery",
             "price": "20",
-            "caleories": "220 - 280 Kcal",
+            "caleories": "265 - 375 Kcal",
             "image": { "fields": {"file": { "url": "assets/images/sandwich1.jpg" } } }
         }
     },
@@ -255,16 +255,38 @@ var newMenu = [
             "title": "Noodle Puff",
             "category": "Bakery",
             "price": "15",
-            "caleories": "220 - 280 Kcal",
+            "caleories": "300 - 425 Kcal",
             "image": { "fields": {"file": { "url": "assets/images/puff.jpg" } } }
         }
     }
 ]
 
+
 // Menu Section -
 const menuSection = document.querySelector('.menu-section');
 // Menu Filter Buttons -
 const menuFilterBtns = document.querySelectorAll('#menu-filter');
+
+// Menu Filteration
+menuFilterBtns.forEach( btn => {
+    btn.addEventListener('click', (e)=>{
+        const Category = e.currentTarget.dataset.id;
+
+        // Current Btn Indication - 
+        btn.classList.add('current')
+        menuFilterBtns.forEach(i =>{
+            if(i.dataset.id != Category){i.classList.remove('current')}
+        })
+
+        // Add Menu Items by Category - 
+        const menuCategory = newMenu.filter(function(menuItem){
+            if (menuItem.fields.category === Category){ return menuItem }
+        });
+
+        // ShortHand If/else Stuff -
+        Category === 'all' ? displayMenuItems(newMenu) : displayMenuItems(menuCategory);
+    })
+})
 
 // Function To Create Menu Cards & Add to HTML
 function displayMenuItems(menuItems){
@@ -296,29 +318,6 @@ function displayMenuItems(menuItems){
     displayMenu = displayMenu.join('');
     if (menuSection) {menuSection.innerHTML = displayMenu;}
 }
-
-
-menuFilterBtns.forEach( btn => {
-    btn.addEventListener('click', (e)=>{
-        const Category = e.currentTarget.dataset.id;
-
-        // Current Btn Indication - 
-        btn.classList.add('current')
-        menuFilterBtns.forEach(i =>{
-            if(i.dataset.id != Category){i.classList.remove('current')}
-        })
-
-        // Add Menu Items by Category - 
-        const menuCategory = newMenu.filter(function(menuItem){
-            if (menuItem.fields.category === Category){
-                return menuItem
-            }
-        });
-
-        // ShortHand If/else Stuff -
-        Category === 'all' ? displayMenuItems(newMenu) : displayMenuItems(menuCategory);
-    })
-})
 
 // ------------------ Menu.html Menu Cards END ------------------------
 

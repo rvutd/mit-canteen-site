@@ -20,7 +20,7 @@ const addContainer = document.querySelector('.add-container')
 const removeContainer = document.querySelector('.remove-container')
 
 // Admin Side URL
-const adminSRC = 'http://127.0.0.1:5501/admin-side.html';
+const adminSRC = 'http://127.0.0.1:5502/admin-side.html';
 
 // Sound Effect
 const soundEffect = new Audio();
@@ -49,6 +49,9 @@ cartBtn.forEach(element => {
         cartInnerlay.classList.add('showCart');
     });
 })
+
+console.log(window.location.href);
+console.log(adminSRC);
 
 if (adminSRC === window.location.href){
     console.log('admin side');

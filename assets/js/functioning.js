@@ -60,9 +60,6 @@
         .auth()
         .signInWithPopup(provider)
         .then((result) => {
-          console.log(result);
-          alert("Signed in with Google Successfully");
-          // this.authRedirecting()
           this.notifyUser();
           this.firebaseAuthRedirect();
         })
