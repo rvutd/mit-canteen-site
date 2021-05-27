@@ -236,7 +236,7 @@ var newMenu = [
             "category": "Bakery",
             "price": "15",
             "caleories": "255 - 390 Kcal",
-            "image": { "fields": {"file": { "url": "assets/images/sandwich1.jpg" } } }
+            "image": { "fields": {"file": { "url": "assets/images/samosa.jpg" } } }
         }
     },
     {
@@ -246,7 +246,7 @@ var newMenu = [
             "category": "Bakery",
             "price": "20",
             "caleories": "265 - 375 Kcal",
-            "image": { "fields": {"file": { "url": "assets/images/sandwich1.jpg" } } }
+            "image": { "fields": {"file": { "url": "assets/images/panner-puff.jpg" } } }
         }
     },
     {
@@ -256,7 +256,7 @@ var newMenu = [
             "category": "Bakery",
             "price": "15",
             "caleories": "300 - 425 Kcal",
-            "image": { "fields": {"file": { "url": "assets/images/puff.jpg" } } }
+            "image": { "fields": {"file": { "url": "assets/images/noodle-puff.jpg" } } }
         }
     }
 ]
@@ -364,15 +364,15 @@ class UI {
         items.forEach(item=>{
             let id = item.ID;
 
-            if (menu.items[id-1].sys.id === id && id != cart.find(i => i > 1 && i === id)){
+            if (newMenu.items[id-1].sys.id === id && id != cart.find(i => i > 1 && i === id)){
                 console.log(id);
                 const div = document.createElement('article');
                 div.classList.add('cart-item')
                 div.innerHTML = `
                     <div><img src="assets/images/sandwich2.jpg" alt="Food item image"></div>
                     <div class="cart-info">
-                        <h3>${menu.items[id-1].fields.title}</h3>
-                        <p>${menu.items[id-1].fields.price}</p>
+                        <h3>${newMenu.items[id-1].fields.title}</h3>
+                        <p>${newMenu.items[id-1].fields.price}</p>
                         <span class="remove-item">remove</span>
                     </div>
                     <div class="flex-column"> 
@@ -430,10 +430,9 @@ document.addEventListener('DOMContentLoaded', () =>{
     // Cart Buttons -
     bagBtn.forEach(addCartBtn => {
         addCartBtn.addEventListener('click', ()=>{
-            ui.addItemCartValues(addCartBtn, menu);
+            ui.addItemCartValues(addCartBtn, newMenu);
             ui.setUpApp()
         });
     });
     
 });
-

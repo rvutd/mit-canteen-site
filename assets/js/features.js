@@ -50,9 +50,6 @@ cartBtn.forEach(element => {
     });
 })
 
-console.log(window.location.href);
-console.log(adminSRC);
-
 if (adminSRC === window.location.href){
     console.log('admin side');
     // Admin Management Btns

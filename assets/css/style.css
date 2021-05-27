@@ -29,7 +29,7 @@ html,body
 html { scroll-behavior: smooth; }
 
 body {
-    background-color: #fff; font-family: Verdana, sans-serif;
+    background-color: #EEEEEE; font-family: Verdana, sans-serif;
     line-height: 1.6; font-size: 1rem;
     color: #333;
 }
@@ -575,6 +575,11 @@ footer .deep-devs a {
     font-weight: 700;
     font-size: 16px;
 }
+/* ------------------- Client Panel -------------------- */
+
+
+
+
 
 /* ------------------- Admin Panel -------------------- */
 .add-container { display: none; }
