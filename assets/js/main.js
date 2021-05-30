@@ -307,7 +307,7 @@ function displayMenuItems(menuItems){
             <div class="menu-cart-functionality">
                 <div class="price">$${item.fields.price}</div>
                 <div class="cart-btn-container">
-                    <button class="bag-btn" data-id=${item.sys.id}>Add to Cart</i></button>
+                    <button class="bag-btn" id="add-to-cart-btn" data-id=${item.sys.id}>Add to Cart</i></button>
                 </div>
             </div>
             </div>
@@ -337,68 +337,6 @@ getProducts() { }
 
 }
   
-// --- Cart Functioning ---
-var cart = []
-const cartItemsContainer = document.querySelector('.cart-items-container');
-const cartItems = document.querySelector('.cart-items');
-const cartTotal = document.querySelector('.cart-total');
-
-var newCart = []
-class UI {
-
-    addItemCartValues(item, menuItems){
-        let id = item.dataset.id;
-        menuItems.items.map(function(item) {
-            if (item.sys.id === id ){
-                let amount = 1
-                cart.push({ID: id, Amount:1})
-                Storage.saveCart(cart)
-            }
-        })
-    }
-
-    showCartItem(){
-        let items = Storage.getCart();
-        console.log(items);
-    
-        items.forEach(item=>{
-            let id = item.ID;
-
-            if (newMenu.items[id-1].sys.id === id && id != cart.find(i => i > 1 && i === id)){
-                console.log(id);
-                const div = document.createElement('article');
-                div.classList.add('cart-item')
-                div.innerHTML = `
-                    <div><img src="assets/images/sandwich2.jpg" alt="Food item image"></div>
-                    <div class="cart-info">
-                        <h3>${newMenu.items[id-1].fields.title}</h3>
-                        <p>${newMenu.items[id-1].fields.price}</p>
-                        <span class="remove-item">remove</span>
-                    </div>
-                    <div class="flex-column"> 
-                        <i class="fas fa-chevron-up"></i>
-                        <p class="item-amount">${item.Amount}</p>
-                        <i class="fas fa-chevron-down"></i>
-                    </div>
-                `
-                // cartItemsContainer.appendChild(div);
-                newCart.push(div)
-            }
-        })
-        this.showInCart()
-    }
-    
-    showInCart() {
-        // newCart.forEach(element => cartItemsContainer.appendChild(element));
-        const lastAdded = newCart[newCart.length-1]
-        cartItemsContainer.appendChild(lastAdded)
-    }
-
-    setUpApp() {
-        this.showCartItem();
-    }
-}
-
 // Local Storage
 class Storage {
     static saveProducts(products){
@@ -421,18 +359,69 @@ class Storage {
     }
 }
 
+// --- Cart Functioning ---
+const cart = []
+// 
+const cartItemsContainer = document.querySelector('.cart-items-container');
+// Nav Cart Items Indicator
+const cartItems = document.querySelector('.cart-items');
+// Total Bill
+const cartTotal = document.querySelector('.cart-total');
+
+function foodItemCartBtn(data_id, quantity){
+    console.log(userEmailID);
+}
+
+
+
 document.addEventListener('DOMContentLoaded', () =>{
-    const ui = new UI();
-
+    // Client UI
     displayMenuItems(newMenu);
-
-    const bagBtn = document.querySelectorAll('.bag-btn');
+    
+    const addToCartBtn = document.querySelectorAll('#add-to-cart-btn');
     // Cart Buttons -
-    bagBtn.forEach(addCartBtn => {
+    addToCartBtn.forEach(addCartBtn => {
         addCartBtn.addEventListener('click', ()=>{
-            ui.addItemCartValues(addCartBtn, newMenu);
-            ui.setUpApp()
+            var quantity = 1;
+            const data_id = addCartBtn.dataset.id;
+            foodItemCartBtn(addCartBtn, quantity);
         });
     });
     
 });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// const div = document.createElement('article');
+// div.classList.add('cart-item')
+// div.innerHTML = `
+//     <div><img src="assets/images/sandwich2.jpg" alt="Food item image"></div>
+//     <div class="cart-info">
+//         <h3>${newMenu.items[id-1].fields.title}</h3>
+//         <p>${newMenu.items[id-1].fields.price}</p>
+//         <span class="remove-item">remove</span>
+//     </div>
+//     <div class="flex-column"> 
+//         <i class="fas fa-chevron-up"></i>
+//         <p class="item-amount">${item.Amount}</p>
+//         <i class="fas fa-chevron-down"></i>
+//     </div>
+// `

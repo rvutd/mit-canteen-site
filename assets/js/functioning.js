@@ -228,26 +228,33 @@
     
   });
 
-  let userEmailID = '';
-  // To know if user have logged in -
-  firebase.auth().onAuthStateChanged(function(user) {
-    if (user) {
+function getUserDetails(){
+    var userTrimedlID = '';
+    var userEmailID = '';
+    // To know if user have logged in -
+    firebase.auth().onAuthStateChanged(function(user) {
       // User is signed in.
-      console.log(user.email);
-      userEmailID = user.email;
-      makeUserDataID(userEmailID)
-      console.log(makeUserDataID(userEmailID));
-    } else {
+      if (user) {
+        userTrimedlID = user.email;
+        makeUserDataID(userTrimedlID);
+        userEmailID = user.email;
+      } 
       // No user is signed in.
-      console.log('No user Logged In');
-    }
-  });
+      else { console.log('No user Logged In');}
+    });
 
-function makeUserDataID(userEmailID){
+    return userEmailID, userTrimedlID
+}
+
+a = getUserDetails()
+console.log(a);
+
+function makeUserDataID(userTrimedlID){
   let userDataID = '';
-  for (i=0; userEmailID.length; i++){
-    if (userEmailID[i] != '@') { userDataID = userDataID + userEmailID[i] }
+  for (i=0; userTrimedlID.length; i++){
+    if (userTrimedlID[i] != '@') { userDataID = userDataID + userTrimedlID[i] }
     else { break }
   }
   return userDataID
 }
+    

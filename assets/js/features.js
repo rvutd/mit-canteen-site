@@ -78,7 +78,7 @@ window.onclick = function(event) {
 }
 
 var signUp_UI, signIn_UI;
-
+// Sign Up Modal
 if (signUpModal){
     signUp_UI = signUpModal.innerHTML = `
     <div class="modal-container">
@@ -121,7 +121,7 @@ if (signUpModal){
     </div>
 `;
 }
-
+// Log In Modal
 if (signModal) {
     signIn_UI = signModal.innerHTML = `
     <!-- Main Card -->

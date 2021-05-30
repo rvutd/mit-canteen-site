@@ -29,7 +29,7 @@ html,body
 html { scroll-behavior: smooth; }
 
 body {
-    background-color: #EEEEEE; font-family: Verdana, sans-serif;
+    background-color: #EFEEE9; font-family: Verdana, sans-serif;
     line-height: 1.6; font-size: 1rem;
     color: #333;
 }
@@ -156,7 +156,7 @@ button {
 
 @media screen and (min-width: 768px) {
     .cart-innerlay {
-      width: 30vw;
+      width: 20vw;
       min-width: 450px;
     }
 }
@@ -190,13 +190,25 @@ button {
     margin: 1.5rem 0;
 }
 
+#cart-btn i { 
+    font-size: 2rem; 
+    margin-top: 5px;
+}
+
+#cart-btn:hover { 
+    color: rgb(126, 125, 125);
+}
+
 .cart-innerlay .cart-item img {
     width: 76px;
     height: 76px;
 }
-
 /* ------------- Home Page CSS -------------- */
 /* Navbar */
+.navbar {
+    background: #1e2022;
+}
+
 .navbar h1 span{ font-size: 25px; }
 
 .navbar .container { 
@@ -213,20 +225,25 @@ button {
 .navbar ul, .navbar li { 
     font-size: 18px;
     margin-top: 3px;
-    padding: 10px 20px; 
+    padding: 9px 20px; 
 }
 
+.navbar .left-nav a { color: grey; }
 .navbar .left-nav a:hover { color: rgb(214, 52, 52); }
 
 .navbar button {
-    outline: none;
-    background-color: #fff;
     padding: 0px 25px;
+    border-color: #F8425F;
+    color: #fff;
+    background: #000;
+    box-shadow: 0 0 10px 0 #F8425F inset, 0 0 10px 4px #F8425F;
+    -webkit-transition: all 150ms ease-in-out;
+    transition: all 150ms ease-in-out;
 }
 
 .navbar .btn:hover {
-    background: #000;
-    color: #fff;
+    border-color: #34c95e;
+    box-shadow: 0 0 10px 0 #34c95e inset, 0 0 10px 4px #34c95e;
 }
 
 /* Toggle Bars */
@@ -255,20 +272,14 @@ button {
     transform: rotate(45deg) translate(-6px, -8px);
 }
 
-/* left Nav Cart */
-.left-nav img {
-    width: 40px;
-    height: 40px;
-}
-
 /* Number of items in Cart */
 .left-nav p {
-    padding: 3px 6px;
-    margin: -4px 0;
-    border-radius: 50%;
-    height: 25px;
-    background: #000;
-    color: #fff;
+    padding: 1px 5px;
+    margin-left: 2px;
+    border-radius: 10vh;
+    height: 20px;
+    background: #7E7D7D;
+    color: #ffffff;
     font-size: 15px;
 }
 
@@ -483,7 +494,13 @@ button {
 
 /* ----------------- Our Vision CSS ------------------ */
 /* Banner Image */
-.main-img img { height: 50em; }
+.main-img { 
+    background: url('../images/8690.jpg') center/cover no-repeat;
+    min-height: calc(95vh - 40px);    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 
 /* Our History Section */
 .our-history p { 
@@ -577,8 +594,21 @@ footer .deep-devs a {
 }
 /* ------------------- Client Panel -------------------- */
 
+.menu-hero {
+    background: url("../images/menu-img8.jpg") center/cover no-repeat;
+    min-height: calc(95vh - 60px);    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 
-
+.menu-hero .banner, .main-img .banner {
+    display: inline-block;    
+    padding: 2rem;
+    background-color: rgba(245, 243, 243, 0.842); color: #333;
+    text-align: center;
+    max-width: 30rem;
+}
 
 
 /* ------------------- Admin Panel -------------------- */

@@ -27,6 +27,8 @@
 
 .grid-4 { grid-template-columns: repeat(4, 1fr); }
 
+.menu-showcase .grid-5 { grid-template-columns: repeat(5, 1fr); gap: 5px; }
+
 .show { visibility: visible; }
 
 .hide-stuff { visibility: hidden; }
@@ -90,11 +92,11 @@ button {cursor: pointer;}
 .xxl { font-size: 5rem;}
 
 /* Margin Y Axis */
-.my-1 { margin: 1rem 0;}
-.my-2 { margin: 2rem 0;}
-.my-3 { margin: 3rem 0;}
-.my-4 { margin: 4rem 0;}
-.my-5 { margin: 5rem 0;}
+.my-1 { margin: 1rem auto;}
+.my-2 { margin: 2rem auto;}
+.my-3 { margin: 3rem auto;}
+.my-4 { margin: 4rem auto;}
+.my-5 { margin: 5rem auto;}
 
 /* Margin XY Axis */
 .m-1 { margin: 1rem;}
@@ -104,15 +106,15 @@ button {cursor: pointer;}
 .m-5 { margin: 5rem;}
 
 /* Padding Y Axis */
-.py-1 { margin: 1rem 0;}
-.py-2 { margin: 2rem 0;}
-.py-3 { margin: 3rem 0;}
-.py-4 { margin: 4rem 0;}
-.py-5 { margin: 5rem 0;}
+.py-1 { margin: 1rem auto;}
+.py-2 { margin: 2rem auto;}
+.py-3 { margin: 3rem auto;}
+.py-4 { margin: 4rem auto;}
+.py-5 { margin: 5rem auto;}
 
 /* Padding XY Axis */
-.p-1 { margin: 1rem;}
-.p-2 { margin: 2rem;}
-.p-3 { margin: 3rem;}
-.p-4 { margin: 4rem;}
-.p-5 { margin: 5rem;}
+.p-1 { padding: 1rem;}
+.p-2 { padding: 2rem;}
+.p-3 { padding: 3rem;}
+.p-4 { padding: 4rem;}
+.p-5 { padding: 5rem;}
