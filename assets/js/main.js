@@ -369,8 +369,10 @@ const cartItems = document.querySelector('.cart-items');
 const cartTotal = document.querySelector('.cart-total');
 
 function foodItemCartBtn(data_id, quantity){
-    console.log(userEmailID);
+    a = getUserDetails()
+    console.log(a);
 }
+
 
 
 

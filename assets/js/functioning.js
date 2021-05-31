@@ -217,10 +217,6 @@
       logout.addEventListener('click', (e) => {
         e.preventDefault();
         firebase.auth().signOut().then(() => {
-          Swal.fire({
-            icon: 'success',
-            title: 'Logged Out Successfully',
-          })
           window.location.replace("https://mit-canteen.netlify.app/index.html")
         });
       });
@@ -228,33 +224,35 @@
     
   });
 
-function getUserDetails(){
-    var userTrimedlID = '';
-    var userEmailID = '';
-    // To know if user have logged in -
-    firebase.auth().onAuthStateChanged(function(user) {
-      // User is signed in.
-      if (user) {
-        userTrimedlID = user.email;
-        makeUserDataID(userTrimedlID);
-        userEmailID = user.email;
-      } 
-      // No user is signed in.
-      else { console.log('No user Logged In');}
-    });
 
-    return userEmailID, userTrimedlID
-}
+  var user = firebase.auth().currentUser;
 
-a = getUserDetails()
-console.log(a);
+  if (user) {
+    console.log(user);
+  } else {
+    console.log('none');
+  }
 
-function makeUserDataID(userTrimedlID){
+
+//   let userEmailID = '';
+//   // To know if user have logged in -
+//   firebase.auth().onAuthStateChanged(function(user) {
+//     if (user) {
+//       // User is signed in.
+//       userEmailID = user.email;
+//       const userTrimedEID = makeUserDataID(userEmailID)
+//       getUserDetailes(userEmailID, userTrimedEID)
+//     } else {
+//       // No user is signed in.
+//       console.log('No user Logged In');
+//     }
+//   });
+
+function makeUserDataID(userEmailID){
   let userDataID = '';
-  for (i=0; userTrimedlID.length; i++){
-    if (userTrimedlID[i] != '@') { userDataID = userDataID + userTrimedlID[i] }
+  for (i=0; userEmailID.length; i++){
+    if (userEmailID[i] != '@') { userDataID = userDataID + userEmailID[i] }
     else { break }
   }
   return userDataID
 }
-    
