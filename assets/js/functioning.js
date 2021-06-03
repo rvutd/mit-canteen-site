@@ -115,7 +115,7 @@
     firebaseAuthRedirect(){
       firebase.auth().onAuthStateChanged(function(user) {
         // If user is registered -
-        user ?  window.location.replace('https://mit-canteen.netlify.app/client-side.html') : console.log('none');
+        user ?  window.location.replace('https://mit-canteen.netlify.app/index.html') : console.log('none');
       });
     }
   }
@@ -221,35 +221,13 @@
         });
       });
     }
-    
   });
 
 
-  var user = firebase.auth().currentUser;
 
-  if (user) {
-    console.log(user);
-  } else {
-    console.log('none');
-  }
-
-
-//   let userEmailID = '';
-//   // To know if user have logged in -
-//   firebase.auth().onAuthStateChanged(function(user) {
-//     if (user) {
-//       // User is signed in.
-//       userEmailID = user.email;
-//       const userTrimedEID = makeUserDataID(userEmailID)
-//       getUserDetailes(userEmailID, userTrimedEID)
-//     } else {
-//       // No user is signed in.
-//       console.log('No user Logged In');
-//     }
-//   });
-
+let userDataID = '';
 function makeUserDataID(userEmailID){
-  let userDataID = '';
+  // let userDataID = '';
   for (i=0; userEmailID.length; i++){
     if (userEmailID[i] != '@') { userDataID = userDataID + userEmailID[i] }
     else { break }

@@ -360,36 +360,188 @@ class Storage {
 }
 
 // --- Cart Functioning ---
-const cart = []
-// 
+// Inside Cart Container
 const cartItemsContainer = document.querySelector('.cart-items-container');
 // Nav Cart Items Indicator
 const cartItems = document.querySelector('.cart-items');
 // Total Bill
 const cartTotal = document.querySelector('.cart-total');
 
-function foodItemCartBtn(data_id, quantity){
-    a = getUserDetails()
-    console.log(a);
+// Clear Cart Btn
+const clearCart = document.querySelector('.clear-cart');
+
+const navcartBtn = document.querySelector('#cart-btn');
+// Item Quantity -
+var quantity = 1;
+
+var addItem = [];
+
+// Add Id & quantity of Food Item - 
+function foodItemCartBtn(data_id, quantity, trimedEmailID, addItem){
+    // Add Food ID to object
+    var product = {
+        FoodID: data_id,
+        Quantity: quantity
+    }
+    // add that to last position
+    addItem.push(product);
+
+    // Save to Firebase DB
+    firebase.database().ref('Users_Carts/' + trimedEmailID + '_Cart').set({
+        Details: addItem
+    });
 }
 
+function showUserCart(addItem){
+  
+    // Remove All Stored Previous items
+    cartItemsContainer.innerHTML = ''
+    
+    addItem.forEach(item => {
+        let id = item.FoodID - 1;
+        var div = document.createElement('article');
+        div.classList.add('cart-item')
+        div.innerHTML = `
+            <div><img src="${newMenu[id].fields.image.fields.file.url}" alt="Food item image"></div>
+            <div class="cart-info">
+                <h3 id'c-title'>${newMenu[id].fields.title}</h3>
+                <p>${newMenu[id].fields.price}</p>
+                <span class="remove-item" data-id=${id+1}>remove</span>
+            </div>
+            <div class="flex-column"> 
+                <i class="fas fa-chevron-up" data-id=${id+1}></i>
+                <p class="item-amount">${item.Quantity}</p>
+                <i class="fas fa-chevron-down" data-id=${id+1}></i>
+            </div>
+        ` 
+        cartItemsContainer.appendChild(div); 
+    })
+}
 
+function cartFunctionalities (addItem, userEmailID, trimedEmailID, addToCartBtn){
 
+    // In Cart Buttons & Functionalities -
+    cartItemsContainer.addEventListener('click', event => {
+        // When Remove Btn is clicked
+        if (event.target.classList.contains('remove-item')){
+            let removeBtn = event.target;
+            let id = removeBtn.dataset.id;
+            // cartItemsContainer.removeChild(removeBtn.parentElement.parentElement)
 
+            // Remove Item From Array -
+            addItem.forEach(item => {
+                if (item.FoodID === id){ addItem.splice(addItem.indexOf(item) ,1) }
+            })
+            
+            // Remove (i.e update) In Firebase DB
+            firebase
+            .database()
+            .ref('Users_Carts/' + trimedEmailID + '_Cart')
+            .update({Details: addItem})
+
+        }
+        // When Add Quantity is clicked
+        else if (event.target.classList.contains('fa-chevron-up')){
+            let addAmount = event.target;
+            let id = addAmount.dataset.id;
+
+            // Update Array -
+            addItem.forEach(item => {                
+                if (item.FoodID === id){
+                    item.Quantity += 1;
+                }
+            })
+            // Update in Firebase DB
+            firebase.database()
+            .ref('Users_Carts/' + trimedEmailID + '_Cart')
+            .update({ Details: addItem })
+        }
+        // When lower Quantity is clicked
+        else if (event.target.classList.contains('fa-chevron-down')){
+            let lowerAmount = event.target;
+            let id = lowerAmount.dataset.id;
+
+            // Update Array -
+            addItem.forEach(item => {                
+                if (item.FoodID === id && item.Quantity >= 1){
+                    item.Quantity -= 1;
+                }
+                if (item.Quantity === 0){
+                    lowerAmount.parentElement.parentElement.innerHTML = '';
+                    // Enable Buttons - so user can use them again
+                    addToCartBtn[id-1].disabled = false;
+                    addToCartBtn[id-1].innerHTML = 'Add to Cart';
+                    // Update Array -
+                    addItem.splice(addItem.indexOf(item) ,1);
+                }
+            })
+
+            // Update in Firebase DB
+            firebase
+            .database()
+            .ref('Users_Carts/' + trimedEmailID + '_Cart')
+            .update({ Details: addItem })
+        }
+    })
+}
+
+// Main.js When Content Loaded
 document.addEventListener('DOMContentLoaded', () =>{
     // Client UI
     displayMenuItems(newMenu);
-    
+    showUserCart(addItem)
     const addToCartBtn = document.querySelectorAll('#add-to-cart-btn');
-    // Cart Buttons -
-    addToCartBtn.forEach(addCartBtn => {
-        addCartBtn.addEventListener('click', ()=>{
-            var quantity = 1;
-            const data_id = addCartBtn.dataset.id;
-            foodItemCartBtn(addCartBtn, quantity);
-        });
-    });
     
+    // When User Is logged In
+    firebase.auth().onAuthStateChanged((user) => {
+        if (user) {
+            var userEmailID = user.email; console.log(userEmailID);
+            var trimedEmailID = makeUserDataID(user.email);
+            
+            // Get Cart Items already stored
+            firebase.database().ref('Users_Carts/' + trimedEmailID + '_Cart').on('value', function(snapshot){
+                var userCart = snapshot.val().Details;
+                // Empty Array
+                addItem = []
+                for (let i = 0; i< userCart.length; i++){
+                    // Store previouly added items to array -
+                    addItem.push(userCart[i])
+                    // Disable already added items
+                    addToCartBtn[userCart[i].FoodID-1].disabled =true;
+                    addToCartBtn[userCart[i].FoodID-1].innerHTML = 'In Cart';
+                }
+                cartFunctionalities(addItem, userEmailID, trimedEmailID, addToCartBtn);
+                showUserCart(addItem);
+            })
+            
+            // Cart Buttons -
+            addToCartBtn.forEach(btn => {
+                btn.addEventListener('click', ()=> {
+                    var quantity = 1;
+                    const data_id = btn.dataset.id;
+                    // Set Values In Firebase DB
+                    foodItemCartBtn(data_id, quantity, trimedEmailID, addItem);
+                });
+            });
+
+            // Remove all items from Cart -
+            
+            clearCart.addEventListener('click', ()=>{
+                cartItemsContainer.innerHTML = '';
+
+                // Update in Firebase DB
+                firebase
+                .database()
+                .ref('Users_Carts/' + trimedEmailID + '_Cart')
+                .remove()
+            })
+
+        } else {
+        console.log('no user logged in');
+        }
+  });
+  
+
 });
 
 

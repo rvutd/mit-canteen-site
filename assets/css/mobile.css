@@ -76,6 +76,8 @@
     
     .menu-item { flex-wrap: wrap; }
 
+    .menu-section { margin: 2rem;}
+
     .menu-item img {
         max-width: 100%;
         border-top-left-radius: 6px; border-top-right-radius: 6px;

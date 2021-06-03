@@ -264,9 +264,8 @@ button {
     -webkit-transform: rotate(-45deg) translate(-5px, 6px);
     transform: rotate(-45deg) translate(-6px, 6px);
 }
-.change .bar-2 {
-    opacity: 0;
-}
+.change .bar-2 { opacity: 0; }
+
 .change .bar-3 {
     -webkit-transform: rotate(45deg) translate(-6px, -8px);
     transform: rotate(45deg) translate(-6px, -8px);
@@ -289,9 +288,7 @@ button {
     text-align: center;
 }
 
-.mob-nav-active {
-    display: grid;
-}
+.mob-nav-active { display: grid; }
 
 .mob-ul li {
     padding: 20px 0;
@@ -299,9 +296,7 @@ button {
     width: 100%;
 }
 
-.mob-navbar button {
-    margin: 20px auto;
-}
+.mob-navbar button { margin: 20px auto; }
 
 .mob-navbar img {
     width: 40px;
@@ -319,9 +314,7 @@ button {
     color: #fff;
 }
 
-.mob-navbar .flex {
-    justify-content: center;
-}
+.mob-navbar .flex { justify-content: center; }
 
 .mob-navbar a:hover { color: rgb(214, 52, 52); }
 
@@ -362,9 +355,7 @@ button {
     text-transform: uppercase;
 }
 
-.showcase h1, .showcase h4 , .showcase .sm{
-    color: #533834;
-}
+.showcase h1, .showcase h4 , .showcase .sm{ color: #533834; }
 
 .showcase img {
     width: 100px;
@@ -430,7 +421,7 @@ button {
 }
 
 
-.menu-item .flex { align-items: center; }
+/* .menu-item .flex { align-items: center; } */
 
 .menu-item .item-info { 
     padding: 15px;
@@ -593,7 +584,6 @@ footer .deep-devs a {
     font-size: 16px;
 }
 /* ------------------- Client Panel -------------------- */
-
 .menu-hero {
     background: url("../images/menu-img8.jpg") center/cover no-repeat;
     min-height: calc(95vh - 60px);    
@@ -610,6 +600,9 @@ footer .deep-devs a {
     max-width: 30rem;
 }
 
+.menu-section {
+    justify-content: center;
+}
 
 /* ------------------- Admin Panel -------------------- */
 .add-container { display: none; }
