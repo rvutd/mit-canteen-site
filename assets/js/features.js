@@ -28,6 +28,21 @@ if (previewNavbar) {
     `
 }
 
+//  --- Intro Mobile NavBar ---
+const mobPreviewNavbar = document.querySelector('#mob-preview-navbar')
+if (mobPreviewNavbar) {
+    mobPreviewNavbar.innerHTML = `
+        <nav class="nav container">
+            <ul class="mob-ul">
+                <li><a href="index.html">Home</a></li> 
+                <li><a href="our-vision.html">Our Vision</a></li>
+                <button class="btn" id="sign-modal">Log In</button>
+                <button class="btn" id="signup-modal">Sign Up</button>
+            </ul>
+        </nav>
+    `
+}
+
 // --- Sign In Modal ---
 const signInModalbtn = document.querySelectorAll('#sign-modal');
 const signModal = document.querySelector('.sign-modal');
