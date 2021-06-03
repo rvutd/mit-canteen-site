@@ -33,10 +33,7 @@
 
 .hide-stuff { visibility: hidden; }
 
-.current {
-    background-color: #000;
-    color: #fff;
-}
+.current { background-color: #000; color: #fff; }
 
 /* Underline (Cool Ones)*/
 .display-table {

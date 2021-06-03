@@ -1,3 +1,33 @@
+//  --- Intro NavBar ---
+const previewNavbar = document.querySelector('.navbar')
+if (previewNavbar) {
+    previewNavbar.innerHTML = `
+        <div class="container flex text-center jc-ai-center">
+            <!-- Left Navigation -->
+            <div class="site-title flex align-item-center">
+                <div>
+                    <a href="index.html"><h1><span class="clr-red">Mit</span> <span class="clr-green">Canteen</span></h1></a>
+                </div>
+                <!-- Toggle Bars -->
+                <div class="toggle-bars mybar">
+                    <div class="bars bar-1"></div>
+                    <div class="bars bar-2"></div>
+                    <div class="bars bar-3"></div>
+                </div>
+            </div>
+            <!-- Right Navigation -->
+            <nav class="site-nav flex left-nav align-item-center">                
+                <ul class="flex">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="our-vision.html">Our Vision</a></li>
+                    <button  class="btn" id="sign-modal">Log In</button>
+                    <button  class="btn" id="signup-modal">Sign Up</button>
+                </ul>
+            </nav>
+        </div>
+    `
+}
+
 // --- Sign In Modal ---
 const signInModalbtn = document.querySelectorAll('#sign-modal');
 const signModal = document.querySelector('.sign-modal');
@@ -21,11 +51,6 @@ const removeContainer = document.querySelector('.remove-container')
 
 // Admin Side URL
 const adminSRC = 'http://127.0.0.1:5502/admin-side.html';
-
-// Sound Effect
-const soundEffect = new Audio();
-soundEffect.src = 'mixkit-interface-click-1126.wav';
-
 
 // LogIn Modal
 signInModalbtn.forEach(element => {
@@ -77,6 +102,8 @@ window.onclick = function(event) {
     }
 }
 
+
+
 var signUp_UI, signIn_UI;
 // Sign Up Modal
 if (signUpModal){
@@ -89,9 +116,9 @@ if (signUpModal){
         </div>
         <!-- Other way of LogIn's -->
         <ul class="modal-icons flex">
-                <li><button><i class="fab fa-google" id="google-signUpIn" onmouseover="soundEffect.play()"></i></button></li>
-                <li><button><i class="fab fa-github" id="github-signUpIn" onmouseover="soundEffect.play()"></i></button></li>
-                <li><button><i class="fab fa-facebook" id="facebook-signUpIn" onmouseover="soundEffect.play()"></i></button></li>
+                <li><button><i class="fab fa-google" id="google-signUpIn"></i></button></li>
+                <li><button><i class="fab fa-github" id="github-signUpIn"></i></button></li>
+                <li><button><i class="fab fa-facebook" id="facebook-signUpIn"></i></button></li>
         </ul>
         <!-- Sign Up Input's -->
         <form class="modal-form grid py-1 text-center" id="main-form">
@@ -133,9 +160,9 @@ if (signModal) {
         </div>
         <!-- Other way of LogIn's -->
         <ul class="modal-icons flex">
-            <li><button><i class="fab fa-google" id="google-signUpIn" onmouseover="soundEffect.play()"></i></button></li>
-            <li><button><i class="fab fa-github" id="github-signUpIn" onmouseover="soundEffect.play()"></i></button></li>
-            <li><button><i class="fab fa-facebook" id="facebook-signUpIn" onmouseover="soundEffect.play()"></i></button></li>
+            <li><button><i class="fab fa-google" id="google-signUpIn"></i></button></li>
+            <li><button><i class="fab fa-github" id="github-signUpIn"></i></button></li>
+            <li><button><i class="fab fa-facebook" id="facebook-signUpIn"></i></button></li>
         </ul>
         <!-- Sign In Input's -->
         <form class="modal-form grid py-1 text-center" id="signIn-form">
@@ -216,4 +243,9 @@ function customerFooterUI() {
         })
     }
 }
+
 customerFooterUI()
+
+
+
+

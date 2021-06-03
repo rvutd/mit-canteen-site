@@ -261,7 +261,6 @@ var newMenu = [
     }
 ]
 
-
 // Menu Section -
 const menuSection = document.querySelector('.menu-section');
 // Menu Filter Buttons -
@@ -293,7 +292,7 @@ function displayMenuItems(menuItems){
     let displayMenu = menuItems.map(function(item){
         return `
         <article class="menu-item">
-            <img src="${item.fields.image.fields.file.url}" alt="Product image">
+            <img src="${item.fields.image.fields.file.url}" loading="lazy" alt="Product image">
             <div class="item-info">
             <figure>
                 <h2>${item.fields.title}</h2>
@@ -540,42 +539,4 @@ document.addEventListener('DOMContentLoaded', () =>{
         console.log('no user logged in');
         }
   });
-  
-
 });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// const div = document.createElement('article');
-// div.classList.add('cart-item')
-// div.innerHTML = `
-//     <div><img src="assets/images/sandwich2.jpg" alt="Food item image"></div>
-//     <div class="cart-info">
-//         <h3>${newMenu.items[id-1].fields.title}</h3>
-//         <p>${newMenu.items[id-1].fields.price}</p>
-//         <span class="remove-item">remove</span>
-//     </div>
-//     <div class="flex-column"> 
-//         <i class="fas fa-chevron-up"></i>
-//         <p class="item-amount">${item.Amount}</p>
-//         <i class="fas fa-chevron-down"></i>
-//     </div>
-// `
