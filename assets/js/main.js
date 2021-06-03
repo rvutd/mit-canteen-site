@@ -462,9 +462,6 @@ function cartFunctionalities (addItem, userEmailID, trimedEmailID, addToCartBtn)
 
             // Update Array -
             addItem.forEach(item => {                
-                if (item.FoodID === id && item.Quantity >= 1){
-                    item.Quantity -= 1;
-                }
                 if (item.Quantity === 0){
                     lowerAmount.parentElement.parentElement.innerHTML = '';
                     // Enable Buttons - so user can use them again
@@ -472,6 +469,9 @@ function cartFunctionalities (addItem, userEmailID, trimedEmailID, addToCartBtn)
                     addToCartBtn[id-1].innerHTML = 'Add to Cart';
                     // Update Array -
                     addItem.splice(addItem.indexOf(item) ,1);
+                }
+                if (item.FoodID === id && item.Quantity >= 1){
+                    item.Quantity -= 1;
                 }
             })
 
