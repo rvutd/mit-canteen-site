@@ -1,5 +1,5 @@
 //  --- Intro NavBar ---
-const previewNavbar = document.querySelector('.navbar')
+const previewNavbar = document.querySelector('#preview-navbar')
 if (previewNavbar) {
     previewNavbar.innerHTML = `
         <div class="container flex text-center jc-ai-center">
