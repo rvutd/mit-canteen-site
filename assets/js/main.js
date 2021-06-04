@@ -369,7 +369,9 @@ const cartTotal = document.querySelector('.cart-total');
 // Clear Cart Btn
 const clearCart = document.querySelector('.clear-cart');
 
-const navcartBtn = document.querySelector('#cart-btn');
+// Nav Cart btn Values
+const cartValues = document.querySelector('#cart-values');
+
 // Item Quantity -
 var quantity = 1;
 
@@ -386,11 +388,13 @@ function foodItemCartBtn(data_id, quantity, trimedEmailID, addItem){
     // add that to last position
     addItem.push(product);
 
-    // Save to Firebase DB
-    firebase.database().ref('Users_Carts/' + trimedEmailID + '_Cart').set({
-        Details: addItem,
-        Total_Amount: 0
-    });
+    if (addItem.length != 0){
+        // Save to Firebase DB
+        firebase.database().ref('Users_Carts/' + trimedEmailID + '_Cart').set({
+            Details: addItem,
+            Total_Amount: 0
+        });
+    }
 }
 
 function showUserCart(addItem, trimedEmailID){
@@ -434,6 +438,7 @@ function showUserCart(addItem, trimedEmailID){
     .update({Details: addItem, Total_Amount: totalAmount})
     // UI
     cartTotal.innerHTML = totalAmount;
+    cartValues.innerHTML = No_of_Item;
 }
 
 function cartFunctionalities (addItem, trimedEmailID, addToCartBtn){
@@ -524,7 +529,7 @@ document.addEventListener('DOMContentLoaded', () =>{
                     // Store previouly added items to array -
                     addItem.push(userCart[i])
                     // Disable already added items
-                    addToCartBtn[userCart[i].FoodID-1].disabled =true;
+                    addToCartBtn[userCart[i].FoodID-1].disabled = true;
                     addToCartBtn[userCart[i].FoodID-1].innerHTML = 'In Cart';
                 }
                 cartFunctionalities(addItem, trimedEmailID, addToCartBtn);
