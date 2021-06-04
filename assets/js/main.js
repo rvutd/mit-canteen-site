@@ -304,7 +304,7 @@ function displayMenuItems(menuItems){
             </figure>
             <hr style="margin: 10px 0;">
             <div class="menu-cart-functionality">
-                <div class="price">$${item.fields.price}</div>
+                <div class="price">&#8377;${item.fields.price}</div>
                 <div class="cart-btn-container">
                     <button class="bag-btn" id="add-to-cart-btn" data-id=${item.sys.id}>Add to Cart</i></button>
                 </div>
@@ -358,7 +358,7 @@ class Storage {
     }
 }
 
-// --- Cart Functioning ---
+// ---------------- Cart Functioning ----------------
 // Inside Cart Container
 const cartItemsContainer = document.querySelector('.cart-items-container');
 // Nav Cart Items Indicator
@@ -373,6 +373,7 @@ const navcartBtn = document.querySelector('#cart-btn');
 // Item Quantity -
 var quantity = 1;
 
+// Cart
 var addItem = [];
 
 // Add Id & quantity of Food Item - 
@@ -387,24 +388,34 @@ function foodItemCartBtn(data_id, quantity, trimedEmailID, addItem){
 
     // Save to Firebase DB
     firebase.database().ref('Users_Carts/' + trimedEmailID + '_Cart').set({
-        Details: addItem
+        Details: addItem,
+        Total_Amount: 0
     });
 }
 
-function showUserCart(addItem){
+function showUserCart(addItem, trimedEmailID){
+
+    let totalAmount = 0;
+    let No_of_Item = 0;
   
     // Remove All Stored Previous items
     cartItemsContainer.innerHTML = ''
-    
+
     addItem.forEach(item => {
         let id = item.FoodID - 1;
+        // Quantity of Current Item
+        let quantity = item.Quantity;
+        No_of_Item += quantity;
+        // Total Amount Calc
+        totalAmount = totalAmount + (quantity * newMenu[id].fields.price);
+        // Creating Cart Item in Cart
         var div = document.createElement('article');
         div.classList.add('cart-item')
         div.innerHTML = `
             <div><img src="${newMenu[id].fields.image.fields.file.url}" alt="Food item image"></div>
             <div class="cart-info">
                 <h3 id'c-title'>${newMenu[id].fields.title}</h3>
-                <p>${newMenu[id].fields.price}</p>
+                <p>&#8377;${newMenu[id].fields.price}</p>
                 <span class="remove-item" data-id=${id+1}>remove</span>
             </div>
             <div class="flex-column"> 
@@ -413,12 +424,19 @@ function showUserCart(addItem){
                 <i class="fas fa-chevron-down" data-id=${id+1}></i>
             </div>
         ` 
-        cartItemsContainer.appendChild(div); 
+        cartItemsContainer.appendChild(div);
     })
+
+    // Set Total Amount Value in Firebase DB & UI-
+    firebase
+    .database()
+    .ref('Users_Carts/' + trimedEmailID + '_Cart')
+    .update({Details: addItem, Total_Amount: totalAmount})
+    // UI
+    cartTotal.innerHTML = totalAmount;
 }
 
-function cartFunctionalities (addItem, userEmailID, trimedEmailID, addToCartBtn){
-
+function cartFunctionalities (addItem, trimedEmailID, addToCartBtn){
     // In Cart Buttons & Functionalities -
     cartItemsContainer.addEventListener('click', event => {
         // When Remove Btn is clicked
@@ -494,8 +512,8 @@ document.addEventListener('DOMContentLoaded', () =>{
     // When User Is logged In
     firebase.auth().onAuthStateChanged((user) => {
         if (user) {
-            var userEmailID = user.email; console.log(userEmailID);
             var trimedEmailID = makeUserDataID(user.email);
+            console.log(trimedEmailID);
             
             // Get Cart Items already stored
             firebase.database().ref('Users_Carts/' + trimedEmailID + '_Cart').on('value', function(snapshot){
@@ -509,8 +527,8 @@ document.addEventListener('DOMContentLoaded', () =>{
                     addToCartBtn[userCart[i].FoodID-1].disabled =true;
                     addToCartBtn[userCart[i].FoodID-1].innerHTML = 'In Cart';
                 }
-                cartFunctionalities(addItem, userEmailID, trimedEmailID, addToCartBtn);
-                showUserCart(addItem);
+                cartFunctionalities(addItem, trimedEmailID, addToCartBtn);
+                showUserCart(addItem, trimedEmailID);
             })
             
             // Cart Buttons -
@@ -528,6 +546,12 @@ document.addEventListener('DOMContentLoaded', () =>{
             clearCart.addEventListener('click', ()=>{
                 cartItemsContainer.innerHTML = '';
 
+                // Enable removed items btn
+                addItem.forEach(item=>{
+                    addToCartBtn[item.FoodID-1].disabled = false;
+                    addToCartBtn[item.FoodID-1].innerHTML = 'Add to Cart';
+                })
+                
                 // Update in Firebase DB
                 firebase
                 .database()

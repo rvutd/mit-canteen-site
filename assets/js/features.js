@@ -1,3 +1,58 @@
+//  --- Intro NavBar ---
+// Toggle Bars Switch
+const toggleBars = document.querySelector('.toggle-bars');
+const mobUl = document.querySelector('.mob-ul');
+
+// Toggle Close/Open Function
+toggleBars.addEventListener('click', () => {
+    toggleBars.classList.toggle('change');
+    mobUl.classList.toggle('mob-nav-active');
+});
+
+const previewNavbar = document.querySelector('#preview-navbar')
+if (previewNavbar) {
+    previewNavbar.innerHTML = `
+        <div class="container flex text-center jc-ai-center">
+            <!-- Left Navigation -->
+            <div class="site-title flex align-item-center">
+                <div>
+                    <a href="index.html"><h1><span class="clr-red">Mit</span> <span class="clr-green">Canteen</span></h1></a>
+                </div>
+                <!-- Toggle Bars -->
+                <div class="toggle-bars mybar">
+                    <div class="bars bar-1"></div>
+                    <div class="bars bar-2"></div>
+                    <div class="bars bar-3"></div>
+                </div>
+            </div>
+            <!-- Right Navigation -->
+            <nav class="site-nav flex left-nav align-item-center">                
+                <ul class="flex">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="our-vision.html">Our Vision</a></li>
+                    <button  class="btn" id="sign-modal">Log In</button>
+                    <button  class="btn" id="signup-modal">Sign Up</button>
+                </ul>
+            </nav>
+        </div>
+    `
+}
+
+//  --- Intro Mobile NavBar ---
+const mobPreviewNavbar = document.querySelector('#mob-preview-navbar')
+if (mobPreviewNavbar) {
+    mobPreviewNavbar.innerHTML = `
+        <nav class="nav container">
+            <ul class="mob-ul">
+                <li><a href="index.html">Home</a></li> 
+                <li><a href="our-vision.html">Our Vision</a></li>
+                <button class="btn" id="sign-modal">Log In</button>
+                <button class="btn" id="signup-modal">Sign Up</button>
+            </ul>
+        </nav>
+    `
+}
+
 var bestDishes = [
     {
         title: 'Masala Sandwich',
@@ -55,50 +110,7 @@ function bestDishesHero(){
 
 bestDishesHero()
 
-//  --- Intro NavBar ---
-const previewNavbar = document.querySelector('#preview-navbar')
-if (previewNavbar) {
-    previewNavbar.innerHTML = `
-        <div class="container flex text-center jc-ai-center">
-            <!-- Left Navigation -->
-            <div class="site-title flex align-item-center">
-                <div>
-                    <a href="index.html"><h1><span class="clr-red">Mit</span> <span class="clr-green">Canteen</span></h1></a>
-                </div>
-                <!-- Toggle Bars -->
-                <div class="toggle-bars mybar">
-                    <div class="bars bar-1"></div>
-                    <div class="bars bar-2"></div>
-                    <div class="bars bar-3"></div>
-                </div>
-            </div>
-            <!-- Right Navigation -->
-            <nav class="site-nav flex left-nav align-item-center">                
-                <ul class="flex">
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="our-vision.html">Our Vision</a></li>
-                    <button  class="btn" id="sign-modal">Log In</button>
-                    <button  class="btn" id="signup-modal">Sign Up</button>
-                </ul>
-            </nav>
-        </div>
-    `
-}
 
-//  --- Intro Mobile NavBar ---
-const mobPreviewNavbar = document.querySelector('#mob-preview-navbar')
-if (mobPreviewNavbar) {
-    mobPreviewNavbar.innerHTML = `
-        <nav class="nav container">
-            <ul class="mob-ul">
-                <li><a href="index.html">Home</a></li> 
-                <li><a href="our-vision.html">Our Vision</a></li>
-                <button class="btn" id="sign-modal">Log In</button>
-                <button class="btn" id="signup-modal">Sign Up</button>
-            </ul>
-        </nav>
-    `
-}
 
 // --- Sign In Modal ---
 const signInModalbtn = document.querySelectorAll('#sign-modal');
