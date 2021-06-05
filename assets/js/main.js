@@ -397,6 +397,7 @@ function foodItemCartBtn(data_id, quantity, trimedEmailID, addItem){
     }
 }
 
+// Add Items in User Cart -
 function showUserCart(addItem, trimedEmailID){
 
     let totalAmount = 0;
@@ -441,6 +442,7 @@ function showUserCart(addItem, trimedEmailID){
     cartValues.innerHTML = No_of_Item;
 }
 
+// User Operations in Cart
 function cartFunctionalities (addItem, trimedEmailID, addToCartBtn){
     // In Cart Buttons & Functionalities -
     cartItemsContainer.addEventListener('click', event => {
@@ -460,7 +462,6 @@ function cartFunctionalities (addItem, trimedEmailID, addToCartBtn){
             .database()
             .ref('Users_Carts/' + trimedEmailID + '_Cart')
             .update({Details: addItem})
-
         }
         // When Add Quantity is clicked
         else if (event.target.classList.contains('fa-chevron-up')){

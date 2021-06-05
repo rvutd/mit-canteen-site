@@ -46,12 +46,6 @@
         .then((cred) => {
           // Save Data to firebase storage -
           saveDatabase.UserfirebaseDatabase(userName, email, password, phoneNumber);
-          // Create Cart
-          let trimedEmailID = makeUserDataID(email)
-          firebase.database().ref('Users_Carts/' + trimedEmailID + '_Cart').set({
-            Details: addItem,
-            Total_Amount: 0
-          });
           this.notifyUser();
           this.firebaseAuthRedirect();
         })

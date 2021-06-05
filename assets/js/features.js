@@ -4,10 +4,12 @@ const toggleBars = document.querySelector('.toggle-bars');
 const mobUl = document.querySelector('.mob-ul');
 
 // Toggle Close/Open Function
-toggleBars.addEventListener('click', () => {
-    toggleBars.classList.toggle('change');
-    mobUl.classList.toggle('mob-nav-active');
-});
+if (toggleBars) {
+    toggleBars.addEventListener('click', () => {
+        toggleBars.classList.toggle('change');
+        mobUl.classList.toggle('mob-nav-active');
+    });
+}
 
 const previewNavbar = document.querySelector('#preview-navbar')
 if (previewNavbar) {
@@ -28,8 +30,8 @@ if (previewNavbar) {
             <!-- Right Navigation -->
             <nav class="site-nav flex left-nav align-item-center">                
                 <ul class="flex">
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="our-vision.html">Our Vision</a></li>
+                    <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+                    <li><a href="our-vision.html"><i class="far fa-eye"></i> Our Vision</a></li>
                     <button  class="btn" id="sign-modal">Log In</button>
                     <button  class="btn" id="signup-modal">Sign Up</button>
                 </ul>
@@ -57,28 +59,28 @@ var bestDishes = [
     {
         title: 'Masala Sandwich',
         rating: 4,
-        imgURL: "assets/images/sandwich1.jpg",
+        imgURL: "assets/images/s2.jpg",
         description: "Sumptuous delicious food baked in our cafe with curated ingredients",
         price: 30
     },
     {
         title: 'Red Pasta',
         rating: 5,
-        imgURL: "assets/images/sandwich1.jpg",
+        imgURL: "assets/images/pasta.jpg",
         description: "Sumptuous delicious food baked in our cafe with curated ingredients",
         price: 45
     },
     {
         title: 'White Pasta',
         rating: 5,
-        imgURL: "assets/images/sandwich1.jpg",
+        imgURL: "assets/images/white-pasta.jpg",
         description: "Sumptuous delicious food baked in our cafe with curated ingredients",
         price: 25
     },
     {
         title: 'French Fries',
         rating: 4,
-        imgURL: "assets/images/sandwich1.jpg",
+        imgURL: "assets/images/shezuan.jpg",
         description: "Sumptuous delicious food baked in our cafe with curated ingredients",
         price: 35
     }

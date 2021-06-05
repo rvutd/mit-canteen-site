@@ -229,7 +229,7 @@ button {
     padding: 9px 20px; 
 }
 
-.navbar .left-nav a { color: grey; }
+.navbar .left-nav a { color: rgb(240, 248, 255); }
 .navbar .left-nav a:hover { color: rgb(214, 52, 52); }
 
 .navbar button {
