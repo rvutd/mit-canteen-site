@@ -414,16 +414,18 @@ function showUserCart(addItem, trimedEmailID){
         // Quantity of Current Item
         let quantity = item.Quantity;
         No_of_Item += quantity;
+        // Menu Fields
+        let inMenu = newMenu[id].fields;
         // Total Amount Calc
-        totalAmount = totalAmount + (quantity * newMenu[id].fields.price);
+        totalAmount = totalAmount + (quantity * inMenu.price);
         // Creating Cart Item in Cart
         var div = document.createElement('article');
         div.classList.add('cart-item')
         div.innerHTML = `
-            <div><img src="${newMenu[id].fields.image.fields.file.url}" alt="Food item image"></div>
+            <div><img src="${inMenu.image.fields.file.url}" alt="Food item image"></div>
             <div class="cart-info">
-                <h3 id'c-title'>${newMenu[id].fields.title}</h3>
-                <p>&#8377;${newMenu[id].fields.price}</p>
+                <h3 id'c-title'>${inMenu.title}</h3>
+                <p>&#8377;${inMenu.price}</p>
                 <span class="remove-item" data-id=${id+1}>remove</span>
             </div>
             <div class="flex-column"> 
@@ -444,8 +446,8 @@ function showUserCart(addItem, trimedEmailID){
     cartTotal.innerHTML = totalAmount;
     cartValues.innerHTML = No_of_Item;
 
+    // If user orders than send cart to orders
     userCart = { Details: addItem, Total_Amount: totalAmount }
-    
     return userCart
 }
 
@@ -469,7 +471,10 @@ function cartFunctionalities (addItem, trimedEmailID, addToCartBtn){
             })
 
             // If last element in cart if removed - 
-            if (addItem.length === 0){ cartItemsContainer.innerHTML = '' }
+            if (addItem.length === 0){ 
+                cartItemsContainer.innerHTML = '';
+                cartValues.innerHTML = 0; 
+            }
             
             // Remove (i.e update) In Firebase DB
             firebase
@@ -522,6 +527,7 @@ function cartFunctionalities (addItem, trimedEmailID, addToCartBtn){
     })
 }
 
+// Remove all items in cart
 function clearUserCart(addItem, addToCartBtn, trimedEmailID){
     cartItemsContainer.innerHTML = '';
 
@@ -543,11 +549,6 @@ function clearUserCart(addItem, addToCartBtn, trimedEmailID){
 
 // User Order's Management -
 function userOrderManagement (trimedEmailID , userCart, userEmailID){
-    // Create user Orders List -
-  
-    // Total No. of Orders till now
-    let orders = [];
-    orders = []
 
     // Current Order
     let current_order = {
@@ -558,21 +559,10 @@ function userOrderManagement (trimedEmailID , userCart, userEmailID){
         Delivery_Status: false
     }
 
-    // Check If There is alreay an order or not -
-    firebase.database().ref('Users_Order/' + trimedEmailID + '_Orders')
-    .on('value', function(snapshot){
-        var userOrders = snapshot.val();
-        // if yes than add to array, if not continue -
-        userOrders.forEach(order => {
-            orders.push(order)
-        })
-    });
-
-    // Adds current into orders list -
-    orders.push(current_order);
-
-    // Save To Firebase -
-    firebase.database().ref('Users_Order/' + trimedEmailID + '_Orders').set(orders);
+    // Add Current Order To User Orders list 
+    firebase.database()
+    .ref('Users_Order/' + trimedEmailID + '_Orders')
+    .push(current_order);
 }
 
 
