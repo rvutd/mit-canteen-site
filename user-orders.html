@@ -21,6 +21,9 @@
     <script src="https://www.gstatic.com/firebasejs/8.3.2/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.3.2/firebase-auth.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.3.2/firebase-database.js"></script>
+
+    <!-- Sweet Alert Pop Modal -->
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 <body>
     
@@ -42,13 +45,13 @@
             <!-- Right Navigation -->
             <nav class="site-nav flex left-nav align-item-center">                
                 <ul class="flex">
-                    <li><a href="client-side.html">Menu</a></li>
-                    <li><a href="user-orders.html">My Orders</a></li>
+                    <li><a href="client-side.html"><i class="fas fa-cocktail"></i> Menu</a></li>
+                    <li><a href="user-orders.html"><i class="fas fa-coins"></i> My Orders</a></li>
                     <button  class="btn" id="userlogout">Log Out</button>
                     <!-- Cart Icon -->
                     <a class="flex" id="cart-btn">
-                        <img src="assets/images/cart.svg" alt="cart icon">
-                        <p>6</p>
+                        <i class="fas fa-shopping-cart"></i>
+                        <p id="cart-values">0</p>
                     </a>
                 </ul>
             </nav>
@@ -60,10 +63,13 @@
         <nav class="nav container">
             <ul class="mob-ul">
                 <li><a href="client-side.html">Menu</a></li>
-                    <li><a href="user-orders.html">My Orders</a></li>
-                    <button  class="btn" id="userlogout">Log Out</button>
+                <li><a href="user-orders.html">My Orders</a></li>
+                <button  class="btn" id="userlogout">Log Out</button>
                 <!-- Cart Icon -->
-                <a class="flex" id="cart-btn"><img src="assets/images/cart.svg" alt="cart icon"><p>6</p></a>
+                <a class="flex" id="cart-btn">
+                    <i class="fas fa-shopping-cart"></i>
+                    <p id="cart-values">6</p>
+                </a>
             </ul>
         </nav>
     </header>
@@ -76,41 +82,32 @@
                 <div>Your Cart</div>
                 <div>
                     <i class="fas fa-times" 
-                        onclick="cartOverlay.classList.remove('show');
-                        cartInnerlay.classList.remove('showCart');">
+                       onclick="cartOverlay.classList.remove('show');
+                       cartInnerlay.classList.remove('showCart');">
                     </i>
                 </div>
             </header>
             <!-- Cart Item Container -->
             <div class="cart-items-container py-2">
                 <!-- Cart Items added to cart -->
-                <article class="cart-item">
-                    <div><img src="assets/images/sandwich2.jpg" alt="Food item image"></div>
-                    <div class="cart-info">
-                        <h3>Double Cheese Potato Burger</h3>
-                        <p>$45.04</p>
-                        <span class="remove-item">remove</span>
-                    </div>
-                    <div class="flex-column"> 
-                        <i class="fas fa-chevron-up"></i>
-                        <p class="item-amount">5</p>
-                        <i class="fas fa-chevron-down"></i>
-                    </div>
-                </article>
+   
             </div>
             <hr class="py-1">
             <!-- Footer Side  -->
             <div class="cart-footer text-center sm">
-                <div>Your Total : $186.59</div>
-                <div>
-                    <button>Clear Cart</button>
-                    <button>Check Out</button>
+                <div>Your Total : &#8377;<span class="cart-total sm">0</span></div>
+                <div class="my-1">
+                    <button class="clear-cart">Clear Cart</button>
+                    <button class="check-out">Order Now</button>
                 </div>
             </div>
         </div>
     </section>
 
+
     <p class="lg text-center">My Orders</p>
+
+
 
     <!-- Page Animations -->
     <script src="assets/js/animations.js"></script>

@@ -266,7 +266,7 @@ const menuSection = document.querySelector('.menu-section');
 // Menu Filter Buttons -
 const menuFilterBtns = document.querySelectorAll('#menu-filter');
 
-// Menu Filteration
+// Menu Items Filteration
 menuFilterBtns.forEach( btn => {
     btn.addEventListener('click', (e)=>{
         const Category = e.currentTarget.dataset.id;
@@ -369,6 +369,9 @@ const cartTotal = document.querySelector('.cart-total');
 // Clear Cart Btn
 const clearCart = document.querySelector('.clear-cart');
 
+// Clear Cart Btn
+const checkOutBtn = document.querySelector('.check-out');
+
 // Nav Cart btn Values
 const cartValues = document.querySelector('#cart-values');
 
@@ -440,6 +443,10 @@ function showUserCart(addItem, trimedEmailID){
     // UI
     cartTotal.innerHTML = totalAmount;
     cartValues.innerHTML = No_of_Item;
+
+    userCart = { Details: addItem, Total_Amount: totalAmount }
+    
+    return userCart
 }
 
 // User Operations in Cart
@@ -454,8 +461,15 @@ function cartFunctionalities (addItem, trimedEmailID, addToCartBtn){
 
             // Remove Item From Array -
             addItem.forEach(item => {
-                if (item.FoodID === id){ addItem.splice(addItem.indexOf(item) ,1) }
+                if (item.FoodID === id){ 
+                    addItem.splice(addItem.indexOf(item) ,1) 
+                    addToCartBtn[id-1].disabled = false;
+                    addToCartBtn[id-1].innerHTML = 'Add to Cart';
+                }
             })
+
+            // If last element in cart if removed - 
+            if (addItem.length === 0){ cartItemsContainer.innerHTML = '' }
             
             // Remove (i.e update) In Firebase DB
             firebase
@@ -508,6 +522,60 @@ function cartFunctionalities (addItem, trimedEmailID, addToCartBtn){
     })
 }
 
+function clearUserCart(addItem, addToCartBtn, trimedEmailID){
+    cartItemsContainer.innerHTML = '';
+
+    // Enable removed items btn
+    addItem.forEach(item=>{
+        addToCartBtn[item.FoodID-1].disabled = false;
+        addToCartBtn[item.FoodID-1].innerHTML = 'Add to Cart';
+    })
+    
+    // Empty Local Cart 
+    addItem = []
+
+    // Update in Firebase DB
+    firebase
+    .database()
+    .ref('Users_Carts/' + trimedEmailID + '_Cart')
+    .remove()
+}
+
+// User Order's Management -
+function userOrderManagement (trimedEmailID , userCart, userEmailID){
+    // Create user Orders List -
+  
+    // Total No. of Orders till now
+    let orders = [];
+    orders = []
+
+    // Current Order
+    let current_order = {
+        Email_ID: userEmailID,
+        Order_Status: true,
+        User_Cart: userCart,
+        Payment_Status: false,
+        Delivery_Status: false
+    }
+
+    // Check If There is alreay an order or not -
+    firebase.database().ref('Users_Order/' + trimedEmailID + '_Orders')
+    .on('value', function(snapshot){
+        var userOrders = snapshot.val();
+        // if yes than add to array, if not continue -
+        userOrders.forEach(order => {
+            orders.push(order)
+        })
+    });
+
+    // Adds current into orders list -
+    orders.push(current_order);
+
+    // Save To Firebase -
+    firebase.database().ref('Users_Order/' + trimedEmailID + '_Orders').set(orders);
+}
+
+
 // Main.js When Content Loaded
 document.addEventListener('DOMContentLoaded', () =>{
     // Client UI
@@ -518,11 +586,14 @@ document.addEventListener('DOMContentLoaded', () =>{
     // When User Is logged In
     firebase.auth().onAuthStateChanged((user) => {
         if (user) {
-            var trimedEmailID = makeUserDataID(user.email);
+            const userEmailID = user.email
+            var trimedEmailID = makeUserDataID(userEmailID);
             console.log(trimedEmailID);
-            
+
             // Get Cart Items already stored
-            firebase.database().ref('Users_Carts/' + trimedEmailID + '_Cart').on('value', function(snapshot){
+            firebase.database()
+            .ref('Users_Carts/' + trimedEmailID + '_Cart')
+            .on('value', function(snapshot){
                 var userCart = snapshot.val().Details;
                 // Empty Array
                 addItem = []
@@ -548,21 +619,32 @@ document.addEventListener('DOMContentLoaded', () =>{
             });
 
             // Remove all items from Cart -
-            
             clearCart.addEventListener('click', ()=>{
-                cartItemsContainer.innerHTML = '';
+                clearUserCart(addItem, addToCartBtn, trimedEmailID);
+                addItem = []
+            })
 
-                // Enable removed items btn
-                addItem.forEach(item=>{
-                    addToCartBtn[item.FoodID-1].disabled = false;
-                    addToCartBtn[item.FoodID-1].innerHTML = 'Add to Cart';
-                })
-                
-                // Update in Firebase DB
-                firebase
-                .database()
-                .ref('Users_Carts/' + trimedEmailID + '_Cart')
-                .remove()
+            // User Check Out's -
+            checkOutBtn.addEventListener('click', ()=>{
+                // Check If Cart is Empty or not -
+                if (addItem.length != 0){
+                    // Order
+                    let userCart = showUserCart(addItem, trimedEmailID);
+                    userOrderManagement(trimedEmailID, userCart, userEmailID);
+                    // Empty User Cart
+                    cartItemsContainer.innerHTML = '';
+                    clearUserCart(addItem, addToCartBtn, trimedEmailID);
+                    addItem = []
+                    Swal.fire({
+                        icon: 'success',
+                        title: 'Order Successfully Recorded',
+                    })
+                } else {
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'Empty Cart: Add Some items in Cart',
+                    })
+                }
             })
 
         } else {

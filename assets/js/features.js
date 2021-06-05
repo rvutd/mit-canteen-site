@@ -55,6 +55,7 @@ if (mobPreviewNavbar) {
     `
 }
 
+// Best Dishes Section
 var bestDishes = [
     {
         title: 'Masala Sandwich',
@@ -85,9 +86,7 @@ var bestDishes = [
         price: 35
     }
 ]
-
 const bestDishesCont = document.querySelector('#best-dishes-container');
-// Best Dishes Section
 function bestDishesHero(){
     bestDishes.forEach(index => {
         var div = document.createElement('div')
@@ -109,10 +108,7 @@ function bestDishesHero(){
         if (bestDishesCont) {bestDishesCont.appendChild(div)}
     })
 }
-
 bestDishesHero()
-
-
 
 // --- Sign In Modal ---
 const signInModalbtn = document.querySelectorAll('#sign-modal');
@@ -126,17 +122,6 @@ const signUpModal = document.querySelector('.signup-modal');
 const cartOverlay = document.querySelector('.cart-overlay');
 const cartInnerlay = document.querySelector('.cart-innerlay');
 const cartBtn = document.querySelectorAll('#cart-btn');
-
-// --- Admin Product Management Btns ---
-const addProductBtn = document.querySelector('#add-product-menu')
-const removeProductBtn = document.querySelector('#remove-product-menu')
-
-// Admin Management Containers
-const addContainer = document.querySelector('.add-container')
-const removeContainer = document.querySelector('.remove-container')
-
-// Admin Side URL
-const adminSRC = 'http://127.0.0.1:5502/admin-side.html';
 
 // LogIn Modal
 signInModalbtn.forEach(element => {
@@ -161,21 +146,6 @@ cartBtn.forEach(element => {
     });
 })
 
-if (adminSRC === window.location.href){
-    console.log('admin side');
-    // Admin Management Btns
-    addProductBtn.addEventListener('click', ()=>{
-        addContainer.classList.toggle('show-container');
-        removeContainer.classList.remove('show-container')
-    })
-
-    // Admin Management Btns
-    removeProductBtn.addEventListener('click', ()=>{
-        removeContainer.classList.toggle('show-container');
-        addContainer.classList.remove('show-container')
-    })
-}
-
 // When the user clicks anywhere outside of the modal, closes it
 window.onclick = function(event) {
     if (event.target == signModal || event.target == signUpModal) {
@@ -188,10 +158,8 @@ window.onclick = function(event) {
     }
 }
 
-
-
-var signUp_UI, signIn_UI;
 // Sign Up Modal
+var signUp_UI, signIn_UI;
 if (signUpModal){
     signUp_UI = signUpModal.innerHTML = `
     <div class="modal-container">
@@ -234,6 +202,7 @@ if (signUpModal){
     </div>
 `;
 }
+
 // Log In Modal
 if (signModal) {
     signIn_UI = signModal.innerHTML = `
@@ -329,7 +298,6 @@ function customerFooterUI() {
         })
     }
 }
-
 customerFooterUI()
 
 
