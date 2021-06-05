@@ -530,6 +530,7 @@ function cartFunctionalities (addItem, trimedEmailID, addToCartBtn){
 // Remove all items in cart
 function clearUserCart(addItem, addToCartBtn, trimedEmailID){
     cartItemsContainer.innerHTML = '';
+    cartValues.innerHTML = 0;
 
     // Enable removed items btn
     addItem.forEach(item=>{
