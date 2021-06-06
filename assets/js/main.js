@@ -524,7 +524,6 @@ function cartFunctionalities (addItem, trimedEmailID, addToCartBtn){
                     item.Quantity -= 1;
                     if (item.Quantity === 0){
                         if ( window.location != 'http://127.0.0.1:5502/user-orders.html'){
-                            console.log(lowerAmount.parentElement.parentElement);
                             // Enable Buttons - so user can use them again
                             // Enable removed items btn
                             addItem.forEach(item=>{
@@ -537,6 +536,12 @@ function cartFunctionalities (addItem, trimedEmailID, addToCartBtn){
                         if (addItem.length === 0){
                             cartItemsContainer.innerHTML = '';
                             cartValues.innerHTML = '0';
+
+                            // Remove in Firebase DB
+                            firebase
+                            .database()
+                            .ref('Users_Carts/' + trimedEmailID + '_Cart')
+                            .remove()
                         }
                     }
                 }
@@ -618,20 +623,22 @@ function ClientDataFlow(addToCartBtn){
             firebase.database()
             .ref('Users_Carts/' + trimedEmailID + '_Cart')
             .on('value', function(snapshot){
-                var userCart = snapshot.val().Details;
-                // Empty Array
-                addItem = []
-                for (let i = 0; i< userCart.length; i++){
-                    // Store previouly added items to array -
-                    addItem.push(userCart[i])
-                    // Disable already added items
-                    if (window.location != 'http://127.0.0.1:5502/user-orders.html'){
-                        addToCartBtn[userCart[i].FoodID-1].disabled = true;
-                        addToCartBtn[userCart[i].FoodID-1].innerHTML = 'In Cart';
+                if (snapshot.exists()){
+                    var userCart = snapshot.val().Details;
+                    // Empty Array
+                    addItem = []
+                    for (let i = 0; i< userCart.length; i++){
+                        // Store previouly added items to array -
+                        addItem.push(userCart[i])
+                        // Disable already added items
+                        if (window.location != 'http://127.0.0.1:5502/user-orders.html'){
+                            addToCartBtn[userCart[i].FoodID-1].disabled = true;
+                            addToCartBtn[userCart[i].FoodID-1].innerHTML = 'In Cart';
+                        }
                     }
+                    cartFunctionalities(addItem, trimedEmailID, addToCartBtn);
+                    showUserCart(addItem, trimedEmailID);
                 }
-                cartFunctionalities(addItem, trimedEmailID, addToCartBtn);
-                showUserCart(addItem, trimedEmailID);
             })
             
             // Cart Buttons -
