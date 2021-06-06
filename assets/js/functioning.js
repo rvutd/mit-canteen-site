@@ -107,16 +107,18 @@
 
     // Notify User
     notifyUser() {
-      Swal.fire({
-        icon: 'success',
-        title: 'Account Created/Signed In Successfully',
-      })
+      window.setTimeout(function(){
+        Swal.fire({
+          icon: 'success',
+          title: 'Account Created/Signed In Successfully',
+        })
+      },1250)
     }
 
     firebaseAuthRedirect(){
       firebase.auth().onAuthStateChanged(function(user) {
         // If user is registered -
-        user ?  window.location.replace('https://mit-canteen.netlify.app/index.html') : console.log('none');
+        user ?  window.location.replace('https://mit-canteen.netlify.app/client-side') : console.log('none');
       });
     }
   }
