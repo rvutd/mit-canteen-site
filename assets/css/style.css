@@ -36,18 +36,18 @@ body {
 
 /* Scroll Bar */
 ::-webkit-scrollbar { width: 8px; }
-  
-  /* Track */
-  ::-webkit-scrollbar-track { background: #f1f1f1; }
-   
-  /* Handle */
-  ::-webkit-scrollbar-thumb {
+
+/* Track */
+::-webkit-scrollbar-track { background: #f1f1f1; }
+
+/* Handle */
+::-webkit-scrollbar-thumb {
     background: #888; 
     border-radius: 20px;
-  }
-  
-  /* Handle on hover */
-  ::-webkit-scrollbar-thumb:hover { background: #555; }
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover { background: #555; }
 
 h1, h2, h3, h4, h5, h6 {
     line-height: 1.6; font-weight: 400;
@@ -150,7 +150,10 @@ button {
     z-index: 3; padding: 2rem;
     transition: all 0.3s linear;
     transform: translateX(100%);
+    overflow: scroll;
 }
+
+.cart-innerlay::-webkit-scrollbar { display: none; }
 
 .showCart { transform: translateX(0); }
 
@@ -284,6 +287,8 @@ button {
 }
 
 /* ---------- mobile navbar ------------ */
+.mob-navbar { background-color: #1E2022; padding-bottom: 1rem;}
+
 .mob-ul {
     display: none;
     text-align: center;
@@ -297,20 +302,21 @@ button {
     width: 100%;
 }
 
+.mob-navbar a { color: rgb(240, 248, 255); }
+
+#cart-values { background: rgb(240, 248, 255); color: #333; }
+
 .mob-navbar button { margin: 20px auto; }
 
 .mob-navbar img {
-    width: 40px;
-    height: 40px;
+    width: 40px; height: 40px;
     text-align: center;
 }
 
 .mob-navbar p {
-    padding: 3px 7px;
-    margin: -5px 0;
+    padding: 3px 7px; margin: -5px 0;
     border-radius: 80px;
-    height: 25px;
-    width: 25px;
+    height: 25px; width: 25px;
     background: #000;
     color: #fff;
 }
@@ -320,15 +326,11 @@ button {
 .mob-navbar a:hover { color: rgb(214, 52, 52); }
 
 .mob-navbar button {
-    outline: none;
+    padding: 10px 25px; outline: none; 
     background-color: #ffffff;
-    padding: 10px 25px;
 }
 
-.mob-navbar .btn:hover {
-    background: #000;
-    color: #fff;
-}
+.mob-navbar .btn:hover { background: #000; color: #fff; }
 
 /* Hero Section */
 .hero { height: 500px; }

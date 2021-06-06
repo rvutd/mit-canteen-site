@@ -31,7 +31,9 @@
 
 .show { visibility: visible; }
 
-.hide-stuff { visibility: hidden; }
+.hide-stuff { visibility: hidden; height: 0;}
+
+.display-none { display: none; }
 
 .current { background-color: #000; color: #fff; }
 

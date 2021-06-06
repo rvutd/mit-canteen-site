@@ -1,16 +1,4 @@
 //  --- Intro NavBar ---
-// Toggle Bars Switch
-const toggleBars = document.querySelector('.toggle-bars');
-const mobUl = document.querySelector('.mob-ul');
-
-// Toggle Close/Open Function
-if (toggleBars) {
-    toggleBars.addEventListener('click', () => {
-        toggleBars.classList.toggle('change');
-        mobUl.classList.toggle('mob-nav-active');
-    });
-}
-
 const previewNavbar = document.querySelector('#preview-navbar')
 if (previewNavbar) {
     previewNavbar.innerHTML = `
@@ -53,6 +41,18 @@ if (mobPreviewNavbar) {
             </ul>
         </nav>
     `
+}
+
+// Toggle Bars Switch
+const toggleBars = document.querySelector('.toggle-bars');
+const mobUI = document.querySelector('.mob-ul');
+
+// Toggle Close/Open Function
+if (toggleBars) {
+    toggleBars.addEventListener('click', () => {
+        toggleBars.classList.toggle('change');
+        mobUI.classList.toggle('mob-nav-active');
+    });
 }
 
 // Best Dishes Section

@@ -266,26 +266,37 @@ const menuSection = document.querySelector('.menu-section');
 // Menu Filter Buttons -
 const menuFilterBtns = document.querySelectorAll('#menu-filter');
 
-// Menu Items Filteration
-menuFilterBtns.forEach( btn => {
-    btn.addEventListener('click', (e)=>{
-        const Category = e.currentTarget.dataset.id;
+function filtering(addToCartBtn){
+    // Menu Items Filteration
+    menuFilterBtns.forEach( btn => {
+        btn.addEventListener('click', (e)=>{
+            const Category = e.currentTarget.dataset.id;
 
-        // Current Btn Indication - 
-        btn.classList.add('current')
-        menuFilterBtns.forEach(i =>{
-            if(i.dataset.id != Category){i.classList.remove('current')}
+            // Current Btn Indication - 
+            btn.classList.add('current')
+            menuFilterBtns.forEach(i =>{
+                if(i.dataset.id != Category){i.classList.remove('current')}
+            })
+
+            // Filtering Menu Items -
+            addToCartBtn.forEach(item => {
+                let id = item.dataset.id;
+                let menuItemClass = item.parentElement.parentElement.parentElement.parentElement
+                if (Category === newMenu[id-1].fields.category){
+                    menuItemClass.classList.remove('display-none')
+                    menuItemClass.classList.add('show')
+                }
+                if (Category != newMenu[id-1].fields.category){
+                    menuItemClass.classList.add('display-none')
+                }
+                if (Category === 'all'){
+                    menuItemClass.classList.remove('display-none')
+                    menuItemClass.classList.add('show')
+                }
+            })
         })
-
-        // Add Menu Items by Category - 
-        const menuCategory = newMenu.filter(function(menuItem){
-            if (menuItem.fields.category === Category){ return menuItem }
-        });
-
-        // ShortHand If/else Stuff -
-        Category === 'all' ? displayMenuItems(newMenu) : displayMenuItems(menuCategory);
     })
-})
+}
 
 // Function To Create Menu Cards & Add to HTML
 function displayMenuItems(menuItems){
@@ -459,7 +470,6 @@ function cartFunctionalities (addItem, trimedEmailID, addToCartBtn){
         if (event.target.classList.contains('remove-item')){
             let removeBtn = event.target;
             let id = removeBtn.dataset.id;
-            // cartItemsContainer.removeChild(removeBtn.parentElement.parentElement)
 
             // Remove Item From Array -
             addItem.forEach(item => {
@@ -573,7 +583,14 @@ document.addEventListener('DOMContentLoaded', () =>{
     displayMenuItems(newMenu);
     showUserCart(addItem)
     const addToCartBtn = document.querySelectorAll('#add-to-cart-btn');
-    
+    // Menu Filtering items
+    filtering(addToCartBtn)
+
+    ClientDataFlow(addToCartBtn)
+});
+
+// When User Loggin and Do Stuff
+function ClientDataFlow(addToCartBtn){
     // When User Is logged In
     firebase.auth().onAuthStateChanged((user) => {
         if (user) {
@@ -641,5 +658,5 @@ document.addEventListener('DOMContentLoaded', () =>{
         } else {
         console.log('no user logged in');
         }
-  });
-});
+    });
+}
