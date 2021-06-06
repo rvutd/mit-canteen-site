@@ -301,5 +301,4 @@ function customerFooterUI() {
 customerFooterUI()
 
 
-
-
+let indexPage = encodeURI('index.html')

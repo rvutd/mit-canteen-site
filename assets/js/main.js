@@ -475,8 +475,13 @@ function cartFunctionalities (addItem, trimedEmailID, addToCartBtn){
             addItem.forEach(item => {
                 if (item.FoodID === id){ 
                     addItem.splice(addItem.indexOf(item) ,1) 
-                    addToCartBtn[id-1].disabled = false;
-                    addToCartBtn[id-1].innerHTML = 'Add to Cart';
+                    if ( window.location != 'http://127.0.0.1:5502/user-orders.html'){
+                        // Enable removed items btn
+                        addItem.forEach(item=>{
+                            addToCartBtn[item.FoodID-1].disabled = false;
+                            addToCartBtn[item.FoodID-1].innerHTML = 'Add to Cart';
+                        })
+                    }
                 }
             })
 
@@ -515,16 +520,25 @@ function cartFunctionalities (addItem, trimedEmailID, addToCartBtn){
 
             // Update Array -
             addItem.forEach(item => {                
-                if (item.Quantity === 0){
-                    lowerAmount.parentElement.parentElement.innerHTML = '';
-                    // Enable Buttons - so user can use them again
-                    addToCartBtn[id-1].disabled = false;
-                    addToCartBtn[id-1].innerHTML = 'Add to Cart';
-                    // Update Array -
-                    addItem.splice(addItem.indexOf(item) ,1);
-                }
                 if (item.FoodID === id && item.Quantity >= 1){
                     item.Quantity -= 1;
+                    if (item.Quantity === 0){
+                        if ( window.location != 'http://127.0.0.1:5502/user-orders.html'){
+                            console.log(lowerAmount.parentElement.parentElement);
+                            // Enable Buttons - so user can use them again
+                            // Enable removed items btn
+                            addItem.forEach(item=>{
+                                addToCartBtn[item.FoodID-1].disabled = false;
+                                addToCartBtn[item.FoodID-1].innerHTML = 'Add to Cart';
+                            })
+                        }
+                        // Update Array -
+                        addItem.splice(addItem.indexOf(item) ,1);
+                        if (addItem.length === 0){
+                            cartItemsContainer.innerHTML = '';
+                            cartValues.innerHTML = '0';
+                        }
+                    }
                 }
             })
 
@@ -541,13 +555,15 @@ function cartFunctionalities (addItem, trimedEmailID, addToCartBtn){
 function clearUserCart(addItem, addToCartBtn, trimedEmailID){
     cartItemsContainer.innerHTML = '';
     cartValues.innerHTML = 0;
+   
+    if ( window.location != 'http://127.0.0.1:5502/user-orders.html'){
+        // Enable removed items btn
+        addItem.forEach(item=>{
+            addToCartBtn[item.FoodID-1].disabled = false;
+            addToCartBtn[item.FoodID-1].innerHTML = 'Add to Cart';
+        })
+    }
 
-    // Enable removed items btn
-    addItem.forEach(item=>{
-        addToCartBtn[item.FoodID-1].disabled = false;
-        addToCartBtn[item.FoodID-1].innerHTML = 'Add to Cart';
-    })
-    
     // Empty Local Cart 
     addItem = []
 
@@ -609,8 +625,10 @@ function ClientDataFlow(addToCartBtn){
                     // Store previouly added items to array -
                     addItem.push(userCart[i])
                     // Disable already added items
-                    addToCartBtn[userCart[i].FoodID-1].disabled = true;
-                    addToCartBtn[userCart[i].FoodID-1].innerHTML = 'In Cart';
+                    if (window.location != 'http://127.0.0.1:5502/user-orders.html'){
+                        addToCartBtn[userCart[i].FoodID-1].disabled = true;
+                        addToCartBtn[userCart[i].FoodID-1].innerHTML = 'In Cart';
+                    }
                 }
                 cartFunctionalities(addItem, trimedEmailID, addToCartBtn);
                 showUserCart(addItem, trimedEmailID);
@@ -647,6 +665,9 @@ function ClientDataFlow(addToCartBtn){
                         icon: 'success',
                         title: 'Order Successfully Recorded',
                     })
+                    window.setTimeout(function(){
+                        window.location.replace('http://127.0.0.1:5502/user-orders.html')
+                    }, 2600)
                 } else {
                     Swal.fire({
                         icon: 'error',
@@ -654,7 +675,7 @@ function ClientDataFlow(addToCartBtn){
                     })
                 }
             })
-
+            
         } else {
         console.log('no user logged in');
         }
