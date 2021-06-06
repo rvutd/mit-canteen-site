@@ -61,6 +61,9 @@
     .our-philosphy h1
     { font-size: 30px; }
 
+    .signup-modal .modal-container {margin-top: 2rem; height: 90%;}
+    .signup-modal .modal-content #sign-modal { padding-bottom: 2rem; }
+
     /* Home Page */
     .hero { height: 700px;}
     .hero img { object-fit: fill; height : 440px; }

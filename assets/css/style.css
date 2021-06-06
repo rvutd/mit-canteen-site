@@ -75,9 +75,13 @@ button {
     padding: 100px 0; visibility: hidden;
     position: fixed; left: 0;
     top: 0; width: 100%; 
-    height: 100%; overflow: visible;
-    background-color: rgba(0,0,0,0.8); 
+    height: 100%; 
+    background-color: rgba(0,0,0,0.8);
+    overflow: scroll; 
 }
+
+.signup-modal .modal-container { overflow: scroll; }
+.signup-modal .modal-container::-webkit-scrollbar { display: none;}
 
 /* ------------------- SignIn Modal ---------*/
 .sign-modal {
