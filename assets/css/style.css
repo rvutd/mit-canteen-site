@@ -153,6 +153,7 @@ button {
     overflow: scroll;
 }
 
+/* Hide Scroll Bar */
 .cart-innerlay::-webkit-scrollbar { display: none; }
 
 .showCart { transform: translateX(0); }
@@ -287,19 +288,15 @@ button {
 }
 
 /* ---------- mobile navbar ------------ */
-.mob-navbar { background-color: #1E2022; padding-bottom: 1rem;}
+.mob-navbar { background-color: #1E2022; }
 
-.mob-ul {
-    display: none;
-    text-align: center;
-}
+.mob-ul { display: none; text-align: center; }
 
-.mob-nav-active { display: grid; }
+.mob-nav-active { display: grid; padding-bottom: 1rem;}
 
-.mob-ul li {
-    padding: 20px 0;
+.mob-ul li { 
+    padding: 20px 0; width: 100%;
     border-bottom: 1px solid #000;
-    width: 100%;
 }
 
 .mob-navbar a { color: rgb(240, 248, 255); }
@@ -335,52 +332,25 @@ button {
 /* Hero Section */
 .hero { height: 500px; }
 
-.hero img {
-    max-width: 550px;
-    margin-top: -70px;
-}
+.hero img { max-width: 550px; margin-top: -70px; }
 
 .hero h3 { font-size: 30px; }
 
-.hero li {
-    margin-top: 10px;
-    padding-right: 20px;
-}
+.hero li { margin-top: 10px; padding-right: 20px; }
 
-.hero p { 
-    max-width: 400px; 
-    font-size: 16px;
-}
+.hero p { max-width: 400px; font-size: 16px; }
 
 /* Come & Dine Section */
-.showcase h6 {
-    color: #aea512;
-    text-transform: uppercase;
-}
+.showcase h6 { color: #aea512; text-transform: uppercase; }
 
 .showcase h1, .showcase h4 , .showcase .sm{ color: #533834; }
 
 .showcase img {
-    width: 100px;
-    height: 100px;
+    width: 100px; height: 100px;
     margin: 5px 0;
 }
 
 .showcase p { font-size: 17px;}
-
-/* Todays Special */
-.special {
-    background-image: url(../images/99.jpg);
-    height: 35em;
-}
-
-.special .container-min { justify-content: space-around; }
-
-.special .card { width: 350px; }
-
-.special .card:hover { transform: translateY(-10px); }
-
-.card img { height: 350px; }
 
 /* Most Loved Dishes */
 .dishes .container-min { 
@@ -393,98 +363,20 @@ button {
 
 .dishes .card {
     display: block;
-    width: 320px;
-    padding: 35px;
+    width: 320px; padding: 35px;
     transition: transform 0.3s ease-in;
 }
 
-.dishes h2{
-    font-size: 29px;
-    color: #aea512;
-}
+.dishes h2 { font-size: 29px; color: #aea512; }
 
 .dishes img {
-    border-radius: 50%;
-    width: 200px;
-    height: 200px;
-    padding: 10px;
+    padding: 10px; border-radius: 50%;
+    width: 200px; height: 200px;
 }
 
 .dishes .card:hover { transform: translateY(-10px);}
 
 /* ------------------ Menu Page CSS ----------------- */
-.menu .container { padding: 0; }
-
-.menu-item {
-    display: flex;
-    max-width: 500px;
-    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
-    border-radius: 6px;
-    background-color: #ffffff;
-}
-
-
-/* .menu-item .flex { align-items: center; } */
-
-.menu-item .item-info { 
-    padding: 15px;
-    width: 100%;
-}
-
-.menu-item figure i {margin-right: 5px;}
-
-.menu-item .item-category { color: #5B6EFD;}
-
-.menu-cart-functionality {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-top: 15px;
-}
-
- .cart-btn-container {
-     display: flex;
-    padding: 5px;
-    background-color: #F5F5F5;
-}
-
-
-.menu-item .price {
-    color: #F57C00;
-    font-size: 25px;
-    font-weight: 700;
-    font-family: 'roboto', sans-serif;
-}
-
-.cart-btn-container i {
-    padding: 5px;
-}
-
-.cart-btn-container button {
-    background: #ffffff;
-    border: none;
-    color: #666262;
-    font-size: 18px;
-    margin: 0 10px;
-    transition: all ease-in 0.2s;
-}
-
-.cart-btn-container button:focus  {
-    outline: none;
-}
-
-.cart-btn-container button:hover {
-    background-color: #6c757d;
-    color: #ffffff;
-} 
-
-.menu-item img {
-    max-width: 220px;
-    height: 240px;
-    border-top-left-radius: 6px;
-    border-bottom-left-radius: 6px;
-}
-
 
 /* ----------------- Our Vision CSS ------------------ */
 /* Banner Image */
@@ -587,6 +479,72 @@ footer .deep-devs a {
     font-size: 16px;
 }
 /* ------------------- Client Panel -------------------- */
+.menu .container { padding: 0; }
+
+.menu-item {
+    display: flex;
+    max-width: 500px;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    border-radius: 6px;
+    background-color: #ffffff;
+}
+
+.menu-item .item-info { padding: 15px; width: 100%; }
+
+.menu-item figure i {margin-right: 5px;}
+
+.menu-item .item-category { color: #5B6EFD;}
+
+.menu-cart-functionality {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 15px;
+}
+
+ .cart-btn-container {
+     display: flex;
+    padding: 5px;
+    background-color: #F5F5F5;
+}
+
+
+.menu-item .price {
+    color: #F57C00;
+    font-size: 25px;
+    font-weight: 700;
+    font-family: 'roboto', sans-serif;
+}
+
+.cart-btn-container i {
+    padding: 5px;
+}
+
+.cart-btn-container button {
+    background: #ffffff;
+    border: none;
+    color: #666262;
+    font-size: 18px;
+    margin: 0 10px;
+    transition: all ease-in 0.2s;
+}
+
+.cart-btn-container button:focus  {
+    outline: none;
+}
+
+.cart-btn-container button:hover {
+    background-color: #6c757d;
+    color: #ffffff;
+} 
+
+.menu-item img {
+    max-width: 220px;
+    height: 240px;
+    border-top-left-radius: 6px;
+    border-bottom-left-radius: 6px;
+}
+
 .menu-hero {
     background: url("../images/menu-img8.jpg") center/cover no-repeat;
     min-height: calc(95vh - 60px);    
