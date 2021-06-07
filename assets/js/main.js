@@ -477,10 +477,8 @@ function cartFunctionalities (addItem, trimedEmailID, addToCartBtn){
                     addItem.splice(addItem.indexOf(item) ,1) 
                     if ( window.location != 'http://127.0.0.1:5502/user-orders.html'){
                         // Enable removed items btn
-                        addItem.forEach(item=>{
-                            addToCartBtn[item.FoodID-1].disabled = false;
-                            addToCartBtn[item.FoodID-1].innerHTML = 'Add to Cart';
-                        })
+                        addToCartBtn[item.FoodID-1].disabled = false;
+                        addToCartBtn[item.FoodID-1].innerHTML = 'Add to Cart';
                     }
                     if (addItem.length === 0){
                         cartItemsContainer.innerHTML = '';
@@ -536,10 +534,9 @@ function cartFunctionalities (addItem, trimedEmailID, addToCartBtn){
                         if ( window.location != 'http://127.0.0.1:5502/user-orders.html'){
                             // Enable Buttons - so user can use them again
                             // Enable removed items btn
-                            addItem.forEach(item=>{
-                                addToCartBtn[item.FoodID-1].disabled = false;
-                                addToCartBtn[item.FoodID-1].innerHTML = 'Add to Cart';
-                            })
+                            console.log('u');
+                            addToCartBtn[item.FoodID-1].disabled = false;
+                            addToCartBtn[item.FoodID-1].innerHTML = 'Add to Cart';
                         }
                         // Update Array -
                         addItem.splice(addItem.indexOf(item) ,1);
