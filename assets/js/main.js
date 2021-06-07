@@ -482,6 +482,16 @@ function cartFunctionalities (addItem, trimedEmailID, addToCartBtn){
                             addToCartBtn[item.FoodID-1].innerHTML = 'Add to Cart';
                         })
                     }
+                    if (addItem.length === 0){
+                        cartItemsContainer.innerHTML = '';
+                        cartValues.innerHTML = '0';
+
+                        // Remove in Firebase DB
+                        firebase
+                        .database()
+                        .ref('Users_Carts/' + trimedEmailID + '_Cart')
+                        .remove()
+                    }
                 }
             })
 
