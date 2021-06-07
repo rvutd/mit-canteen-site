@@ -221,8 +221,8 @@ if (signModal) {
         </ul>
         <!-- Sign In Input's -->
         <form class="modal-form grid py-1 text-center" id="signIn-form">
-            <input type="text" placeholder="Email Id" id="sign-in-email">
-            <input type="text" placeholder="Password" id="sign-in-password">
+            <input type="email" placeholder="Email Id" id="sign-in-email" required>
+            <input type="password" placeholder="Password" id="sign-in-password" required>
 
             <button type="submit" class="btn">Login</button>
         </form>

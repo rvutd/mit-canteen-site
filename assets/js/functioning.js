@@ -46,8 +46,10 @@
         .then((cred) => {
           // Save Data to firebase storage -
           saveDatabase.UserfirebaseDatabase(userName, email, password, phoneNumber);
-          this.notifyUser();
-          this.firebaseAuthRedirect();
+          Swal.fire({
+            icon: 'success',
+            title: 'Account Created Successfully. Please LogIn To order Delicious Cuisine',
+          })
         })
         .catch((error) => Swal.fire("" + error));
       }
@@ -132,11 +134,17 @@
 
     firebase.auth().signInWithEmailAndPassword(email, password)
     .then(userCredential => {
-        alert("Logged In");
-        signUpMethods.authRedirecting()
+      Swal.fire({
+        icon: 'success',
+        title: 'Logged In',
+      })
+      signUpMethods.authRedirecting()
     })
     .catch(error => {
-        alert("Log In Failed: ", error);
+      Swal.fire({
+        icon: 'error',
+        title: '' + error,
+      })
     });
     }
   }
