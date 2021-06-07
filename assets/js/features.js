@@ -175,12 +175,12 @@ if (signUpModal){
                 <li><button><i class="fab fa-facebook" id="facebook-signUpIn"></i></button></li>
         </ul>
         <!-- Sign Up Input's -->
-        <form class="modal-form grid py-1 text-center" id="main-form">
-            <input type="text" placeholder="Full Name" id="sign-up-full-name">
-            <input type="text" placeholder="email id" id="sign-up-email">
-            <input type="text" placeholder="Password" id="sign-up-password">
-            <input type="text" placeholder="Re - Enter Password" id="sign-up-repassword">
-            <input type="text" placeholder="Mobile Number" id="sign-up-number">
+        <form class="modal-form grid py-1 text-center" id="main-form" required>
+            <input type="text" placeholder="Full Name" id="sign-up-full-name" required>
+            <input type="email" placeholder="email id" id="sign-up-email" required>
+            <input type="password" placeholder="Password" id="sign-up-password" required>
+            <input type="password" placeholder="Re - Enter Password" id="sign-up-repassword" required>
+            <input type="tel" placeholder="Mobile Number" id="sign-up-number" required>
 
             <button type="submit" class="btn">Register</button>
         </form>
@@ -271,10 +271,10 @@ function customerFooterUI() {
                     <article class="quick-links">
                         <ul>
                             <h1 class="sm">Quick Links</h1>
-                            <li><a href="index.html">Home</a></li>
-                            <li><a href="menu.html">Order Online</a></li>
+                            <li><a href="index.html">Canteen Home</a></li>
                             <li><a href="our-vision.html">Our Vision</a></li>
-                            <li><a href="testimonials.html">About Us</a></li>
+                            <li><a href="https://github.com/rvutd/mit-canteen-site">Git Repository</a></li>
+                            <li><a href="https://mitindore.co.in/">MIT Indore</a></li>
                         </ul>
                     </article>
                     <!-- Contact Details -->
