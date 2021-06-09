@@ -103,7 +103,79 @@
         </div>
     </section>
 
+    <section class="orders c-orders m-2">
+        <div class="container-min p-2">
+            <!-- heading -->
+            <main class="current-orders title" style="font-size: 1.7rem;">Current Orders</main>
+            <!-- Shows Current Orders -->
+            <main class="current-details">
+                <!-- Current Order Main Titles -->
+                <table class="main-details">
+                    <button class="table-btn my-1">Order Details</button>
+                    <thead>
+                        <tr>
+                            <th><i class="fas fa-th-list" style="margin-right: 5px;"></i> Items</th>
+                            <th><i class="fas fa-tenge" style="margin-right: 5px;"></i> Total</th>
+                            <th><i class="fas fa-calendar-alt" style="margin-right: 5px;"></i> Ordered Date</th>
+                            <th><i class="fas fa-clock" style="margin-right: 5px;"></i> Ordered Time</th>
+                            <th><i class="fas fa-calendar-check" style="margin-right: 5px;"></i> Order Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td data-label= "Items">2</td>
+                            <td data-label= "Total">$105.00</td>
+                            <td data-label= "Date">07/06/2021</td>
+                            <td data-label= "Time">07:38PM</td>
+                            <td data-label= "Order Status">Cooking</td>
+                        </tr>
+                    </tbody>
+                </table>
 
+                <!-- Current Order Items -->
+                <table class="descriptive-details">
+                    <button class="table-btn" id="show-order-details">More Details</button>
+                    <thead>
+                        <tr>
+                            <th><i class="fas fa-coins" style="margin-right: 5px;"></i> S.No</th>
+                            <th><i class="fas fa-th-list" style="margin-right: 5px;"></i> Item</th>
+                            <th><i class="fas fa-money-bill-alt" style="margin-right: 5px;"></i> Price</th>
+                            <th><i class="fab fa-buffer" style="margin-right: 5px;"></i> Quantity </th>
+                            <th><i class="fas fa-tenge" style="margin-right: 5px;"></i> Sub Total</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="my-1">
+                            <td data-label= "S. No">1</td>
+                            <td data-label= "Item">Burger</td>
+                            <td data-label= "Price">&#8377 45</td>
+                            <td data-label= "Quantity">3</td>
+                            <td data-label= "Sub Total">&#8377 105.00</td>
+                        </tr>
+                        <tr class="my-1 odd">
+                            <td data-label= "S. No">2</td>
+                            <td data-label= "Item">Burger</td>
+                            <td data-label= "Price">&#8377 45</td>
+                            <td data-label= "Quantity">3</td>
+                            <td data-label= "Sub Total">&#8377 105.00</td>
+                        </tr>
+                        <tr class="my-1">
+                            <td data-label= "S. No">3</td>
+                            <td data-label= "Item">Burger</td>
+                            <td data-label= "Price">&#8377 45</td>
+                            <td data-label= "Quantity">3</td>
+                            <td data-label= "Sub Total">&#8377 105.00</td>
+                        </tr>
+                          
+                    </tbody>                
+                </table>
+            </main>
+        </div>
+    </section>
+
+    <section class="orders p-orders">
+        <main class="previous-orders"></main>
+    </section>
 
     <!-- Page Animations -->
     <script src="assets/js/animations.js"></script>

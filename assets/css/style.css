@@ -29,7 +29,7 @@ html,body
 html { scroll-behavior: smooth; }
 
 body {
-    background-color: #EFEEE9; font-family: Verdana, sans-serif;
+    background-color: #f1f1f1; font-family: Verdana, sans-serif;
     line-height: 1.6; font-size: 1rem;
     color: #333;
 }
@@ -264,7 +264,7 @@ button {
 .toggle-bars .bars{
     width: 30px;
     height: 3px;
-    background-color: #333;
+    background-color: #f1f1f1;
     margin: 6px 0;
     transition: 0.4s;
 }
@@ -567,6 +567,94 @@ footer .deep-devs a {
 
 .menu-section {
     justify-content: center;
+}
+
+/* (Client) Your Orders Page */
+.orders .container-min{
+    max-width: 75rem;
+    background: #fff;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
+.table-btn {
+    background: #000;
+    color: #f1f1f1;
+    border: 1px solid #999;
+    padding: 10px 15px;
+    border-radius: 5px;
+    margin: 1rem 0;
+}
+
+.orders .title { border-bottom: 1px solid #999; padding-bottom: 0.5rem;}
+
+.orders img {
+    width: 50px;
+    height: 50px;
+}
+
+.orders table {
+    background: #fff;
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.orders th {
+    text-align: center;
+    border: 0px;
+    border-bottom: 1px solid #999;
+    padding: 1rem;
+    background: #f1f1f1;
+}
+
+.orders td {
+    text-align: center;
+    padding-bottom: 5px;
+}
+
+.orders .main-details { margin-bottom: 2rem;}
+
+.current-details .main-details, .current-details .descriptive-details{ padding: 1rem; }
+
+.descriptive-details td:nth-child(4){ padding-left: 2.5rem; }
+
+tr { box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px; }
+
+.odd { background: #f5f5f5;}
+
+.current-details td, .current-details th {
+    padding: 0.5rem 1rem 1rem 1rem;
+    border-bottom: 1px solid rgb(235, 230, 230);
+}
+
+@media(max-width:720px){
+    .orders table thead { display: none; }
+
+    .oreders table tbody, .orders table td, .orders table tr { 
+        display: block;
+        width: 100%;
+        font-size: 15px;
+    }
+
+    .orders table tr { margin-bottom: 0.5rem;}
+
+    .orders table tbody td { 
+        text-align: right;
+        padding-left: 50%;
+        position: relative;
+    }
+
+    tr { margin-bottom: 5rem;}
+
+    .orders table td::before { 
+        content: attr(data-label);
+        position: absolute;
+        left: 1rem;
+        width: 50%;
+        text-align: left;
+        font-weight: 700;
+    }
+
+    .table-btn { margin: 0;}
 }
 
 /* ------------------- Admin Panel -------------------- */
