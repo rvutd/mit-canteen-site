@@ -304,12 +304,14 @@ customerFooterUI()
 let indexPage = encodeURI('index.html')
 
 // Client Orders Detals
-const showOrderDetails = document.querySelector('#show-order-details');
+const showOrderDetails = document.querySelectorAll('#show-order-details');
 const descriptiveDetails = document.querySelector('.descriptive-details');
 
 
 if (showOrderDetails){
-    showOrderDetails.addEventListener('click', ()=>{
-        descriptiveDetails.classList.toggle('display-none')
+    showOrderDetails.forEach(btn => {
+        btn.addEventListener('click', ()=>{
+            descriptiveDetails.classList.toggle('display-none')
+        })
     })
 }

@@ -611,7 +611,18 @@ footer .deep-devs a {
     padding-bottom: 5px;
 }
 
-.orders .main-details { margin-bottom: 2rem;}
+.orders .main-details { margin-bottom: 0.5rem;}
+
+table, tr, th, tr {
+    border: 1px solid #f3f3f3;
+}
+
+hr.type_5 {
+    border: 0;
+    height: 55px;
+    background-image: url(image/type_5.png);
+    background-repeat: no-repeat;
+    }
 
 .current-details .main-details, .current-details .descriptive-details{ padding: 1rem; }
 

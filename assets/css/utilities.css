@@ -111,3 +111,27 @@ button {cursor: pointer;}
 .p-3 { padding: 3rem;}
 .p-4 { padding: 4rem;}
 .p-5 { padding: 5rem;}
+
+
+
+
+/* Glyph, by Harry Roberts */
+
+hr.hrStyle{
+    overflow: visible; /* For IE */
+    padding: 0;
+    border: none;
+    border-top: medium double #333;
+    color: #333;
+    text-align: center;
+    margin-top: 3rem;
+}
+hr.hrStyle:after {
+    content: "§";
+    display: inline-block;
+    position: relative;
+    top: -0.7em;
+    font-size: 1.5em;
+    padding: 0 0.25em;
+    background: white;
+}
