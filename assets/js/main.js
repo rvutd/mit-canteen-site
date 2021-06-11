@@ -534,7 +534,6 @@ function cartFunctionalities (addItem, trimedEmailID, addToCartBtn){
                         if ( window.location != 'http://127.0.0.1:5502/user-orders.html'){
                             // Enable Buttons - so user can use them again
                             // Enable removed items btn
-                            console.log('u');
                             addToCartBtn[item.FoodID-1].disabled = false;
                             addToCartBtn[item.FoodID-1].innerHTML = 'Add to Cart';
                         }
@@ -589,13 +588,24 @@ function clearUserCart(addItem, addToCartBtn, trimedEmailID){
 // User Order's Management -
 function userOrderManagement (trimedEmailID , userCart, userEmailID){
 
+    const orderDate = new Date().toLocaleDateString();
+    var orderTime = new Date().toLocaleTimeString();
+
+    if ( orderTime > 12){
+        orderTime = orderTime + ' PM'
+    } else {
+        orderTime = orderTime + ' AM'
+    }
+    
     // Current Order
     let current_order = {
         Email_ID: userEmailID,
         Order_Status: true,
         User_Cart: userCart,
         Payment_Status: false,
-        Delivery_Status: false
+        Delivery_Status: false,
+        Order_Date: orderDate,
+        Order_Time: orderTime,
     }
 
     // Add Current Order To User Orders list 
@@ -671,6 +681,7 @@ function ClientDataFlow(addToCartBtn){
                     // Order
                     let userCart = showUserCart(addItem, trimedEmailID);
                     userOrderManagement(trimedEmailID, userCart, userEmailID);
+                    setOrderDetails()
                     // Empty User Cart
                     cartItemsContainer.innerHTML = '';
                     clearUserCart(addItem, addToCartBtn, trimedEmailID);
@@ -678,7 +689,7 @@ function ClientDataFlow(addToCartBtn){
                     Swal.fire({
                         icon: 'success',
                         title: 'Order Successfully Recorded',
-                    })
+                    });
                     window.setTimeout(function(){
                         window.location.replace('http://127.0.0.1:5502/user-orders.html')
                     }, 2600)
@@ -689,7 +700,10 @@ function ClientDataFlow(addToCartBtn){
                     })
                 }
             })
-            
+
+            // Sets Current & Previous Orders Details
+            setOrderDetails(trimedEmailID)
+
         } else {
         console.log('no user logged in');
         }
