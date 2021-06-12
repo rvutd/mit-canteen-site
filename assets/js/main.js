@@ -700,10 +700,6 @@ function ClientDataFlow(addToCartBtn){
                     })
                 }
             })
-
-            // Sets Current & Previous Orders Details
-            setOrderDetails(trimedEmailID)
-
         } else {
         console.log('no user logged in');
         }

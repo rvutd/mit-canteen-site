@@ -346,19 +346,13 @@ function setOrderDetails(trimedEmailID){
                     }
                 }
                 if (data[key].Order_Status === true){
-
                     i += 1
                     
                     // Check Order If accepted or not
-                    if (orderStatus === true){
-                        orderStatus = 'Cooking'
-                    } else {
-                        orderStatus = 'Not Available'
-                    }
+                    if (orderStatus === true){ orderStatus = 'Cooking' } 
+                    else { orderStatus = 'Not Available' }
 
-                    if (deliveryStatus === true){
-                        orderStatus = 'Ready'
-                    }
+                    if (deliveryStatus === true){ orderStatus = 'Ready' }
 
                     // --- Creates Main Container ---
                     const div = document.createElement('main');
@@ -416,8 +410,7 @@ function setOrderDetails(trimedEmailID){
                         sID += 1
                         let foodID = itemID.FoodID
                         let subTotal = newMenu[foodID-1].fields.price * itemID.Quantity
-
-                        console.log(subTotal);
+                        // Creates Table Fields 
                         var tr = document.createElement('tr');
                         tr.classList.add('my-1')
                         tr.innerHTML = `
@@ -473,6 +466,16 @@ function setOrderDetails(trimedEmailID){
             })
         } else {
             console.log('no orders');
+        }
+    })
+}
+
+if (window.location.href === ''){
+    firebase.auth().onStateChanged((user)=> {
+        if (user) {
+            var trimedEmailID = makeUserDataID(user.email);
+            // Sets Current & Previous Orders Details
+            setOrderDetails(trimedEmailID)
         }
     })
 }
