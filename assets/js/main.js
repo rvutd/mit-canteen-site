@@ -691,7 +691,7 @@ function ClientDataFlow(addToCartBtn){
                         title: 'Order Successfully Recorded',
                     });
                     window.setTimeout(function(){
-                        window.location.replace('http://127.0.0.1:5502/user-orders.html')
+                        window.location.replace('https://mit-canteen.netlify.app/user-orders.html')
                     }, 2600)
                 } else {
                     Swal.fire({
