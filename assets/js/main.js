@@ -531,7 +531,7 @@ function cartFunctionalities (addItem, trimedEmailID, addToCartBtn){
                 if (item.FoodID === id && item.Quantity >= 1){
                     item.Quantity -= 1;
                     if (item.Quantity === 0){
-                        if ( window.location != 'http://127.0.0.1:5502/user-orders.html'){
+                        if ( window.location != 'https://mit-canteen.netlify.app/client-side'){
                             // Enable Buttons - so user can use them again
                             // Enable removed items btn
                             addToCartBtn[item.FoodID-1].disabled = false;
@@ -552,7 +552,6 @@ function cartFunctionalities (addItem, trimedEmailID, addToCartBtn){
                     }
                 }
             })
-
             // Update in Firebase DB
             firebase
             .database()
@@ -591,11 +590,8 @@ function userOrderManagement (trimedEmailID , userCart, userEmailID){
     const orderDate = new Date().toLocaleDateString();
     var orderTime = new Date().toLocaleTimeString();
 
-    if ( orderTime > 12){
-        orderTime = orderTime + ' PM'
-    } else {
-        orderTime = orderTime + ' AM'
-    }
+    if ( orderTime > 12){ orderTime = orderTime + ' PM' }
+    else { orderTime = orderTime + ' AM' }
     
     // Current Order
     let current_order = {
@@ -623,7 +619,6 @@ document.addEventListener('DOMContentLoaded', () =>{
     const addToCartBtn = document.querySelectorAll('#add-to-cart-btn');
     // Menu Filtering items
     filtering(addToCartBtn)
-
     ClientDataFlow(addToCartBtn)
 });
 
@@ -648,7 +643,7 @@ function ClientDataFlow(addToCartBtn){
                         // Store previouly added items to array -
                         addItem.push(userCart[i])
                         // Disable already added items
-                        if (window.location != 'http://127.0.0.1:5502/user-orders.html'){
+                        if (window.location != 'https://mit-canteen.netlify.app/client-side'){
                             addToCartBtn[userCart[i].FoodID-1].disabled = true;
                             addToCartBtn[userCart[i].FoodID-1].innerHTML = 'In Cart';
                         }
@@ -659,14 +654,16 @@ function ClientDataFlow(addToCartBtn){
             })
             
             // Cart Buttons -
-            addToCartBtn.forEach(btn => {
-                btn.addEventListener('click', ()=> {
-                    var quantity = 1;
-                    const data_id = btn.dataset.id;
-                    // Set Values In Firebase DB
-                    foodItemCartBtn(data_id, quantity, trimedEmailID, addItem);
+            if (addToCartBtn){
+                addToCartBtn.forEach(btn => {
+                    btn.addEventListener('click', ()=> {
+                        var quantity = 1;
+                        const data_id = btn.dataset.id;
+                        // Set Values In Firebase DB
+                        foodItemCartBtn(data_id, quantity, trimedEmailID, addItem);
+                    });
                 });
-            });
+            }
 
             // Remove all items from Cart -
             clearCart.addEventListener('click', ()=>{
@@ -681,7 +678,6 @@ function ClientDataFlow(addToCartBtn){
                     // Order
                     let userCart = showUserCart(addItem, trimedEmailID);
                     userOrderManagement(trimedEmailID, userCart, userEmailID);
-                    setOrderDetails()
                     // Empty User Cart
                     cartItemsContainer.innerHTML = '';
                     clearUserCart(addItem, addToCartBtn, trimedEmailID);
