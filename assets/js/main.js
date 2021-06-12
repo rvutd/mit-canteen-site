@@ -606,7 +606,7 @@ function ClientDataFlow(addToCartBtn){
                         // Store previouly added items to array -
                         addItem.push(userCart[i])
                         // Disable already added items
-                        if (window.location != 'https://mit-canteen.netlify.app/user-orders'){
+                        if (window.location != 'https://mit-canteen.netlify.app/user-orders.html'){
                             addToCartBtn[userCart[i].FoodID-1].disabled = true;
                             addToCartBtn[userCart[i].FoodID-1].innerHTML = 'In Cart';
                         }
