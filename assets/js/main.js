@@ -514,6 +514,7 @@ function cartFunctionalities (addItem, trimedEmailID, addToCartBtn){
                     }
                 }
             })
+
             // Update in Firebase DB
             firebase
             .database()
@@ -605,7 +606,7 @@ function ClientDataFlow(addToCartBtn){
                         // Store previouly added items to array -
                         addItem.push(userCart[i])
                         // Disable already added items
-                        if (window.location != 'https://mit-canteen.netlify.app/client-side'){
+                        if (window.location != 'https://mit-canteen.netlify.app/user-orders'){
                             addToCartBtn[userCart[i].FoodID-1].disabled = true;
                             addToCartBtn[userCart[i].FoodID-1].innerHTML = 'In Cart';
                         }
