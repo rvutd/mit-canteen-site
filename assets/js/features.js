@@ -470,12 +470,3 @@ function setOrderDetails(trimedEmailID){
     })
 }
 
-if (window.location.href === 'https://mit-canteen.netlify.app/users-orders'){
-    firebase.auth().onStateChanged((user)=> {
-        if (user) {
-            var trimedEmailID = makeUserDataID(user.email);
-            // Sets Current & Previous Orders Details
-            setOrderDetails(trimedEmailID)
-        }
-    })
-}

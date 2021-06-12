@@ -659,6 +659,11 @@ function ClientDataFlow(addToCartBtn){
                     })
                 }
             })
+
+            // Shows Orders
+            if (window.location.href != 'https://mit-canteen.netlify.app/users-orders'){
+                setOrderDetails(trimedEmailID)
+            }
         } else {
         console.log('no user logged in');
         }
