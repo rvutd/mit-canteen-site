@@ -331,44 +331,6 @@ function displayMenuItems(menuItems){
 
 // ------------------ Menu.html Menu Cards END ------------------------
 
-// --- Product functioning ---
-class Products {
-// Add Products To Admin Pannel -
-AdminAddProduct() { /* To Admin Database */ }
-
-// Add Products To Admin Pannel -
-AdminRemoveProduct() { /* To Admin Database */ }
-
-// Add Update Product To Admin Pannel -
-AdminUpdateProduct() { /* To Admin Database */ }
-
-// Get products and display them to customer menu panel -
-getProducts() { }
-
-}
-  
-// Local Storage
-class Storage {
-    static saveProducts(products){
-          localStorage.setItem('products', JSON.stringify(products));
-    }
-
-    static getProduct(id) {
-        // goes into Browser -> Application -> localStorage -> method(getItem(stuff here it is array)) -> 
-        let products = JSON.parse(localStorage.getItem('products')); 
-        return products.find(product => product.id === id)
-    }
-
-    static saveCart(cart){
-        localStorage.setItem('cart', JSON.stringify(cart));
-    }
-
-    static getCart(){
-        return localStorage.getItem('cart')?JSON.parse
-        (localStorage.getItem('cart')):[]
-    }
-}
-
 // ---------------- Cart Functioning ----------------
 // Inside Cart Container
 const cartItemsContainer = document.querySelector('.cart-items-container');
