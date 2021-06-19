@@ -554,7 +554,7 @@ function userOrderManagement (trimedEmailID , userCart, userEmailID){
     // To check AM or PM
     var hours = new Date().getHours();
     // Check AM or PM
-    if ( hours > 12){ orderTime = orderTime + ' PM' }
+    if ( hours >= 12){ orderTime = orderTime + ' PM' }
     else { orderTime = orderTime + ' AM' }
     
     // Current Order
