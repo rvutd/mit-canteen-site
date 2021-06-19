@@ -67,7 +67,6 @@
           this.firebaseAuthRedirect();
         })
         .catch((error) => Swal.fire("" + error));
-
     }
   
     // FaceBook SignUp Method -
@@ -153,9 +152,7 @@
   class saveDatabase {
     // Authentication Details -
     static UserfirebaseDatabase(userName, email, password, phoneNumber) {
-
-      const userID = makeUserDataID(email);
-      
+      const userID = makeUserDataID(email);     
       // Create User data in firebase -
       console.log('database called');
       firebase.database().ref('User_Data/' + userID).set({

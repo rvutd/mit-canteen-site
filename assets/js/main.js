@@ -527,7 +527,7 @@ function cartFunctionalities (addItem, trimedEmailID, addToCartBtn){
 function clearUserCart(addItem, addToCartBtn, trimedEmailID){
     cartItemsContainer.innerHTML = '';
     cartValues.forEach(values => { values.innerHTML = '0';})
-    
+
     if ( window.location != 'http://127.0.0.1:5502/user-orders.html'){
         // Enable removed items btn
         addItem.forEach(item=>{
@@ -571,7 +571,6 @@ function userOrderManagement (trimedEmailID , userCart, userEmailID){
     .ref('Users_Order/' + trimedEmailID + '_Orders')
     .push(current_order);
 }
-
 
 // Main.js When Content Loaded
 document.addEventListener('DOMContentLoaded', () =>{
