@@ -223,19 +223,24 @@
     }
 
     // LogOut User -
-    const logout = document.getElementById('userlogout');
+    const logout = document.querySelectorAll('#userlogout');
+    console.log(logout);
     if (logout){
-      logout.addEventListener('click', (e) => {
-        e.preventDefault();
-        Swal.fire({
-          icon: 'success',
-          title: 'Logged Out Successfully',
-        })
-        firebase.auth().signOut().then(() => {
-          window.location.replace("https://mit-canteen.netlify.app/index.html")
+      logout.forEach(btn => {
+        btn.addEventListener('click', (e) => {
+          e.preventDefault();
+          console.log('logout btn clicked');
+          Swal.fire({
+            icon: 'success',
+            title: 'Logged Out Successfully',
+          })
+          firebase.auth().signOut().then(() => {
+            window.location.replace("https://mit-canteen.netlify.app/index.html")
+          });
         });
-      });
+      })
     }
+
   });
 
 // Makes User ID Through EmailID Provided By User

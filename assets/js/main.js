@@ -346,7 +346,7 @@ const clearCart = document.querySelector('.clear-cart');
 const checkOutBtn = document.querySelector('.check-out');
 
 // Nav Cart btn Values
-const cartValues = document.querySelector('#cart-values');
+const cartValues = document.querySelectorAll('#cart-values');
 
 // Item Quantity -
 var quantity = 1;
@@ -417,7 +417,7 @@ function showUserCart(addItem, trimedEmailID){
     .update({Details: addItem, Total_Amount: totalAmount})
     // UI
     cartTotal.innerHTML = totalAmount;
-    cartValues.innerHTML = No_of_Item;
+    cartValues.forEach(values=>{values.innerHTML = No_of_Item;})
 
     // If user orders than send cart to orders
     userCart = { Details: addItem, Total_Amount: totalAmount }
@@ -444,7 +444,7 @@ function cartFunctionalities (addItem, trimedEmailID, addToCartBtn){
                     }
                     if (addItem.length === 0){
                         cartItemsContainer.innerHTML = '';
-                        cartValues.innerHTML = '0';
+                        cartValues.forEach(values => { values.innerHTML = '0';})
 
                         // Remove in Firebase DB
                         firebase
@@ -458,7 +458,7 @@ function cartFunctionalities (addItem, trimedEmailID, addToCartBtn){
             // If last element in cart if removed - 
             if (addItem.length === 0){ 
                 cartItemsContainer.innerHTML = '';
-                cartValues.innerHTML = 0; 
+                cartValues.forEach(values => { values.innerHTML = '0';})
             }
             
             // Remove (i.e update) In Firebase DB
@@ -503,8 +503,7 @@ function cartFunctionalities (addItem, trimedEmailID, addToCartBtn){
                         addItem.splice(addItem.indexOf(item) ,1);
                         if (addItem.length === 0){
                             cartItemsContainer.innerHTML = '';
-                            cartValues.innerHTML = '0';
-
+                            cartValues.forEach(values => { values.innerHTML = '0';})
                             // Remove in Firebase DB
                             firebase
                             .database()
@@ -527,8 +526,8 @@ function cartFunctionalities (addItem, trimedEmailID, addToCartBtn){
 // Remove all items in cart
 function clearUserCart(addItem, addToCartBtn, trimedEmailID){
     cartItemsContainer.innerHTML = '';
-    cartValues.innerHTML = 0;
-   
+    cartValues.forEach(values => { values.innerHTML = '0';})
+    
     if ( window.location != 'http://127.0.0.1:5502/user-orders.html'){
         // Enable removed items btn
         addItem.forEach(item=>{
