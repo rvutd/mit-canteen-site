@@ -111,7 +111,7 @@
       window.setTimeout(function(){
         Swal.fire({
           icon: 'success',
-          title: 'Account Created/Signed In Successfully',
+          title: 'Account Signed In Successfully',
         })
       },1250)
     }
