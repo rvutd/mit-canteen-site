@@ -551,9 +551,11 @@ function userOrderManagement (trimedEmailID , userCart, userEmailID){
 
     const orderDate = new Date().toLocaleDateString();
     var orderTime = new Date().toLocaleTimeString();
-
-    if ( orderTime > 12){ orderTime = orderTime + ' PM' }
-    else { orderTime = orderTime + ' AM' }
+    // To check AM or PM
+    var hours = new Date().getHours();
+    // Check AM or PM
+    if ( hours > 12){ orderTime = orderTime + ' PM' }
+    else { hours = orderTime + ' AM' }
     
     // Current Order
     let current_order = {
