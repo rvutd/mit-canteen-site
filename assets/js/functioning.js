@@ -221,7 +221,6 @@
 
     // LogOut User -
     const logout = document.querySelectorAll('#userlogout');
-    console.log(logout);
     if (logout){
       logout.forEach(btn => {
         btn.addEventListener('click', (e) => {
