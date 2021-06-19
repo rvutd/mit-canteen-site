@@ -528,7 +528,7 @@ function clearUserCart(addItem, addToCartBtn, trimedEmailID){
     cartItemsContainer.innerHTML = '';
     cartValues.forEach(values => { values.innerHTML = '0';})
 
-    if ( window.location != 'http://127.0.0.1:5502/user-orders.html'){
+    if ( window.location != 'https://mit-canteen.netlify.app/user-orders.html'){
         // Enable removed items btn
         addItem.forEach(item=>{
             addToCartBtn[item.FoodID-1].disabled = false;
@@ -661,7 +661,7 @@ function ClientDataFlow(addToCartBtn){
             })
 
             // Shows Orders
-            if (window.location.href === 'https://mit-canteen.netlify.app/users-orders.html'){
+            if (window.location.href === 'https://mit-canteen.netlify.app/user-orders.html'){
                 setOrderDetails(trimedEmailID)
             }
         } else {
