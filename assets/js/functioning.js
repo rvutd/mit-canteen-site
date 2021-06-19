@@ -229,7 +229,6 @@
       logout.forEach(btn => {
         btn.addEventListener('click', (e) => {
           e.preventDefault();
-          console.log('logout btn clicked');
           Swal.fire({
             icon: 'success',
             title: 'Logged Out Successfully',
