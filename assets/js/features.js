@@ -326,8 +326,8 @@ function userFooterUI() {
                     <article class="quick-links">
                         <ul>
                             <h1 class="sm">Quick Links</h1>
-                            <li><a href="index.html">Menu</a></li>
-                            <li><a href="our-vision.html">Your Orders</a></li>
+                            <li><a href="client-side.html">Menu</a></li>
+                            <li><a href="user-orders.html">Your Orders</a></li>
                             <li><a href="https://github.com/rvutd/mit-canteen-site" target="_blank">Git Repository</a></li>
                             <li><a href="https://mitindore.co.in/" target="_blank">MIT Indore</a></li>
                         </ul>
