@@ -493,7 +493,7 @@ function cartFunctionalities (addItem, trimedEmailID, addToCartBtn){
                 if (item.FoodID === id && item.Quantity >= 1){
                     item.Quantity -= 1;
                     if (item.Quantity === 0){
-                        if ( window.location != 'https://mit-canteen.netlify.app/client-side'){
+                        if ( window.location != 'https://mit-canteen.netlify.app/user-orders.html'){
                             // Enable Buttons - so user can use them again
                             // Enable removed items btn
                             addToCartBtn[item.FoodID-1].disabled = false;
