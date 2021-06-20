@@ -528,7 +528,7 @@ function cartFunctionalities (addItem, trimedEmailID, addToCartBtn){
 function clearUserCart(addItem, addToCartBtn, trimedEmailID){
     cartItemsContainer.innerHTML = '';
     cartValues.forEach(values => { values.innerHTML = '0';})
-
+    cartTotal.innerHTML = '0';
     if ( window.location != 'https://mit-canteen.netlify.app/user-orders.html'){
         // Enable removed items btn
         addItem.forEach(item=>{
