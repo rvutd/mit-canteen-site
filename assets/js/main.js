@@ -504,6 +504,7 @@ function cartFunctionalities (addItem, trimedEmailID, addToCartBtn){
                         if (addItem.length === 0){
                             cartItemsContainer.innerHTML = '';
                             cartValues.forEach(values => { values.innerHTML = '0';})
+                            cartTotal.innerHTML = '0';
                             // Remove in Firebase DB
                             firebase
                             .database()
