@@ -78,9 +78,8 @@
         .auth()
         .signInWithPopup(provider)
         .then((result) => {
-          console.log(result);
           this.notifyUser();
-          this.firebaseAuthRedirect()
+          this.firebaseAuthRedirect();
         })
         .catch((error) => Swal.fire("" + error));
     }
@@ -93,9 +92,9 @@
       firebase
         .auth()
         .signInWithPopup(provider)
-        .then(function (result) {
+        .then((result) => {
           this.notifyUser();
-          this.firebaseAuthRedirect()
+          this.firebaseAuthRedirect();
         })
         .catch((error) => Swal.fire("" + error));
     }
