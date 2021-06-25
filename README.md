@@ -17,5 +17,15 @@ Project is created with:
 * Run it through web browser or throght live servers.
 * Hope you like it.
 
+## CONTRIBUTE
+Contributions are always welcome! Please read the [contribution guidelines](https://github.com/user/repo/blob/branch/other_file.md) first.
+
+## COD (Code of Conduct)
+Please read the [COD guidelines](https://github.com/rvutd/mit-canteen-site/blob/master/CODE_OF_CONDUCT.md).
+
+## License
+To the extent possible under law, [Ravindra Purohit](https://github.com/rvutd) has waived all copyright and related or neighboring rights to this work.<br>
+[click here to read](https://github.com/rvutd/mit-canteen-site/blob/master/LICENSE)
+
 ## Link of this site
 <https://mit-canteen.netlify.app/index.html>
