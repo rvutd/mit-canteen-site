@@ -663,7 +663,7 @@ function ClientDataFlow(addToCartBtn){
             })
 
             // Shows Orders
-            if (window.location.href === 'https://mit-canteen.netlify.app/user-orders.html'){
+            if (window.location.href != 'https://mit-canteen.netlify.app/user-orders.html'){
                 setOrderDetails(trimedEmailID)
             }
         } else {

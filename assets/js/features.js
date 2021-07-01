@@ -475,11 +475,19 @@ function setOrderDetails(trimedEmailID){
                         `                        
                         tbody.appendChild(tr)
                     })
+
+                    // Line Seperating Two Orders -
+                    var lineHR = document.createElement('hr')
+                    lineHR.style.margin = '2rem auto 0rem auto';
+                    lineHR.classList.add('hrStyle')
                     // Structures Container & other stuff
                     currentDiv.appendChild(tbody)
                     div.appendChild(currentDiv)
                     orderInner.appendChild(div)
+                    orderInner.appendChild(lineHR)
+
                 }
+                // If order isn't accepted by administrator
                 else if (data[key].Order_Status === false){
                     i += 1
 

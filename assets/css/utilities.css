@@ -112,12 +112,8 @@ button {cursor: pointer;}
 .p-4 { padding: 4rem;}
 .p-5 { padding: 5rem;}
 
-
-
-
 /* Glyph, by Harry Roberts */
-
-hr.hrStyle{
+.hrStyle{
     overflow: visible; /* For IE */
     padding: 0;
     border: none;
@@ -126,7 +122,8 @@ hr.hrStyle{
     text-align: center;
     margin-top: 3rem;
 }
-hr.hrStyle:after {
+
+.hrStyle:after {
     content: "§";
     display: inline-block;
     position: relative;
