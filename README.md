@@ -29,3 +29,4 @@ To the extent possible under law, [Ravindra Purohit](https://github.com/rvutd) h
 
 ## Link of this site
 <https://mit-canteen.netlify.app/index.html>
+
