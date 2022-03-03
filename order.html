@@ -1,24 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Mit Canteen | Sign In/Up</title>
-    
+
     <!-- Page Icon -->
-    <link rel="Micosoft icon" href="assets/images/MIT LOGO.png">
-    
+    <link rel="Micosoft icon" href="assets/images/MIT LOGO.png" />
+
     <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" 
-          integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w==" 
-          crossorigin="anonymous" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"
+      integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w=="
+      crossorigin="anonymous"
+    />
 
     <!-- Style Sheets -->
-    <link rel="stylesheet" href="assets/css/style.css">
-    <link rel="stylesheet" href="assets/css/utilities.css">
-    <link rel="stylesheet" href="assets/css/mobile.css">
-    <link rel="stylesheet" href="assets/css/animations.css">
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <link rel="stylesheet" href="assets/css/utilities.css" />
+    <link rel="stylesheet" href="assets/css/mobile.css" />
+    <link rel="stylesheet" href="assets/css/animations.css" />
 
     <!-- Firebase Connectivity Using CDN -->
     <script src="https://www.gstatic.com/firebasejs/8.3.2/firebase-app.js"></script>
@@ -27,85 +30,85 @@
 
     <!-- Sweet Alert Pop Modal -->
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-</head>
-<body>
-    
+  </head>
+  <body>
     <!-- NavBar -->
     <header class="navbar">
-        <div class="container flex text-center jc-ai-center">
-            <!-- Left Navigation -->
-            <div class="site-title flex align-item-center">
-                <div>
-                    <a href="index.html"><h1><span class="clr-red">Mit</span> <span class="clr-green">Canteen Admin</span></h1></a>
-                </div>
-                <!-- Toggle Bars -->
-                <div class="toggle-bars mybar">
-                    <div class="bars bar-1"></div>
-                    <div class="bars bar-2"></div>
-                    <div class="bars bar-3"></div>
-                </div>
-            </div>
-            <!-- Right Navigation -->
-            <nav class="site-nav flex left-nav align-item-center">                
-                <ul class="flex">
-                    <li><a href="order.html">Orders</a></li>
-                    <li><a href="admin-side.html">Product Management</a></li>
-                    <button  class="btn" id="logout" style="padding: 10px 20px;">Log Out</button>
-                </ul>
-            </nav>
+      <div class="container flex text-center jc-ai-center">
+        <!-- Left Navigation -->
+        <div class="site-title flex align-item-center">
+          <div>
+            <a href="index.html"
+              ><h1>
+                <span class="clr-red">Mit</span>
+                <span class="clr-green">Canteen Admin</span>
+              </h1></a
+            >
+          </div>
+          <!-- Toggle Bars -->
+          <div class="toggle-bars mybar">
+            <div class="bars bar-1"></div>
+            <div class="bars bar-2"></div>
+            <div class="bars bar-3"></div>
+          </div>
         </div>
+        <!-- Right Navigation -->
+        <nav class="site-nav flex left-nav align-item-center">
+          <ul class="flex">
+            <li><a href="order.html">Orders</a></li>
+            <li><a href="admin-side.html">Product Management</a></li>
+            <button class="btn" id="logout" style="padding: 10px 20px">
+              Log Out
+            </button>
+          </ul>
+        </nav>
+      </div>
     </header>
 
     <!-- Mobile Navbar -->
     <header class="mob-navbar">
-        <nav class="nav container">
-            <ul class="mob-ul">
-                <li><a href="orders.html">Orders</a></li>
-                <li><a href="admin-side.html">Product Management</a></li>
-                <button  class="btn" id="logout" style="padding: 10px 20px;">Log Out</button>
-            </ul>
-        </nav>
+      <nav class="nav container">
+        <ul class="mob-ul">
+          <li><a href="order.html">Orders</a></li>
+          <li><a href="admin-side.html">Product Management</a></li>
+          <button class="btn" id="logout" style="padding: 10px 20px">
+            Log Out
+          </button>
+        </ul>
+      </nav>
     </header>
 
     <section class="add-product remove">
-        <div class="container-min grid">
-            <div class="title md text-center">ravindra@gmail.com Orders</div>
-            <hr>
-            <!-- Add Menu Item -->
-            <article class="menu-item text-center grid grid-1">
-                <table>
-                    <tr>
-                      <th>S.No.</th>
-                      <th>Food Item</th>
-                      <th>Amount</th>
-                      <th>Total</th>
-                    </tr>
-                    <tr>
-                      <td>1.</td>
-                      <td>Double Cheese Potato Burger</td>
-                      <td>2</td>
-                      <td>90.00</td>
-                    </tr>
-                    <tr>
-                      <td>2.</td>
-                      <td>Veg Club Sandwitch</td>
-                      <td>1</td>
-                      <td>120.00</td>
-                    </tr>
-                </table>
-                <div class="my-1 bold">Sub-Total: 210.00</div>
-            </article>
-        </div>
+      <div class="container-min grid">
+        <div class="title md text-center">ravindra@gmail.com Orders</div>
+        <hr />
+        <!-- Add Menu Item -->
+        <article class="menu-item text-center grid grid-1" id="custom">
+          <table>
+            <tr>
+              <th>S.No.</th>
+              <th>Food Item</th>
+              <th>Amount</th>
+              <th>Total</th>
+            </tr>
+            <tr>
+              <td>1.</td>
+              <td>Double Cheese Potato Burger</td>
+              <td>2</td>
+              <td>90.00</td>
+            </tr>
+            <tr>
+              <td>2.</td>
+              <td>Veg Club Sandwitch</td>
+              <td>1</td>
+              <td>120.00</td>
+            </tr>
+          </table>
+          <div class="bold">Sub-Total: 210.00</div>
+        </article>
+      </div>
     </section>
 
-    <!-- Page Animations -->
-    <script src="assets/js/animations.js"></script>
-    <!-- Menu & Admin Stuff -->
-    <script src="assets/js/main.js"></script>
-    <!-- Creative Features -->
-    <script src="assets/js/features.js"></script>
-    <!-- Controls User Stuff -->
-    <script src="assets/js/functioning.js"></script>
-    
-</body>
+    <script src="assets/js/admin.js"></script>
+  </body>
 </html>
